@@ -1,6 +1,10 @@
 SHServer Logging File
-Generated on 12-28-2013 at 10:13:41
+Generated on 12-28-2013 at 23:19:53
 
-[10:13:41] SDL initialized
-[10:13:41] Video mode set
-[10:13:41] Board surface initialized
+[23:19:53] SDL initialized
+[23:19:54] Video mode set
+[23:19:54] Surface created successfully at address 0x00601FA0
+[23:19:54] Surface created successfully at address 0x0099BE88
+[23:20:20] Surface at address 0x00601FA0 destroyed successfully
+[23:20:20] Surface at address 0x0099BE88 destroyed successfully
+[23:20:20] Client closed successfully

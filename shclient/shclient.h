@@ -10,22 +10,28 @@
 
 #include <SDL/SDL.h>
 
+#include "shdata.h"
+
 /********************************* _surface ********************************/
-typedef struct _surface {
+typedef struct _surface SHSurface;
+
+struct _surface {
 	SDL_Surface*	sdl_surf;
+	SHSurface*		parent;		// if not null, sld_pos is defined relatively to the parent
 	SDL_Rect*		sdl_pos;
-	SDL_Surface*	parent;		// if not null, sld_pos is defined relatively to the parent
 	int				visible;
 	int				r;
 	int				g;
 	int				b;
-} SHSurface;
+};
 
 // Prototypes
-SHSurface* NewSurface(SHSurface*);
-void DestroySurface(SHSurface*);
-void RenderSurface(SHSurface*);
+SHSurface* NewSurface(int, int, SHSurface*, int, int, int, int, int, int, SHLogger*);
+void DestroySurface(SHSurface*, SHLogger*);
+void RenderSurface(SHSurface*, SDL_Surface*);
 void SetVisible(SHSurface*, int);
 /***************************************************************************/
+
+// SHButton
 
 #endif /* SHCLIENT_H_ */

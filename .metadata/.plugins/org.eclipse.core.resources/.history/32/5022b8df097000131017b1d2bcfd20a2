@@ -1,0 +1,35 @@
+/*
+ * shclient.h
+ *
+ *  Created on: 28 déc. 2013
+ *      Author: Emmanuel
+ */
+
+#ifndef SHCLIENT_H_
+#define SHCLIENT_H_
+
+#include <SDL/SDL.h>
+
+#include "shdata.h"
+
+/********************************* _surface ********************************/
+typedef struct _surface {
+	SDL_Surface*	sdl_surf;
+	SDL_Rect*		sdl_pos;
+	SDL_Surface*	parent;		// if not null, sld_pos is defined relatively to the parent
+	int				visible;
+	int				r;
+	int				g;
+	int				b;
+} SHSurface;
+
+// Prototypes
+SHSurface* NewSurface(SHSurface*, SHLogger*);
+void DestroySurface(SHSurface*, SHLogger*);
+void RenderSurface(SHSurface*);
+void SetVisible(SHSurface*, int);
+/***************************************************************************/
+
+// SHButton
+
+#endif /* SHCLIENT_H_ */

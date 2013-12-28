@@ -1,0 +1,114 @@
+\hypertarget{shdata_8h}{\section{shdata.\-h File Reference}
+\label{shdata_8h}\index{shdata.\-h@{shdata.\-h}}
+}
+\subsection*{Data Structures}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{struct__hashtable}{\-\_\-hashtable}
+\begin{DoxyCompactList}\small\item\em As its name indicates, structure for handling hashtables ! \end{DoxyCompactList}\item 
+struct \hyperlink{struct_s_h_character}{S\-H\-Character}
+\begin{DoxyCompactList}\small\item\em Structure for storing complete information on a given character. \end{DoxyCompactList}\item 
+struct \hyperlink{struct_s_h_player}{S\-H\-Player}
+\begin{DoxyCompactList}\small\item\em Storing information on a player. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef enum \hyperlink{shdata_8h_ae2bd03ffd6f7a162ede34fd5c4d1d064}{S\-H\-\_\-\-A\-L\-I\-G\-N\-M\-E\-N\-T} \hyperlink{shdata_8h_ad54666edac6a84b80f8c5dbca03cc034}{S\-H\-\_\-\-A\-L\-I\-G\-N\-M\-E\-N\-T}
+\item 
+typedef enum \hyperlink{shdata_8h_ae7d9f4a879396ab054f097efae041e69}{S\-H\-\_\-\-C\-O\-L\-O\-R} \hyperlink{shdata_8h_a22d84fe8e414622578195a6ea22ad937}{S\-H\-\_\-\-C\-O\-L\-O\-R}
+\item 
+typedef struct \hyperlink{struct__hashtable}{\-\_\-hashtable} \hyperlink{shdata_8h_adebe0af58ad30febaad5497c465c8d11}{hashtable\-\_\-t}
+\item 
+typedef struct \hyperlink{struct_s_h_character}{S\-H\-Character} \hyperlink{shdata_8h_a41b6cc02ccdd3fb319f319194f2ca4af}{S\-H\-Character}
+\item 
+typedef struct \hyperlink{struct_s_h_player}{S\-H\-Player} \hyperlink{shdata_8h_a73086ce1bb607e1b8aa1e8e215d242e8}{S\-H\-Player}
+\end{DoxyCompactItemize}
+\subsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \hyperlink{shdata_8h_ae2bd03ffd6f7a162ede34fd5c4d1d064}{S\-H\-\_\-\-A\-L\-I\-G\-N\-M\-E\-N\-T} \{ \hyperlink{shdata_8h_ae2bd03ffd6f7a162ede34fd5c4d1d064af46d14eb9d5d71afc9f6e747689fcb56}{N\-E\-U\-T\-R\-A\-L}, 
+\hyperlink{shdata_8h_ae2bd03ffd6f7a162ede34fd5c4d1d064a51456c2feaca02f683dedd83697d360b}{H\-U\-N\-T\-E\-R}, 
+\hyperlink{shdata_8h_ae2bd03ffd6f7a162ede34fd5c4d1d064a549fe49108cc2db68ebe9757a50154d2}{S\-H\-A\-D\-O\-W}
+ \}
+\begin{DoxyCompactList}\small\item\em Character's alignment indicator. \end{DoxyCompactList}\item 
+enum \hyperlink{shdata_8h_ae7d9f4a879396ab054f097efae041e69}{S\-H\-\_\-\-C\-O\-L\-O\-R} \{ \\*
+\hyperlink{shdata_8h_ae7d9f4a879396ab054f097efae041e69a283fc479650da98250635b9c3c0e7e50}{W\-H\-I\-T\-E}, 
+\hyperlink{shdata_8h_ae7d9f4a879396ab054f097efae041e69af80f9a890089d211842d59625e561f88}{R\-E\-D}, 
+\hyperlink{shdata_8h_ae7d9f4a879396ab054f097efae041e69a35d6719cb4d7577c031b3d79057a1b79}{B\-L\-U\-E}, 
+\hyperlink{shdata_8h_ae7d9f4a879396ab054f097efae041e69aa60bd322f93178d68184e30e162571ca}{G\-R\-E\-E\-N}, 
+\\*
+\hyperlink{shdata_8h_ae7d9f4a879396ab054f097efae041e69ace9ee4c1a6b777940c7f3a766a9a88d4}{O\-R\-A\-N\-G\-E}, 
+\hyperlink{shdata_8h_ae7d9f4a879396ab054f097efae041e69ae735a848bf82163a19236ead1c3ef2d2}{Y\-E\-L\-L\-O\-W}, 
+\hyperlink{shdata_8h_ae7d9f4a879396ab054f097efae041e69a1fa14482e7e4dc1332ab8c9d995fe570}{B\-R\-O\-W\-N}, 
+\hyperlink{shdata_8h_ae7d9f4a879396ab054f097efae041e69a7088400e4fa72e2239115e7c0b294ea4}{V\-I\-O\-L\-E\-T}
+ \}
+\begin{DoxyCompactList}\small\item\em Available colors. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Typedef Documentation}
+\hypertarget{shdata_8h_adebe0af58ad30febaad5497c465c8d11}{\index{shdata.\-h@{shdata.\-h}!hashtable\-\_\-t@{hashtable\-\_\-t}}
+\index{hashtable\-\_\-t@{hashtable\-\_\-t}!shdata.h@{shdata.\-h}}
+\subsubsection[{hashtable\-\_\-t}]{\setlength{\rightskip}{0pt plus 5cm}typedef struct {\bf \-\_\-hashtable} {\bf hashtable\-\_\-t}}}\label{shdata_8h_adebe0af58ad30febaad5497c465c8d11}
+\hypertarget{shdata_8h_ad54666edac6a84b80f8c5dbca03cc034}{\index{shdata.\-h@{shdata.\-h}!S\-H\-\_\-\-A\-L\-I\-G\-N\-M\-E\-N\-T@{S\-H\-\_\-\-A\-L\-I\-G\-N\-M\-E\-N\-T}}
+\index{S\-H\-\_\-\-A\-L\-I\-G\-N\-M\-E\-N\-T@{S\-H\-\_\-\-A\-L\-I\-G\-N\-M\-E\-N\-T}!shdata.h@{shdata.\-h}}
+\subsubsection[{S\-H\-\_\-\-A\-L\-I\-G\-N\-M\-E\-N\-T}]{\setlength{\rightskip}{0pt plus 5cm}typedef enum {\bf S\-H\-\_\-\-A\-L\-I\-G\-N\-M\-E\-N\-T}  {\bf S\-H\-\_\-\-A\-L\-I\-G\-N\-M\-E\-N\-T}}}\label{shdata_8h_ad54666edac6a84b80f8c5dbca03cc034}
+\hypertarget{shdata_8h_a22d84fe8e414622578195a6ea22ad937}{\index{shdata.\-h@{shdata.\-h}!S\-H\-\_\-\-C\-O\-L\-O\-R@{S\-H\-\_\-\-C\-O\-L\-O\-R}}
+\index{S\-H\-\_\-\-C\-O\-L\-O\-R@{S\-H\-\_\-\-C\-O\-L\-O\-R}!shdata.h@{shdata.\-h}}
+\subsubsection[{S\-H\-\_\-\-C\-O\-L\-O\-R}]{\setlength{\rightskip}{0pt plus 5cm}typedef enum {\bf S\-H\-\_\-\-C\-O\-L\-O\-R}  {\bf S\-H\-\_\-\-C\-O\-L\-O\-R}}}\label{shdata_8h_a22d84fe8e414622578195a6ea22ad937}
+\hypertarget{shdata_8h_a41b6cc02ccdd3fb319f319194f2ca4af}{\index{shdata.\-h@{shdata.\-h}!S\-H\-Character@{S\-H\-Character}}
+\index{S\-H\-Character@{S\-H\-Character}!shdata.h@{shdata.\-h}}
+\subsubsection[{S\-H\-Character}]{\setlength{\rightskip}{0pt plus 5cm}typedef struct {\bf S\-H\-Character}  {\bf S\-H\-Character}}}\label{shdata_8h_a41b6cc02ccdd3fb319f319194f2ca4af}
+\hypertarget{shdata_8h_a73086ce1bb607e1b8aa1e8e215d242e8}{\index{shdata.\-h@{shdata.\-h}!S\-H\-Player@{S\-H\-Player}}
+\index{S\-H\-Player@{S\-H\-Player}!shdata.h@{shdata.\-h}}
+\subsubsection[{S\-H\-Player}]{\setlength{\rightskip}{0pt plus 5cm}typedef struct {\bf S\-H\-Player}  {\bf S\-H\-Player}}}\label{shdata_8h_a73086ce1bb607e1b8aa1e8e215d242e8}
+
+
+\subsection{Enumeration Type Documentation}
+\hypertarget{shdata_8h_ae2bd03ffd6f7a162ede34fd5c4d1d064}{\index{shdata.\-h@{shdata.\-h}!S\-H\-\_\-\-A\-L\-I\-G\-N\-M\-E\-N\-T@{S\-H\-\_\-\-A\-L\-I\-G\-N\-M\-E\-N\-T}}
+\index{S\-H\-\_\-\-A\-L\-I\-G\-N\-M\-E\-N\-T@{S\-H\-\_\-\-A\-L\-I\-G\-N\-M\-E\-N\-T}!shdata.h@{shdata.\-h}}
+\subsubsection[{S\-H\-\_\-\-A\-L\-I\-G\-N\-M\-E\-N\-T}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf S\-H\-\_\-\-A\-L\-I\-G\-N\-M\-E\-N\-T}}}\label{shdata_8h_ae2bd03ffd6f7a162ede34fd5c4d1d064}
+
+
+Character's alignment indicator. 
+
+\begin{Desc}
+\item[Enumerator\-: ]\par
+\begin{description}
+\index{N\-E\-U\-T\-R\-A\-L@{N\-E\-U\-T\-R\-A\-L}!shdata.\-h@{shdata.\-h}}\index{shdata.\-h@{shdata.\-h}!N\-E\-U\-T\-R\-A\-L@{N\-E\-U\-T\-R\-A\-L}}\item[{\em 
+\hypertarget{shdata_8h_ae2bd03ffd6f7a162ede34fd5c4d1d064af46d14eb9d5d71afc9f6e747689fcb56}{N\-E\-U\-T\-R\-A\-L}\label{shdata_8h_ae2bd03ffd6f7a162ede34fd5c4d1d064af46d14eb9d5d71afc9f6e747689fcb56}
+}]\index{H\-U\-N\-T\-E\-R@{H\-U\-N\-T\-E\-R}!shdata.\-h@{shdata.\-h}}\index{shdata.\-h@{shdata.\-h}!H\-U\-N\-T\-E\-R@{H\-U\-N\-T\-E\-R}}\item[{\em 
+\hypertarget{shdata_8h_ae2bd03ffd6f7a162ede34fd5c4d1d064a51456c2feaca02f683dedd83697d360b}{H\-U\-N\-T\-E\-R}\label{shdata_8h_ae2bd03ffd6f7a162ede34fd5c4d1d064a51456c2feaca02f683dedd83697d360b}
+}]\index{S\-H\-A\-D\-O\-W@{S\-H\-A\-D\-O\-W}!shdata.\-h@{shdata.\-h}}\index{shdata.\-h@{shdata.\-h}!S\-H\-A\-D\-O\-W@{S\-H\-A\-D\-O\-W}}\item[{\em 
+\hypertarget{shdata_8h_ae2bd03ffd6f7a162ede34fd5c4d1d064a549fe49108cc2db68ebe9757a50154d2}{S\-H\-A\-D\-O\-W}\label{shdata_8h_ae2bd03ffd6f7a162ede34fd5c4d1d064a549fe49108cc2db68ebe9757a50154d2}
+}]\end{description}
+\end{Desc}
+
+\hypertarget{shdata_8h_ae7d9f4a879396ab054f097efae041e69}{\index{shdata.\-h@{shdata.\-h}!S\-H\-\_\-\-C\-O\-L\-O\-R@{S\-H\-\_\-\-C\-O\-L\-O\-R}}
+\index{S\-H\-\_\-\-C\-O\-L\-O\-R@{S\-H\-\_\-\-C\-O\-L\-O\-R}!shdata.h@{shdata.\-h}}
+\subsubsection[{S\-H\-\_\-\-C\-O\-L\-O\-R}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf S\-H\-\_\-\-C\-O\-L\-O\-R}}}\label{shdata_8h_ae7d9f4a879396ab054f097efae041e69}
+
+
+Available colors. 
+
+\begin{Desc}
+\item[Enumerator\-: ]\par
+\begin{description}
+\index{W\-H\-I\-T\-E@{W\-H\-I\-T\-E}!shdata.\-h@{shdata.\-h}}\index{shdata.\-h@{shdata.\-h}!W\-H\-I\-T\-E@{W\-H\-I\-T\-E}}\item[{\em 
+\hypertarget{shdata_8h_ae7d9f4a879396ab054f097efae041e69a283fc479650da98250635b9c3c0e7e50}{W\-H\-I\-T\-E}\label{shdata_8h_ae7d9f4a879396ab054f097efae041e69a283fc479650da98250635b9c3c0e7e50}
+}]\index{R\-E\-D@{R\-E\-D}!shdata.\-h@{shdata.\-h}}\index{shdata.\-h@{shdata.\-h}!R\-E\-D@{R\-E\-D}}\item[{\em 
+\hypertarget{shdata_8h_ae7d9f4a879396ab054f097efae041e69af80f9a890089d211842d59625e561f88}{R\-E\-D}\label{shdata_8h_ae7d9f4a879396ab054f097efae041e69af80f9a890089d211842d59625e561f88}
+}]\index{B\-L\-U\-E@{B\-L\-U\-E}!shdata.\-h@{shdata.\-h}}\index{shdata.\-h@{shdata.\-h}!B\-L\-U\-E@{B\-L\-U\-E}}\item[{\em 
+\hypertarget{shdata_8h_ae7d9f4a879396ab054f097efae041e69a35d6719cb4d7577c031b3d79057a1b79}{B\-L\-U\-E}\label{shdata_8h_ae7d9f4a879396ab054f097efae041e69a35d6719cb4d7577c031b3d79057a1b79}
+}]\index{G\-R\-E\-E\-N@{G\-R\-E\-E\-N}!shdata.\-h@{shdata.\-h}}\index{shdata.\-h@{shdata.\-h}!G\-R\-E\-E\-N@{G\-R\-E\-E\-N}}\item[{\em 
+\hypertarget{shdata_8h_ae7d9f4a879396ab054f097efae041e69aa60bd322f93178d68184e30e162571ca}{G\-R\-E\-E\-N}\label{shdata_8h_ae7d9f4a879396ab054f097efae041e69aa60bd322f93178d68184e30e162571ca}
+}]\index{O\-R\-A\-N\-G\-E@{O\-R\-A\-N\-G\-E}!shdata.\-h@{shdata.\-h}}\index{shdata.\-h@{shdata.\-h}!O\-R\-A\-N\-G\-E@{O\-R\-A\-N\-G\-E}}\item[{\em 
+\hypertarget{shdata_8h_ae7d9f4a879396ab054f097efae041e69ace9ee4c1a6b777940c7f3a766a9a88d4}{O\-R\-A\-N\-G\-E}\label{shdata_8h_ae7d9f4a879396ab054f097efae041e69ace9ee4c1a6b777940c7f3a766a9a88d4}
+}]\index{Y\-E\-L\-L\-O\-W@{Y\-E\-L\-L\-O\-W}!shdata.\-h@{shdata.\-h}}\index{shdata.\-h@{shdata.\-h}!Y\-E\-L\-L\-O\-W@{Y\-E\-L\-L\-O\-W}}\item[{\em 
+\hypertarget{shdata_8h_ae7d9f4a879396ab054f097efae041e69ae735a848bf82163a19236ead1c3ef2d2}{Y\-E\-L\-L\-O\-W}\label{shdata_8h_ae7d9f4a879396ab054f097efae041e69ae735a848bf82163a19236ead1c3ef2d2}
+}]\index{B\-R\-O\-W\-N@{B\-R\-O\-W\-N}!shdata.\-h@{shdata.\-h}}\index{shdata.\-h@{shdata.\-h}!B\-R\-O\-W\-N@{B\-R\-O\-W\-N}}\item[{\em 
+\hypertarget{shdata_8h_ae7d9f4a879396ab054f097efae041e69a1fa14482e7e4dc1332ab8c9d995fe570}{B\-R\-O\-W\-N}\label{shdata_8h_ae7d9f4a879396ab054f097efae041e69a1fa14482e7e4dc1332ab8c9d995fe570}
+}]\index{V\-I\-O\-L\-E\-T@{V\-I\-O\-L\-E\-T}!shdata.\-h@{shdata.\-h}}\index{shdata.\-h@{shdata.\-h}!V\-I\-O\-L\-E\-T@{V\-I\-O\-L\-E\-T}}\item[{\em 
+\hypertarget{shdata_8h_ae7d9f4a879396ab054f097efae041e69a7088400e4fa72e2239115e7c0b294ea4}{V\-I\-O\-L\-E\-T}\label{shdata_8h_ae7d9f4a879396ab054f097efae041e69a7088400e4fa72e2239115e7c0b294ea4}
+}]\end{description}
+\end{Desc}
+

@@ -1,0 +1,19 @@
+/*
+ * shclient.h
+ *
+ *  Created on: 28 déc. 2013
+ *      Author: Emmanuel
+ */
+
+#ifndef SHCLIENT_H_
+#define SHCLIENT_H_
+
+/********************************* _surface ********************************/
+typedef struct _surface {
+	SDL_Surface*	sdl_surf;
+	SDL_Rect*		sdl_pos;
+	SDL_Surface*	parent;
+} SHSurface;
+/***************************************************************************/
+
+#endif /* SHCLIENT_H_ */

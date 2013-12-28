@@ -1,0 +1,8 @@
+/*
+ * _loader.c - data loader : creates hashtable from files arborescence
+ *
+ *  Created on: 26 déc. 2013
+ *      Author: Emmanuel
+ */
+
+// folders & files --> arrays of hashtables --> arrays of structures ?

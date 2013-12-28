@@ -1,0 +1,24 @@
+/*
+ * SHPlayer.h
+ *
+ *  Created on: 23 déc. 2013
+ *      Author: Emmanuel
+ */
+
+#ifndef SHPLAYER_H_
+#define SHPLAYER_H_
+
+#include "SHCharacter.h"
+
+typedef struct SHPlayer {
+	int 			id;
+	char 			name[20];
+	SHCharacter*	character;
+	int				color;
+	int				health;
+	int				area;
+	int				dice;
+	// cards ...
+} SHPlayer;
+
+#endif /* SHPLAYER_H_ */

@@ -1,0 +1,17 @@
+/*
+ * SHPlayer.h
+ *
+ *  Created on: 23 déc. 2013
+ *      Author: Emmanuel
+ */
+
+#ifndef SHPLAYER_H_
+#define SHPLAYER_H_
+
+typedef struct SHPlayer {
+	int 			id;
+	char 			name[20];
+	SHCharacter*	character;
+} SHPlayer;
+
+#endif /* SHPLAYER_H_ */

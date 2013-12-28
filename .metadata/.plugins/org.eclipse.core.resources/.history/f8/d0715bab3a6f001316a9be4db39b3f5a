@@ -1,0 +1,31 @@
+/*
+ * params.h
+ *
+ *  Created on: 25 déc. 2013
+ *      Author: Emmanuel
+ */
+
+#ifndef PARAMS_H_
+#define PARAMS_H_
+
+#define SCREEN_WIDTH 		1024
+#define SCREEN_HEIGHT 		600
+#define	MAX_FPS				60
+#if SDL_BYTEORDER == SDL_BIG_ENDIAN
+    #define RMASK 0xff000000;
+    #define GMASK 0x00ff0000;
+    #define BMASK 0x0000ff00;
+    #define AMASK 0x000000ff;
+#else
+    #define RMASK 0x000000ff;
+    #define GMASK 0x0000ff00;
+    #define BMASK 0x00ff0000;
+    #define AMASK 0xff000000;
+#endif
+
+#define BOARD_SURF_WIDTH	800
+#define BOARD_SURF_HEIGHT	400
+#define BOARD_SURF_MIN_ZOOM 0.9
+#define BOARD_SURF_MAX_ZOOM 2
+
+#endif /* PARAMS_H_ */

@@ -1,0 +1,14 @@
+/*
+ * main.c
+ *
+ *  Created on: 23 déc. 2013
+ *      Author: Emmanuel
+ */
+
+#include <stdlib.h>
+#include <stdio.h>
+
+int main() {
+	return EXIT_SUCCESS;
+}
+

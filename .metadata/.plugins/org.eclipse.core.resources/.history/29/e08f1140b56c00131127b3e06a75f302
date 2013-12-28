@@ -1,0 +1,45 @@
+/*
+ * character.c
+ *
+ *  Created on: 23 déc. 2013
+ *      Author: Emmanuel
+ */
+
+#include <stdlib.h>
+#include <stdio.h>
+#include "SHCharacter.h"
+
+/**
+ * \fn 		LoadCharacter
+ * \brief	Load character information from a given file into dedicated structure.
+ *
+ * \inputs	dataloc		path to data file location
+ * 			name		character name
+ * \output	Pointer to SHCharacter structure
+ */
+SHCharacter* LoadCharacter(char* dataloc, char* name) {
+	// Open file specified by dataloc
+	FILE* datafile = fopen(dataloc, "r");
+
+	// Create object in memory
+	SHCharacter* character = malloc(sizeof(SHCharacter));
+	strcpy(name, character->name);
+
+	// Close data file
+	fclose(datafile);
+
+	// Result
+	return character;
+}
+
+/*
+ * \fn 		ClearCharacter
+ * \brief	Clear a character from memory.
+ *
+ * \inputs	character	character structure to clear
+ */
+void ClearCharacter(SHCharacter* character) {
+	// Free space in memory
+	free(character);
+}
+

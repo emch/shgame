@@ -1,0 +1,23 @@
+/*
+ * main.c
+ *
+ *  Created on: 23 déc. 2013
+ *      Author: Emmanuel
+ */
+
+#include <stdlib.h>
+#include <stdio.h>
+
+#include "shdata.h"
+
+int main() {
+	// Initialization
+	SHLogger* myLogger = CreateLogger("SHServer.log");
+
+	// Garbage collector
+
+	// End of program
+	DestroyLogger(myLogger);
+	return EXIT_SUCCESS;
+}
+

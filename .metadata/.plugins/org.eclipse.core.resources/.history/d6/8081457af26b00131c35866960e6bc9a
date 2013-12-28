@@ -1,0 +1,16 @@
+/*
+ * character.h
+ *
+ *  Created on: 23 déc. 2013
+ *      Author: Emmanuel
+ */
+
+#ifndef CHARACTER_H_
+#define CHARACTER_H_
+
+typedef struct SHCharacter {
+	int 		id;
+	char[8]		name
+} SHCharacter;
+
+#endif /* CHARACTER_H_ */

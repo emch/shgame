@@ -1,0 +1,20 @@
+/*
+ * character.c
+ *
+ *  Created on: 23 déc. 2013
+ *      Author: Emmanuel
+ */
+
+#include <stdlib.h>
+#include <stdio.h>
+
+#include "SHCharacter.h"
+
+// à terme, renvoyer une structure SHCharacter
+// load a character from a file at dataloc (filename is name of character + .shd)
+void LoadCharacter(char* dataloc, char* name) {
+
+}
+
+// toutes les fonctions de pouvoir ...
+

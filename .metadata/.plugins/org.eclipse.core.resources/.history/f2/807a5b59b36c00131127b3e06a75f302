@@ -1,0 +1,23 @@
+/*
+ * character.h
+ *
+ *  Created on: 23 déc. 2013
+ *      Author: Emmanuel
+ */
+
+#ifndef CHARACTER_H_
+#define CHARACTER_H_
+
+/**
+ * \struct 	SHCharacter
+ * \brief	Structure for storing complete information on a given character.
+ */
+typedef struct SHCharacter {
+	int 	id;
+	char	name[8];
+} SHCharacter;
+
+SHCharacter* LoadCharacter(char*, char*);
+void ClearCharacter(SHCharacter*);
+
+#endif /* CHARACTER_H_ */

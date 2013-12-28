@@ -1,0 +1,12 @@
+/*
+ * _surface.c
+ *
+ *  Created on: 28 déc. 2013
+ *      Author: Emmanuel
+ */
+
+#include "shclient.h"
+
+SHSurface* NewSurface() {
+	return NULL;
+}

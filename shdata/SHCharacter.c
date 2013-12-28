@@ -1,0 +1,8 @@
+/*
+ * character.c
+ *
+ *  Created on: 23 déc. 2013
+ *      Author: Emmanuel
+ */
+
+#include "shdata.h"

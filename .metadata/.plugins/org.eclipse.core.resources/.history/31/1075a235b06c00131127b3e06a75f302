@@ -1,0 +1,34 @@
+/*
+ * character.c
+ *
+ *  Created on: 23 déc. 2013
+ *      Author: Emmanuel
+ */
+
+#include <stdlib.h>
+#include <stdio.h>
+#include "SHCharacter.h"
+
+/**
+ *
+ */
+SHCharacter* LoadCharacter(char* dataloc, char* name) {
+	// Open file specified by dataloc
+	FILE* datafile = fopen(dataloc,'r');
+
+	// Create object in memory
+	SHCharacter* res = malloc(sizeof(SHCharacter));
+
+	// Close data file
+	fclose(datafile);
+
+	// Result
+	return res;
+}
+
+void ClearCharacter(SHCharacter* character) {
+	//
+}
+
+// toutes les fonctions de pouvoir ...
+

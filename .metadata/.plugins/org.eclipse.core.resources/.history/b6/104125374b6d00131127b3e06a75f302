@@ -1,0 +1,16 @@
+/*
+ * SHParams.h
+ *
+ *  Created on: 24 déc. 2013
+ *      Author: Emmanuel
+ */
+
+#ifndef SHPARAMS_H_
+#define SHPARAMS_H_
+
+// Alignement
+typedef enum SH_ALIGNMENT {
+	NEUTRAL, HUNTER, SHADOW
+} SH_ALIGNMENT;
+
+#endif /* SHPARAMS_H_ */

@@ -1,0 +1,34 @@
+/*
+ * _logger.c
+ *
+ *  Created on: 26 déc. 2013
+ *      Author: Emmanuel
+ */
+
+// faire une fonction du type flogf avec %s %d %i etc et les variables associées !
+// voir fprintf ?
+// ou sscanf ?
+
+#include <stdlib.h>
+#include <string.h>
+
+#include "shdata.h"
+
+/**
+ * \fn		CreateLogger
+ * \brief	Creates a logging file in executable directory
+ */
+logger_t* CreateLogger(char* output_name) {
+	logger_t* mylogger = malloc(sizeof(logger_t));
+	FILE* myfile = fopen(output_name, "w");
+
+	strcpy(mylogger->filename, output_name); // TODO check properties considering size
+	mylogger->file = myfile;
+
+	return mylogger;
+}
+
+void DestroyLogger(logger_t* mylogger) {
+	fclose(mylogger->file); // in case this was not done before
+	free(mylogger);
+}

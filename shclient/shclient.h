@@ -36,8 +36,18 @@ typedef struct _surface SHSurface;
 struct _surface {
 	SDL_Surface*	bck;		// background
 	SHColor*		bck_color;
+
 	int				border_width;
 	SHColor*		border_color;
+	SDL_Surface*	border_tl;
+	SDL_Surface*	border_tc;
+	SDL_Surface*	border_tr;
+	SDL_Surface*	border_ml;
+	SDL_Surface*	border_mr;
+	SDL_Surface*	border_bl;
+	SDL_Surface*	border_bc;
+	SDL_Surface*	border_br;
+
 	SHSurface*		parent;		// if not null, sld_pos is defined relatively to the parent
 	SDL_Rect*		sdl_pos;
 	int				visible;
@@ -51,5 +61,15 @@ void SetVisible(SHSurface*, int);
 /***************************************************************************/
 
 // SHButton
+// Seuls les SHButton sont cliquables
+// Comme les SHSurface, les mettre dans un array et parcourir l'array lorsqu'un event mouseclicked est détecté
+// Voir les pointeurs sur fonction
+// Idem, un des fields est une SDL_Surface avec bordure + couleur de fond (utile pour le bouton de choix de couleur de carte)
+// + possibilité de mettre un texte
+// afficher les joueurs (colonne de gauche) dans des boutons !
+
+// SHTextField
+// Pour écrire du texte sur une SHSurface
+// Voir SDL_ttf et chercher une police sympathique
 
 #endif /* SHCLIENT_H_ */

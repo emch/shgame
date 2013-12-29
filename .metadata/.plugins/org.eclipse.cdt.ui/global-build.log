@@ -2405,3 +2405,386 @@ Info: Nothing to build for shdata
 Info: Nothing to build for shserver
 Info: Nothing to build for shupdate
 Info: Nothing to build for shvfs
+22:15:38 **** Incremental Build of configuration Debug for project shclient ****
+Info: Internal Builder is used for build
+gcc "-IC:\\Users\\Emmanuel\\Documents\\Programmation\\SDL\\fichiers\\SDL-1.2.15\\include" "-IC:\\Users\\Emmanuel\\Documents\\Programmation\\ShadowHunters\\dev\\shdata" -O0 -g3 -Wall -c -fmessage-length=0 -o _surface.o "..\\_surface.c" 
+gcc "-IC:\\Users\\Emmanuel\\Documents\\Programmation\\SDL\\fichiers\\SDL-1.2.15\\include" "-IC:\\Users\\Emmanuel\\Documents\\Programmation\\ShadowHunters\\dev\\shdata" -O0 -g3 -Wall -c -fmessage-length=0 -o main.o "..\\main.c" 
+gcc "-IC:\\Users\\Emmanuel\\Documents\\Programmation\\SDL\\fichiers\\SDL-1.2.15\\include" "-IC:\\Users\\Emmanuel\\Documents\\Programmation\\ShadowHunters\\dev\\shdata" -O0 -g3 -Wall -c -fmessage-length=0 -o _color.o "..\\_color.c" 
+gcc "-LC:\\Users\\Emmanuel\\Documents\\GitHub\\shgame\\shdata\\Debug" "-LC:\\Users\\Emmanuel\\Documents\\Programmation\\SDL\\fichiers\\SDL_image-devel-1.2.12-VC\\SDL_image-1.2.12\\lib" -Wl,-subsystem,windows -o SHClient.exe main.o _surface.o _color.o -lmingw32 -lSDLmain -lSDL -lshdata -lSDL_image 
+Info: Nothing to build for shclient
+22:15:53 **** Incremental Build of configuration Debug for project shdata ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o _logger.o "..\\_logger.c" 
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o SHCharacter.o "..\\SHCharacter.c" 
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o SHPlayer.o "..\\SHPlayer.c" 
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o _hashtable.o "..\\_hashtable.c" 
+gcc -shared -o shdata.dll _parser.o _logger.o _loader.o _hashtable.o SHPlayer.o SHCharacter.o SHArea.o 
+Info: Nothing to build for shserver
+Info: Nothing to build for shupdate
+Info: Nothing to build for shvfs
+Info: Nothing to build for shclient
+22:17:14 **** Incremental Build of configuration Debug for project shclient ****
+Info: Internal Builder is used for build
+gcc "-IC:\\Users\\Emmanuel\\Documents\\Programmation\\SDL\\fichiers\\SDL-1.2.15\\include" "-IC:\\Users\\Emmanuel\\Documents\\Programmation\\ShadowHunters\\dev\\shdata" -O0 -g3 -Wall -c -fmessage-length=0 -o _surface.o "..\\_surface.c" 
+gcc "-LC:\\Users\\Emmanuel\\Documents\\GitHub\\shgame\\shdata\\Debug" "-LC:\\Users\\Emmanuel\\Documents\\Programmation\\SDL\\fichiers\\SDL_image-devel-1.2.12-VC\\SDL_image-1.2.12\\lib" -Wl,-subsystem,windows -o SHClient.exe main.o _surface.o _color.o -lmingw32 -lSDLmain -lSDL -lshdata -lSDL_image 
+Info: Nothing to build for shclient
+Info: Nothing to build for shdata
+Info: Nothing to build for shserver
+Info: Nothing to build for shupdate
+Info: Nothing to build for shvfs
+Info: Nothing to build for shclient
+22:17:41 **** Incremental Build of configuration Debug for project shclient ****
+Info: Internal Builder is used for build
+gcc "-IC:\\Users\\Emmanuel\\Documents\\Programmation\\SDL\\fichiers\\SDL-1.2.15\\include" "-IC:\\Users\\Emmanuel\\Documents\\Programmation\\ShadowHunters\\dev\\shdata" -O0 -g3 -Wall -c -fmessage-length=0 -o _surface.o "..\\_surface.c" 
+gcc "-LC:\\Users\\Emmanuel\\Documents\\GitHub\\shgame\\shdata\\Debug" "-LC:\\Users\\Emmanuel\\Documents\\Programmation\\SDL\\fichiers\\SDL_image-devel-1.2.12-VC\\SDL_image-1.2.12\\lib" -Wl,-subsystem,windows -o SHClient.exe main.o _surface.o _color.o -lmingw32 -lSDLmain -lSDL -lshdata -lSDL_image 
+Info: Nothing to build for shclient
+Info: Nothing to build for shdata
+Info: Nothing to build for shserver
+Info: Nothing to build for shupdate
+Info: Nothing to build for shvfs
+Info: Nothing to build for shclient
+22:21:39 **** Incremental Build of configuration Debug for project shclient ****
+Info: Internal Builder is used for build
+gcc "-IC:\\Users\\Emmanuel\\Documents\\Programmation\\SDL\\fichiers\\SDL-1.2.15\\include" "-IC:\\Users\\Emmanuel\\Documents\\Programmation\\ShadowHunters\\dev\\shdata" -O0 -g3 -Wall -c -fmessage-length=0 -o _surface.o "..\\_surface.c" 
+gcc "-IC:\\Users\\Emmanuel\\Documents\\Programmation\\SDL\\fichiers\\SDL-1.2.15\\include" "-IC:\\Users\\Emmanuel\\Documents\\Programmation\\ShadowHunters\\dev\\shdata" -O0 -g3 -Wall -c -fmessage-length=0 -o main.o "..\\main.c" 
+gcc "-IC:\\Users\\Emmanuel\\Documents\\Programmation\\SDL\\fichiers\\SDL-1.2.15\\include" "-IC:\\Users\\Emmanuel\\Documents\\Programmation\\ShadowHunters\\dev\\shdata" -O0 -g3 -Wall -c -fmessage-length=0 -o _color.o "..\\_color.c" 
+gcc "-LC:\\Users\\Emmanuel\\Documents\\GitHub\\shgame\\shdata\\Debug" "-LC:\\Users\\Emmanuel\\Documents\\Programmation\\SDL\\fichiers\\SDL_image-devel-1.2.12-VC\\SDL_image-1.2.12\\lib" -Wl,-subsystem,windows -o SHClient.exe main.o _surface.o _color.o -lmingw32 -lSDLmain -lSDL -lshdata -lSDL_image 
+Info: Nothing to build for shdata
+Info: Nothing to build for shserver
+Info: Nothing to build for shupdate
+Info: Nothing to build for shvfs
+22:24:28 **** Incremental Build of configuration Debug for project shclient ****
+Info: Internal Builder is used for build
+gcc "-IC:\\Users\\Emmanuel\\Documents\\Programmation\\SDL\\fichiers\\SDL-1.2.15\\include" "-IC:\\Users\\Emmanuel\\Documents\\Programmation\\ShadowHunters\\dev\\shdata" -O0 -g3 -Wall -c -fmessage-length=0 -o _surface.o "..\\_surface.c" 
+gcc "-LC:\\Users\\Emmanuel\\Documents\\GitHub\\shgame\\shdata\\Debug" "-LC:\\Users\\Emmanuel\\Documents\\Programmation\\SDL\\fichiers\\SDL_image-devel-1.2.12-VC\\SDL_image-1.2.12\\lib" -Wl,-subsystem,windows -o SHClient.exe main.o _surface.o _color.o -lmingw32 -lSDLmain -lSDL -lshdata -lSDL_image 
+Info: Nothing to build for shdata
+Info: Nothing to build for shserver
+Info: Nothing to build for shupdate
+Info: Nothing to build for shvfs
+Info: Nothing to build for shclient
+22:25:23 **** Incremental Build of configuration Debug for project shclient ****
+Info: Internal Builder is used for build
+gcc "-IC:\\Users\\Emmanuel\\Documents\\Programmation\\SDL\\fichiers\\SDL-1.2.15\\include" "-IC:\\Users\\Emmanuel\\Documents\\Programmation\\ShadowHunters\\dev\\shdata" -O0 -g3 -Wall -c -fmessage-length=0 -o _surface.o "..\\_surface.c" 
+gcc "-IC:\\Users\\Emmanuel\\Documents\\Programmation\\SDL\\fichiers\\SDL-1.2.15\\include" "-IC:\\Users\\Emmanuel\\Documents\\Programmation\\ShadowHunters\\dev\\shdata" -O0 -g3 -Wall -c -fmessage-length=0 -o main.o "..\\main.c" 
+gcc "-LC:\\Users\\Emmanuel\\Documents\\GitHub\\shgame\\shdata\\Debug" "-LC:\\Users\\Emmanuel\\Documents\\Programmation\\SDL\\fichiers\\SDL_image-devel-1.2.12-VC\\SDL_image-1.2.12\\lib" -Wl,-subsystem,windows -o SHClient.exe main.o _surface.o _color.o -lmingw32 -lSDLmain -lSDL -lshdata -lSDL_image 
+Info: Nothing to build for shdata
+Info: Nothing to build for shserver
+Info: Nothing to build for shupdate
+Info: Nothing to build for shvfs
+Info: Nothing to build for shclient
+22:27:18 **** Incremental Build of configuration Debug for project shclient ****
+Info: Internal Builder is used for build
+gcc "-IC:\\Users\\Emmanuel\\Documents\\Programmation\\SDL\\fichiers\\SDL-1.2.15\\include" "-IC:\\Users\\Emmanuel\\Documents\\Programmation\\ShadowHunters\\dev\\shdata" -O0 -g3 -Wall -c -fmessage-length=0 -o _surface.o "..\\_surface.c" 
+..\_surface.c: In function 'NewSurface':
+..\_surface.c:40: attention : unused variable 'res_border_tl'
+gcc "-LC:\\Users\\Emmanuel\\Documents\\GitHub\\shgame\\shdata\\Debug" "-LC:\\Users\\Emmanuel\\Documents\\Programmation\\SDL\\fichiers\\SDL_image-devel-1.2.12-VC\\SDL_image-1.2.12\\lib" -Wl,-subsystem,windows -o SHClient.exe main.o _surface.o _color.o -lmingw32 -lSDLmain -lSDL -lshdata -lSDL_image 
+Info: Nothing to build for shdata
+Info: Nothing to build for shserver
+Info: Nothing to build for shupdate
+Info: Nothing to build for shvfs
+22:27:56 **** Incremental Build of configuration Debug for project shclient ****
+Info: Internal Builder is used for build
+gcc "-IC:\\Users\\Emmanuel\\Documents\\Programmation\\SDL\\fichiers\\SDL-1.2.15\\include" "-IC:\\Users\\Emmanuel\\Documents\\Programmation\\ShadowHunters\\dev\\shdata" -O0 -g3 -Wall -c -fmessage-length=0 -o _surface.o "..\\_surface.c" 
+gcc "-LC:\\Users\\Emmanuel\\Documents\\GitHub\\shgame\\shdata\\Debug" "-LC:\\Users\\Emmanuel\\Documents\\Programmation\\SDL\\fichiers\\SDL_image-devel-1.2.12-VC\\SDL_image-1.2.12\\lib" -Wl,-subsystem,windows -o SHClient.exe main.o _surface.o _color.o -lmingw32 -lSDLmain -lSDL -lshdata -lSDL_image 
+Info: Nothing to build for shdata
+Info: Nothing to build for shserver
+Info: Nothing to build for shupdate
+Info: Nothing to build for shvfs
+Info: Nothing to build for shclient
+Info: Nothing to build for shclient
+Info: Nothing to build for shdata
+Info: Nothing to build for shserver
+Info: Nothing to build for shupdate
+Info: Nothing to build for shvfs
+22:29:44 **** Incremental Build of configuration Debug for project shclient ****
+Info: Internal Builder is used for build
+gcc "-IC:\\Users\\Emmanuel\\Documents\\Programmation\\SDL\\fichiers\\SDL-1.2.15\\include" "-IC:\\Users\\Emmanuel\\Documents\\Programmation\\ShadowHunters\\dev\\shdata" -O0 -g3 -Wall -c -fmessage-length=0 -o _surface.o "..\\_surface.c" 
+gcc "-LC:\\Users\\Emmanuel\\Documents\\GitHub\\shgame\\shdata\\Debug" "-LC:\\Users\\Emmanuel\\Documents\\Programmation\\SDL\\fichiers\\SDL_image-devel-1.2.12-VC\\SDL_image-1.2.12\\lib" -Wl,-subsystem,windows -o SHClient.exe main.o _surface.o _color.o -lmingw32 -lSDLmain -lSDL -lshdata -lSDL_image 
+Info: Nothing to build for shdata
+Info: Nothing to build for shserver
+Info: Nothing to build for shupdate
+Info: Nothing to build for shvfs
+Info: Nothing to build for shclient
+22:31:17 **** Incremental Build of configuration Debug for project shclient ****
+Info: Internal Builder is used for build
+gcc "-IC:\\Users\\Emmanuel\\Documents\\Programmation\\SDL\\fichiers\\SDL-1.2.15\\include" "-IC:\\Users\\Emmanuel\\Documents\\Programmation\\ShadowHunters\\dev\\shdata" -O0 -g3 -Wall -c -fmessage-length=0 -o _surface.o "..\\_surface.c" 
+..\_surface.c: In function 'NewSurface':
+..\_surface.c:39: erreur: initialisation invalide
+..\_surface.c:67: erreur: incompatible types when assigning to type 'struct SDL_Surface *' from type 'SDL_Surface'
+Info: Nothing to build for shdata
+Info: Nothing to build for shserver
+Info: Nothing to build for shupdate
+Info: Nothing to build for shvfs
+22:31:30 **** Incremental Build of configuration Debug for project shclient ****
+Info: Internal Builder is used for build
+gcc "-IC:\\Users\\Emmanuel\\Documents\\Programmation\\SDL\\fichiers\\SDL-1.2.15\\include" "-IC:\\Users\\Emmanuel\\Documents\\Programmation\\ShadowHunters\\dev\\shdata" -O0 -g3 -Wall -c -fmessage-length=0 -o _surface.o "..\\_surface.c" 
+gcc "-LC:\\Users\\Emmanuel\\Documents\\GitHub\\shgame\\shdata\\Debug" "-LC:\\Users\\Emmanuel\\Documents\\Programmation\\SDL\\fichiers\\SDL_image-devel-1.2.12-VC\\SDL_image-1.2.12\\lib" -Wl,-subsystem,windows -o SHClient.exe main.o _surface.o _color.o -lmingw32 -lSDLmain -lSDL -lshdata -lSDL_image 
+Info: Nothing to build for shdata
+Info: Nothing to build for shserver
+Info: Nothing to build for shupdate
+Info: Nothing to build for shvfs
+22:35:39 **** Incremental Build of configuration Debug for project shclient ****
+Info: Internal Builder is used for build
+gcc "-IC:\\Users\\Emmanuel\\Documents\\Programmation\\SDL\\fichiers\\SDL-1.2.15\\include" "-IC:\\Users\\Emmanuel\\Documents\\Programmation\\ShadowHunters\\dev\\shdata" -O0 -g3 -Wall -c -fmessage-length=0 -o _surface.o "..\\_surface.c" 
+gcc "-IC:\\Users\\Emmanuel\\Documents\\Programmation\\SDL\\fichiers\\SDL-1.2.15\\include" "-IC:\\Users\\Emmanuel\\Documents\\Programmation\\ShadowHunters\\dev\\shdata" -O0 -g3 -Wall -c -fmessage-length=0 -o _color.o "..\\_color.c" 
+gcc "-IC:\\Users\\Emmanuel\\Documents\\Programmation\\SDL\\fichiers\\SDL-1.2.15\\include" "-IC:\\Users\\Emmanuel\\Documents\\Programmation\\ShadowHunters\\dev\\shdata" -O0 -g3 -Wall -c -fmessage-length=0 -o main.o "..\\main.c" 
+gcc "-LC:\\Users\\Emmanuel\\Documents\\GitHub\\shgame\\shdata\\Debug" "-LC:\\Users\\Emmanuel\\Documents\\Programmation\\SDL\\fichiers\\SDL_image-devel-1.2.12-VC\\SDL_image-1.2.12\\lib" -Wl,-subsystem,windows -o SHClient.exe main.o _surface.o _color.o -lmingw32 -lSDLmain -lSDL -lshdata -lSDL_image 
+Info: Nothing to build for shdata
+Info: Nothing to build for shserver
+Info: Nothing to build for shupdate
+Info: Nothing to build for shvfs
+22:36:50 **** Incremental Build of configuration Debug for project shclient ****
+Info: Internal Builder is used for build
+gcc "-IC:\\Users\\Emmanuel\\Documents\\Programmation\\SDL\\fichiers\\SDL-1.2.15\\include" "-IC:\\Users\\Emmanuel\\Documents\\Programmation\\ShadowHunters\\dev\\shdata" -O0 -g3 -Wall -c -fmessage-length=0 -o _surface.o "..\\_surface.c" 
+gcc "-LC:\\Users\\Emmanuel\\Documents\\GitHub\\shgame\\shdata\\Debug" "-LC:\\Users\\Emmanuel\\Documents\\Programmation\\SDL\\fichiers\\SDL_image-devel-1.2.12-VC\\SDL_image-1.2.12\\lib" -Wl,-subsystem,windows -o SHClient.exe main.o _surface.o _color.o -lmingw32 -lSDLmain -lSDL -lshdata -lSDL_image 
+Info: Nothing to build for shdata
+Info: Nothing to build for shserver
+Info: Nothing to build for shupdate
+Info: Nothing to build for shvfs
+22:39:55 **** Incremental Build of configuration Debug for project shclient ****
+Info: Internal Builder is used for build
+gcc "-IC:\\Users\\Emmanuel\\Documents\\Programmation\\SDL\\fichiers\\SDL-1.2.15\\include" "-IC:\\Users\\Emmanuel\\Documents\\Programmation\\ShadowHunters\\dev\\shdata" -O0 -g3 -Wall -c -fmessage-length=0 -o main.o "..\\main.c" 
+gcc "-IC:\\Users\\Emmanuel\\Documents\\Programmation\\SDL\\fichiers\\SDL-1.2.15\\include" "-IC:\\Users\\Emmanuel\\Documents\\Programmation\\ShadowHunters\\dev\\shdata" -O0 -g3 -Wall -c -fmessage-length=0 -o _color.o "..\\_color.c" 
+gcc "-IC:\\Users\\Emmanuel\\Documents\\Programmation\\SDL\\fichiers\\SDL-1.2.15\\include" "-IC:\\Users\\Emmanuel\\Documents\\Programmation\\ShadowHunters\\dev\\shdata" -O0 -g3 -Wall -c -fmessage-length=0 -o _surface.o "..\\_surface.c" 
+gcc "-LC:\\Users\\Emmanuel\\Documents\\GitHub\\shgame\\shdata\\Debug" "-LC:\\Users\\Emmanuel\\Documents\\Programmation\\SDL\\fichiers\\SDL_image-devel-1.2.12-VC\\SDL_image-1.2.12\\lib" -Wl,-subsystem,windows -o SHClient.exe main.o _surface.o _color.o -lmingw32 -lSDLmain -lSDL -lshdata -lSDL_image 
+Info: Nothing to build for shdata
+Info: Nothing to build for shserver
+Info: Nothing to build for shupdate
+Info: Nothing to build for shvfs
+22:40:26 **** Incremental Build of configuration Debug for project shclient ****
+Info: Internal Builder is used for build
+gcc "-IC:\\Users\\Emmanuel\\Documents\\Programmation\\SDL\\fichiers\\SDL-1.2.15\\include" "-IC:\\Users\\Emmanuel\\Documents\\Programmation\\ShadowHunters\\dev\\shdata" -O0 -g3 -Wall -c -fmessage-length=0 -o _surface.o "..\\_surface.c" 
+gcc "-LC:\\Users\\Emmanuel\\Documents\\GitHub\\shgame\\shdata\\Debug" "-LC:\\Users\\Emmanuel\\Documents\\Programmation\\SDL\\fichiers\\SDL_image-devel-1.2.12-VC\\SDL_image-1.2.12\\lib" -Wl,-subsystem,windows -o SHClient.exe main.o _surface.o _color.o -lmingw32 -lSDLmain -lSDL -lshdata -lSDL_image 
+Info: Nothing to build for shdata
+Info: Nothing to build for shserver
+Info: Nothing to build for shupdate
+Info: Nothing to build for shvfs
+Info: Nothing to build for shclient
+22:41:14 **** Incremental Build of configuration Debug for project shclient ****
+Info: Internal Builder is used for build
+gcc "-IC:\\Users\\Emmanuel\\Documents\\Programmation\\SDL\\fichiers\\SDL-1.2.15\\include" "-IC:\\Users\\Emmanuel\\Documents\\Programmation\\ShadowHunters\\dev\\shdata" -O0 -g3 -Wall -c -fmessage-length=0 -o _surface.o "..\\_surface.c" 
+gcc "-LC:\\Users\\Emmanuel\\Documents\\GitHub\\shgame\\shdata\\Debug" "-LC:\\Users\\Emmanuel\\Documents\\Programmation\\SDL\\fichiers\\SDL_image-devel-1.2.12-VC\\SDL_image-1.2.12\\lib" -Wl,-subsystem,windows -o SHClient.exe main.o _surface.o _color.o -lmingw32 -lSDLmain -lSDL -lshdata -lSDL_image 
+Info: Nothing to build for shdata
+Info: Nothing to build for shserver
+Info: Nothing to build for shupdate
+Info: Nothing to build for shvfs
+Info: Nothing to build for shclient
+22:42:28 **** Incremental Build of configuration Debug for project shclient ****
+Info: Internal Builder is used for build
+gcc "-IC:\\Users\\Emmanuel\\Documents\\Programmation\\SDL\\fichiers\\SDL-1.2.15\\include" "-IC:\\Users\\Emmanuel\\Documents\\Programmation\\ShadowHunters\\dev\\shdata" -O0 -g3 -Wall -c -fmessage-length=0 -o _surface.o "..\\_surface.c" 
+..\_surface.c: In function 'NewSurface':
+..\_surface.c:44: attention : unused variable 'res_border_tl'
+gcc "-LC:\\Users\\Emmanuel\\Documents\\GitHub\\shgame\\shdata\\Debug" "-LC:\\Users\\Emmanuel\\Documents\\Programmation\\SDL\\fichiers\\SDL_image-devel-1.2.12-VC\\SDL_image-1.2.12\\lib" -Wl,-subsystem,windows -o SHClient.exe main.o _surface.o _color.o -lmingw32 -lSDLmain -lSDL -lshdata -lSDL_image 
+Info: Nothing to build for shdata
+Info: Nothing to build for shserver
+Info: Nothing to build for shupdate
+Info: Nothing to build for shvfs
+Info: Nothing to build for shclient
+22:43:01 **** Incremental Build of configuration Debug for project shclient ****
+Info: Internal Builder is used for build
+gcc "-IC:\\Users\\Emmanuel\\Documents\\Programmation\\SDL\\fichiers\\SDL-1.2.15\\include" "-IC:\\Users\\Emmanuel\\Documents\\Programmation\\ShadowHunters\\dev\\shdata" -O0 -g3 -Wall -c -fmessage-length=0 -o _surface.o "..\\_surface.c" 
+gcc "-LC:\\Users\\Emmanuel\\Documents\\GitHub\\shgame\\shdata\\Debug" "-LC:\\Users\\Emmanuel\\Documents\\Programmation\\SDL\\fichiers\\SDL_image-devel-1.2.12-VC\\SDL_image-1.2.12\\lib" -Wl,-subsystem,windows -o SHClient.exe main.o _surface.o _color.o -lmingw32 -lSDLmain -lSDL -lshdata -lSDL_image 
+Info: Nothing to build for shdata
+Info: Nothing to build for shserver
+Info: Nothing to build for shupdate
+Info: Nothing to build for shvfs
+22:43:52 **** Incremental Build of configuration Debug for project shclient ****
+Info: Internal Builder is used for build
+gcc "-IC:\\Users\\Emmanuel\\Documents\\Programmation\\SDL\\fichiers\\SDL-1.2.15\\include" "-IC:\\Users\\Emmanuel\\Documents\\Programmation\\ShadowHunters\\dev\\shdata" -O0 -g3 -Wall -c -fmessage-length=0 -o _surface.o "..\\_surface.c" 
+gcc "-LC:\\Users\\Emmanuel\\Documents\\GitHub\\shgame\\shdata\\Debug" "-LC:\\Users\\Emmanuel\\Documents\\Programmation\\SDL\\fichiers\\SDL_image-devel-1.2.12-VC\\SDL_image-1.2.12\\lib" -Wl,-subsystem,windows -o SHClient.exe main.o _surface.o _color.o -lmingw32 -lSDLmain -lSDL -lshdata -lSDL_image 
+Info: Nothing to build for shdata
+Info: Nothing to build for shserver
+Info: Nothing to build for shupdate
+Info: Nothing to build for shvfs
+Info: Nothing to build for shclient
+22:44:42 **** Incremental Build of configuration Debug for project shclient ****
+Info: Internal Builder is used for build
+gcc "-IC:\\Users\\Emmanuel\\Documents\\Programmation\\SDL\\fichiers\\SDL-1.2.15\\include" "-IC:\\Users\\Emmanuel\\Documents\\Programmation\\ShadowHunters\\dev\\shdata" -O0 -g3 -Wall -c -fmessage-length=0 -o _surface.o "..\\_surface.c" 
+gcc "-LC:\\Users\\Emmanuel\\Documents\\GitHub\\shgame\\shdata\\Debug" "-LC:\\Users\\Emmanuel\\Documents\\Programmation\\SDL\\fichiers\\SDL_image-devel-1.2.12-VC\\SDL_image-1.2.12\\lib" -Wl,-subsystem,windows -o SHClient.exe main.o _surface.o _color.o -lmingw32 -lSDLmain -lSDL -lshdata -lSDL_image 
+Info: Nothing to build for shdata
+Info: Nothing to build for shserver
+Info: Nothing to build for shupdate
+Info: Nothing to build for shvfs
+Info: Nothing to build for shclient
+22:45:27 **** Incremental Build of configuration Debug for project shclient ****
+Info: Internal Builder is used for build
+gcc "-IC:\\Users\\Emmanuel\\Documents\\Programmation\\SDL\\fichiers\\SDL-1.2.15\\include" "-IC:\\Users\\Emmanuel\\Documents\\Programmation\\ShadowHunters\\dev\\shdata" -O0 -g3 -Wall -c -fmessage-length=0 -o _surface.o "..\\_surface.c" 
+gcc "-LC:\\Users\\Emmanuel\\Documents\\GitHub\\shgame\\shdata\\Debug" "-LC:\\Users\\Emmanuel\\Documents\\Programmation\\SDL\\fichiers\\SDL_image-devel-1.2.12-VC\\SDL_image-1.2.12\\lib" -Wl,-subsystem,windows -o SHClient.exe main.o _surface.o _color.o -lmingw32 -lSDLmain -lSDL -lshdata -lSDL_image 
+Info: Nothing to build for shdata
+Info: Nothing to build for shserver
+Info: Nothing to build for shupdate
+Info: Nothing to build for shvfs
+Info: Nothing to build for shclient
+22:46:40 **** Incremental Build of configuration Debug for project shclient ****
+Info: Internal Builder is used for build
+gcc "-IC:\\Users\\Emmanuel\\Documents\\Programmation\\SDL\\fichiers\\SDL-1.2.15\\include" "-IC:\\Users\\Emmanuel\\Documents\\Programmation\\ShadowHunters\\dev\\shdata" -O0 -g3 -Wall -c -fmessage-length=0 -o _surface.o "..\\_surface.c" 
+gcc "-LC:\\Users\\Emmanuel\\Documents\\GitHub\\shgame\\shdata\\Debug" "-LC:\\Users\\Emmanuel\\Documents\\Programmation\\SDL\\fichiers\\SDL_image-devel-1.2.12-VC\\SDL_image-1.2.12\\lib" -Wl,-subsystem,windows -o SHClient.exe main.o _surface.o _color.o -lmingw32 -lSDLmain -lSDL -lshdata -lSDL_image 
+Info: Nothing to build for shdata
+Info: Nothing to build for shserver
+Info: Nothing to build for shupdate
+Info: Nothing to build for shvfs
+Info: Nothing to build for shclient
+22:48:10 **** Incremental Build of configuration Debug for project shclient ****
+Info: Internal Builder is used for build
+gcc "-IC:\\Users\\Emmanuel\\Documents\\Programmation\\SDL\\fichiers\\SDL-1.2.15\\include" "-IC:\\Users\\Emmanuel\\Documents\\Programmation\\ShadowHunters\\dev\\shdata" -O0 -g3 -Wall -c -fmessage-length=0 -o _surface.o "..\\_surface.c" 
+gcc "-LC:\\Users\\Emmanuel\\Documents\\GitHub\\shgame\\shdata\\Debug" "-LC:\\Users\\Emmanuel\\Documents\\Programmation\\SDL\\fichiers\\SDL_image-devel-1.2.12-VC\\SDL_image-1.2.12\\lib" -Wl,-subsystem,windows -o SHClient.exe main.o _surface.o _color.o -lmingw32 -lSDLmain -lSDL -lshdata -lSDL_image 
+Info: Nothing to build for shdata
+Info: Nothing to build for shserver
+Info: Nothing to build for shupdate
+Info: Nothing to build for shvfs
+Info: Nothing to build for shclient
+22:48:32 **** Incremental Build of configuration Debug for project shclient ****
+Info: Internal Builder is used for build
+gcc "-IC:\\Users\\Emmanuel\\Documents\\Programmation\\SDL\\fichiers\\SDL-1.2.15\\include" "-IC:\\Users\\Emmanuel\\Documents\\Programmation\\ShadowHunters\\dev\\shdata" -O0 -g3 -Wall -c -fmessage-length=0 -o _surface.o "..\\_surface.c" 
+gcc "-LC:\\Users\\Emmanuel\\Documents\\GitHub\\shgame\\shdata\\Debug" "-LC:\\Users\\Emmanuel\\Documents\\Programmation\\SDL\\fichiers\\SDL_image-devel-1.2.12-VC\\SDL_image-1.2.12\\lib" -Wl,-subsystem,windows -o SHClient.exe main.o _surface.o _color.o -lmingw32 -lSDLmain -lSDL -lshdata -lSDL_image 
+Info: Nothing to build for shdata
+Info: Nothing to build for shserver
+Info: Nothing to build for shupdate
+Info: Nothing to build for shvfs
+Info: Nothing to build for shclient
+22:48:49 **** Incremental Build of configuration Debug for project shclient ****
+Info: Internal Builder is used for build
+gcc "-IC:\\Users\\Emmanuel\\Documents\\Programmation\\SDL\\fichiers\\SDL-1.2.15\\include" "-IC:\\Users\\Emmanuel\\Documents\\Programmation\\ShadowHunters\\dev\\shdata" -O0 -g3 -Wall -c -fmessage-length=0 -o _surface.o "..\\_surface.c" 
+gcc "-LC:\\Users\\Emmanuel\\Documents\\GitHub\\shgame\\shdata\\Debug" "-LC:\\Users\\Emmanuel\\Documents\\Programmation\\SDL\\fichiers\\SDL_image-devel-1.2.12-VC\\SDL_image-1.2.12\\lib" -Wl,-subsystem,windows -o SHClient.exe main.o _surface.o _color.o -lmingw32 -lSDLmain -lSDL -lshdata -lSDL_image 
+Info: Nothing to build for shdata
+Info: Nothing to build for shserver
+Info: Nothing to build for shupdate
+Info: Nothing to build for shvfs
+Info: Nothing to build for shclient
+22:50:08 **** Incremental Build of configuration Debug for project shclient ****
+Info: Internal Builder is used for build
+gcc "-IC:\\Users\\Emmanuel\\Documents\\Programmation\\SDL\\fichiers\\SDL-1.2.15\\include" "-IC:\\Users\\Emmanuel\\Documents\\Programmation\\ShadowHunters\\dev\\shdata" -O0 -g3 -Wall -c -fmessage-length=0 -o _surface.o "..\\_surface.c" 
+gcc "-LC:\\Users\\Emmanuel\\Documents\\GitHub\\shgame\\shdata\\Debug" "-LC:\\Users\\Emmanuel\\Documents\\Programmation\\SDL\\fichiers\\SDL_image-devel-1.2.12-VC\\SDL_image-1.2.12\\lib" -Wl,-subsystem,windows -o SHClient.exe main.o _surface.o _color.o -lmingw32 -lSDLmain -lSDL -lshdata -lSDL_image 
+Info: Nothing to build for shdata
+Info: Nothing to build for shserver
+Info: Nothing to build for shupdate
+Info: Nothing to build for shvfs
+Info: Nothing to build for shclient
+22:50:29 **** Incremental Build of configuration Debug for project shclient ****
+Info: Internal Builder is used for build
+gcc "-IC:\\Users\\Emmanuel\\Documents\\Programmation\\SDL\\fichiers\\SDL-1.2.15\\include" "-IC:\\Users\\Emmanuel\\Documents\\Programmation\\ShadowHunters\\dev\\shdata" -O0 -g3 -Wall -c -fmessage-length=0 -o _surface.o "..\\_surface.c" 
+gcc "-LC:\\Users\\Emmanuel\\Documents\\GitHub\\shgame\\shdata\\Debug" "-LC:\\Users\\Emmanuel\\Documents\\Programmation\\SDL\\fichiers\\SDL_image-devel-1.2.12-VC\\SDL_image-1.2.12\\lib" -Wl,-subsystem,windows -o SHClient.exe main.o _surface.o _color.o -lmingw32 -lSDLmain -lSDL -lshdata -lSDL_image 
+Info: Nothing to build for shdata
+Info: Nothing to build for shserver
+Info: Nothing to build for shupdate
+Info: Nothing to build for shvfs
+22:50:36 **** Incremental Build of configuration Debug for project shclient ****
+Info: Internal Builder is used for build
+gcc "-IC:\\Users\\Emmanuel\\Documents\\Programmation\\SDL\\fichiers\\SDL-1.2.15\\include" "-IC:\\Users\\Emmanuel\\Documents\\Programmation\\ShadowHunters\\dev\\shdata" -O0 -g3 -Wall -c -fmessage-length=0 -o _surface.o "..\\_surface.c" 
+gcc "-LC:\\Users\\Emmanuel\\Documents\\GitHub\\shgame\\shdata\\Debug" "-LC:\\Users\\Emmanuel\\Documents\\Programmation\\SDL\\fichiers\\SDL_image-devel-1.2.12-VC\\SDL_image-1.2.12\\lib" -Wl,-subsystem,windows -o SHClient.exe main.o _surface.o _color.o -lmingw32 -lSDLmain -lSDL -lshdata -lSDL_image 
+22:52:18 **** Incremental Build of configuration Debug for project shclient ****
+Info: Internal Builder is used for build
+gcc "-IC:\\Users\\Emmanuel\\Documents\\Programmation\\SDL\\fichiers\\SDL-1.2.15\\include" "-IC:\\Users\\Emmanuel\\Documents\\Programmation\\ShadowHunters\\dev\\shdata" -O0 -g3 -Wall -c -fmessage-length=0 -o _surface.o "..\\_surface.c" 
+gcc "-LC:\\Users\\Emmanuel\\Documents\\GitHub\\shgame\\shdata\\Debug" "-LC:\\Users\\Emmanuel\\Documents\\Programmation\\SDL\\fichiers\\SDL_image-devel-1.2.12-VC\\SDL_image-1.2.12\\lib" -Wl,-subsystem,windows -o SHClient.exe main.o _surface.o _color.o -lmingw32 -lSDLmain -lSDL -lshdata -lSDL_image 
+Info: Nothing to build for shdata
+Info: Nothing to build for shserver
+Info: Nothing to build for shupdate
+Info: Nothing to build for shvfs
+Info: Nothing to build for shclient
+22:52:54 **** Incremental Build of configuration Debug for project shclient ****
+Info: Internal Builder is used for build
+gcc "-IC:\\Users\\Emmanuel\\Documents\\Programmation\\SDL\\fichiers\\SDL-1.2.15\\include" "-IC:\\Users\\Emmanuel\\Documents\\Programmation\\ShadowHunters\\dev\\shdata" -O0 -g3 -Wall -c -fmessage-length=0 -o _surface.o "..\\_surface.c" 
+gcc "-LC:\\Users\\Emmanuel\\Documents\\GitHub\\shgame\\shdata\\Debug" "-LC:\\Users\\Emmanuel\\Documents\\Programmation\\SDL\\fichiers\\SDL_image-devel-1.2.12-VC\\SDL_image-1.2.12\\lib" -Wl,-subsystem,windows -o SHClient.exe main.o _surface.o _color.o -lmingw32 -lSDLmain -lSDL -lshdata -lSDL_image 
+22:53:11 **** Incremental Build of configuration Debug for project shclient ****
+Info: Internal Builder is used for build
+gcc "-IC:\\Users\\Emmanuel\\Documents\\Programmation\\SDL\\fichiers\\SDL-1.2.15\\include" "-IC:\\Users\\Emmanuel\\Documents\\Programmation\\ShadowHunters\\dev\\shdata" -O0 -g3 -Wall -c -fmessage-length=0 -o _surface.o "..\\_surface.c" 
+gcc "-LC:\\Users\\Emmanuel\\Documents\\GitHub\\shgame\\shdata\\Debug" "-LC:\\Users\\Emmanuel\\Documents\\Programmation\\SDL\\fichiers\\SDL_image-devel-1.2.12-VC\\SDL_image-1.2.12\\lib" -Wl,-subsystem,windows -o SHClient.exe main.o _surface.o _color.o -lmingw32 -lSDLmain -lSDL -lshdata -lSDL_image 
+22:54:21 **** Incremental Build of configuration Debug for project shclient ****
+Info: Internal Builder is used for build
+gcc "-IC:\\Users\\Emmanuel\\Documents\\Programmation\\SDL\\fichiers\\SDL-1.2.15\\include" "-IC:\\Users\\Emmanuel\\Documents\\Programmation\\ShadowHunters\\dev\\shdata" -O0 -g3 -Wall -c -fmessage-length=0 -o _surface.o "..\\_surface.c" 
+gcc "-LC:\\Users\\Emmanuel\\Documents\\GitHub\\shgame\\shdata\\Debug" "-LC:\\Users\\Emmanuel\\Documents\\Programmation\\SDL\\fichiers\\SDL_image-devel-1.2.12-VC\\SDL_image-1.2.12\\lib" -Wl,-subsystem,windows -o SHClient.exe main.o _surface.o _color.o -lmingw32 -lSDLmain -lSDL -lshdata -lSDL_image 
+Info: Nothing to build for shdata
+Info: Nothing to build for shserver
+Info: Nothing to build for shupdate
+Info: Nothing to build for shvfs
+22:54:34 **** Incremental Build of configuration Debug for project shclient ****
+Info: Internal Builder is used for build
+gcc "-IC:\\Users\\Emmanuel\\Documents\\Programmation\\SDL\\fichiers\\SDL-1.2.15\\include" "-IC:\\Users\\Emmanuel\\Documents\\Programmation\\ShadowHunters\\dev\\shdata" -O0 -g3 -Wall -c -fmessage-length=0 -o _surface.o "..\\_surface.c" 
+gcc "-LC:\\Users\\Emmanuel\\Documents\\GitHub\\shgame\\shdata\\Debug" "-LC:\\Users\\Emmanuel\\Documents\\Programmation\\SDL\\fichiers\\SDL_image-devel-1.2.12-VC\\SDL_image-1.2.12\\lib" -Wl,-subsystem,windows -o SHClient.exe main.o _surface.o _color.o -lmingw32 -lSDLmain -lSDL -lshdata -lSDL_image 
+22:55:14 **** Incremental Build of configuration Debug for project shclient ****
+Info: Internal Builder is used for build
+gcc "-IC:\\Users\\Emmanuel\\Documents\\Programmation\\SDL\\fichiers\\SDL-1.2.15\\include" "-IC:\\Users\\Emmanuel\\Documents\\Programmation\\ShadowHunters\\dev\\shdata" -O0 -g3 -Wall -c -fmessage-length=0 -o _surface.o "..\\_surface.c" 
+gcc "-LC:\\Users\\Emmanuel\\Documents\\GitHub\\shgame\\shdata\\Debug" "-LC:\\Users\\Emmanuel\\Documents\\Programmation\\SDL\\fichiers\\SDL_image-devel-1.2.12-VC\\SDL_image-1.2.12\\lib" -Wl,-subsystem,windows -o SHClient.exe main.o _surface.o _color.o -lmingw32 -lSDLmain -lSDL -lshdata -lSDL_image 
+Info: Nothing to build for shdata
+Info: Nothing to build for shserver
+Info: Nothing to build for shupdate
+Info: Nothing to build for shvfs
+Info: Nothing to build for shclient
+22:56:09 **** Incremental Build of configuration Debug for project shclient ****
+Info: Internal Builder is used for build
+gcc "-IC:\\Users\\Emmanuel\\Documents\\Programmation\\SDL\\fichiers\\SDL-1.2.15\\include" "-IC:\\Users\\Emmanuel\\Documents\\Programmation\\ShadowHunters\\dev\\shdata" -O0 -g3 -Wall -c -fmessage-length=0 -o _surface.o "..\\_surface.c" 
+gcc "-LC:\\Users\\Emmanuel\\Documents\\GitHub\\shgame\\shdata\\Debug" "-LC:\\Users\\Emmanuel\\Documents\\Programmation\\SDL\\fichiers\\SDL_image-devel-1.2.12-VC\\SDL_image-1.2.12\\lib" -Wl,-subsystem,windows -o SHClient.exe main.o _surface.o _color.o -lmingw32 -lSDLmain -lSDL -lshdata -lSDL_image 
+Info: Nothing to build for shclient
+Info: Nothing to build for shdata
+Info: Nothing to build for shserver
+Info: Nothing to build for shupdate
+Info: Nothing to build for shvfs
+22:56:23 **** Incremental Build of configuration Debug for project shclient ****
+Info: Internal Builder is used for build
+gcc "-IC:\\Users\\Emmanuel\\Documents\\Programmation\\SDL\\fichiers\\SDL-1.2.15\\include" "-IC:\\Users\\Emmanuel\\Documents\\Programmation\\ShadowHunters\\dev\\shdata" -O0 -g3 -Wall -c -fmessage-length=0 -o _surface.o "..\\_surface.c" 
+gcc "-LC:\\Users\\Emmanuel\\Documents\\GitHub\\shgame\\shdata\\Debug" "-LC:\\Users\\Emmanuel\\Documents\\Programmation\\SDL\\fichiers\\SDL_image-devel-1.2.12-VC\\SDL_image-1.2.12\\lib" -Wl,-subsystem,windows -o SHClient.exe main.o _surface.o _color.o -lmingw32 -lSDLmain -lSDL -lshdata -lSDL_image 
+22:57:35 **** Incremental Build of configuration Debug for project shclient ****
+Info: Internal Builder is used for build
+gcc "-IC:\\Users\\Emmanuel\\Documents\\Programmation\\SDL\\fichiers\\SDL-1.2.15\\include" "-IC:\\Users\\Emmanuel\\Documents\\Programmation\\ShadowHunters\\dev\\shdata" -O0 -g3 -Wall -c -fmessage-length=0 -o _surface.o "..\\_surface.c" 
+gcc "-LC:\\Users\\Emmanuel\\Documents\\GitHub\\shgame\\shdata\\Debug" "-LC:\\Users\\Emmanuel\\Documents\\Programmation\\SDL\\fichiers\\SDL_image-devel-1.2.12-VC\\SDL_image-1.2.12\\lib" -Wl,-subsystem,windows -o SHClient.exe main.o _surface.o _color.o -lmingw32 -lSDLmain -lSDL -lshdata -lSDL_image 
+Info: Nothing to build for shdata
+Info: Nothing to build for shserver
+Info: Nothing to build for shupdate
+Info: Nothing to build for shvfs
+Info: Nothing to build for shclient
+22:57:59 **** Incremental Build of configuration Debug for project shclient ****
+Info: Internal Builder is used for build
+gcc "-IC:\\Users\\Emmanuel\\Documents\\Programmation\\SDL\\fichiers\\SDL-1.2.15\\include" "-IC:\\Users\\Emmanuel\\Documents\\Programmation\\ShadowHunters\\dev\\shdata" -O0 -g3 -Wall -c -fmessage-length=0 -o main.o "..\\main.c" 
+gcc "-LC:\\Users\\Emmanuel\\Documents\\GitHub\\shgame\\shdata\\Debug" "-LC:\\Users\\Emmanuel\\Documents\\Programmation\\SDL\\fichiers\\SDL_image-devel-1.2.12-VC\\SDL_image-1.2.12\\lib" -Wl,-subsystem,windows -o SHClient.exe main.o _surface.o _color.o -lmingw32 -lSDLmain -lSDL -lshdata -lSDL_image 
+23:03:04 **** Incremental Build of configuration Debug for project shclient ****
+Info: Internal Builder is used for build
+gcc "-IC:\\Users\\Emmanuel\\Documents\\Programmation\\SDL\\fichiers\\SDL-1.2.15\\include" "-IC:\\Users\\Emmanuel\\Documents\\Programmation\\ShadowHunters\\dev\\shdata" -O0 -g3 -Wall -c -fmessage-length=0 -o _surface.o "..\\_surface.c" 
+gcc "-LC:\\Users\\Emmanuel\\Documents\\GitHub\\shgame\\shdata\\Debug" "-LC:\\Users\\Emmanuel\\Documents\\Programmation\\SDL\\fichiers\\SDL_image-devel-1.2.12-VC\\SDL_image-1.2.12\\lib" -Wl,-subsystem,windows -o SHClient.exe main.o _surface.o _color.o -lmingw32 -lSDLmain -lSDL -lshdata -lSDL_image 
+Info: Nothing to build for shdata
+Info: Nothing to build for shserver
+Info: Nothing to build for shupdate
+Info: Nothing to build for shvfs
+Info: Nothing to build for shclient
+23:03:23 **** Incremental Build of configuration Debug for project shclient ****
+Info: Internal Builder is used for build
+gcc "-IC:\\Users\\Emmanuel\\Documents\\Programmation\\SDL\\fichiers\\SDL-1.2.15\\include" "-IC:\\Users\\Emmanuel\\Documents\\Programmation\\ShadowHunters\\dev\\shdata" -O0 -g3 -Wall -c -fmessage-length=0 -o main.o "..\\main.c" 
+gcc "-LC:\\Users\\Emmanuel\\Documents\\GitHub\\shgame\\shdata\\Debug" "-LC:\\Users\\Emmanuel\\Documents\\Programmation\\SDL\\fichiers\\SDL_image-devel-1.2.12-VC\\SDL_image-1.2.12\\lib" -Wl,-subsystem,windows -o SHClient.exe main.o _surface.o _color.o -lmingw32 -lSDLmain -lSDL -lshdata -lSDL_image 
+23:03:33 **** Incremental Build of configuration Debug for project shclient ****
+Info: Internal Builder is used for build
+gcc "-IC:\\Users\\Emmanuel\\Documents\\Programmation\\SDL\\fichiers\\SDL-1.2.15\\include" "-IC:\\Users\\Emmanuel\\Documents\\Programmation\\ShadowHunters\\dev\\shdata" -O0 -g3 -Wall -c -fmessage-length=0 -o main.o "..\\main.c" 
+gcc "-LC:\\Users\\Emmanuel\\Documents\\GitHub\\shgame\\shdata\\Debug" "-LC:\\Users\\Emmanuel\\Documents\\Programmation\\SDL\\fichiers\\SDL_image-devel-1.2.12-VC\\SDL_image-1.2.12\\lib" -Wl,-subsystem,windows -o SHClient.exe main.o _surface.o _color.o -lmingw32 -lSDLmain -lSDL -lshdata -lSDL_image 
+23:04:28 **** Incremental Build of configuration Debug for project shclient ****
+Info: Internal Builder is used for build
+gcc "-IC:\\Users\\Emmanuel\\Documents\\Programmation\\SDL\\fichiers\\SDL-1.2.15\\include" "-IC:\\Users\\Emmanuel\\Documents\\Programmation\\ShadowHunters\\dev\\shdata" -O0 -g3 -Wall -c -fmessage-length=0 -o main.o "..\\main.c" 
+gcc "-IC:\\Users\\Emmanuel\\Documents\\Programmation\\SDL\\fichiers\\SDL-1.2.15\\include" "-IC:\\Users\\Emmanuel\\Documents\\Programmation\\ShadowHunters\\dev\\shdata" -O0 -g3 -Wall -c -fmessage-length=0 -o _color.o "..\\_color.c" 
+gcc "-IC:\\Users\\Emmanuel\\Documents\\Programmation\\SDL\\fichiers\\SDL-1.2.15\\include" "-IC:\\Users\\Emmanuel\\Documents\\Programmation\\ShadowHunters\\dev\\shdata" -O0 -g3 -Wall -c -fmessage-length=0 -o _surface.o "..\\_surface.c" 
+gcc "-LC:\\Users\\Emmanuel\\Documents\\GitHub\\shgame\\shdata\\Debug" "-LC:\\Users\\Emmanuel\\Documents\\Programmation\\SDL\\fichiers\\SDL_image-devel-1.2.12-VC\\SDL_image-1.2.12\\lib" -Wl,-subsystem,windows -o SHClient.exe main.o _surface.o _color.o -lmingw32 -lSDLmain -lSDL -lshdata -lSDL_image 
+Info: Nothing to build for shdata
+Info: Nothing to build for shserver
+Info: Nothing to build for shupdate
+Info: Nothing to build for shvfs
+Info: Nothing to build for shclient
+23:05:15 **** Incremental Build of configuration Debug for project shclient ****
+Info: Internal Builder is used for build
+gcc "-IC:\\Users\\Emmanuel\\Documents\\Programmation\\SDL\\fichiers\\SDL-1.2.15\\include" "-IC:\\Users\\Emmanuel\\Documents\\Programmation\\ShadowHunters\\dev\\shdata" -O0 -g3 -Wall -c -fmessage-length=0 -o main.o "..\\main.c" 
+gcc "-LC:\\Users\\Emmanuel\\Documents\\GitHub\\shgame\\shdata\\Debug" "-LC:\\Users\\Emmanuel\\Documents\\Programmation\\SDL\\fichiers\\SDL_image-devel-1.2.12-VC\\SDL_image-1.2.12\\lib" -Wl,-subsystem,windows -o SHClient.exe main.o _surface.o _color.o -lmingw32 -lSDLmain -lSDL -lshdata -lSDL_image 
+23:05:23 **** Incremental Build of configuration Debug for project shclient ****
+Info: Internal Builder is used for build
+gcc "-IC:\\Users\\Emmanuel\\Documents\\Programmation\\SDL\\fichiers\\SDL-1.2.15\\include" "-IC:\\Users\\Emmanuel\\Documents\\Programmation\\ShadowHunters\\dev\\shdata" -O0 -g3 -Wall -c -fmessage-length=0 -o main.o "..\\main.c" 
+gcc "-LC:\\Users\\Emmanuel\\Documents\\GitHub\\shgame\\shdata\\Debug" "-LC:\\Users\\Emmanuel\\Documents\\Programmation\\SDL\\fichiers\\SDL_image-devel-1.2.12-VC\\SDL_image-1.2.12\\lib" -Wl,-subsystem,windows -o SHClient.exe main.o _surface.o _color.o -lmingw32 -lSDLmain -lSDL -lshdata -lSDL_image 
+23:05:42 **** Incremental Build of configuration Debug for project shclient ****
+Info: Internal Builder is used for build
+gcc "-IC:\\Users\\Emmanuel\\Documents\\Programmation\\SDL\\fichiers\\SDL-1.2.15\\include" "-IC:\\Users\\Emmanuel\\Documents\\Programmation\\ShadowHunters\\dev\\shdata" -O0 -g3 -Wall -c -fmessage-length=0 -o main.o "..\\main.c" 
+gcc "-LC:\\Users\\Emmanuel\\Documents\\GitHub\\shgame\\shdata\\Debug" "-LC:\\Users\\Emmanuel\\Documents\\Programmation\\SDL\\fichiers\\SDL_image-devel-1.2.12-VC\\SDL_image-1.2.12\\lib" -Wl,-subsystem,windows -o SHClient.exe main.o _surface.o _color.o -lmingw32 -lSDLmain -lSDL -lshdata -lSDL_image 
+23:06:05 **** Incremental Build of configuration Debug for project shclient ****
+Info: Internal Builder is used for build
+gcc "-IC:\\Users\\Emmanuel\\Documents\\Programmation\\SDL\\fichiers\\SDL-1.2.15\\include" "-IC:\\Users\\Emmanuel\\Documents\\Programmation\\ShadowHunters\\dev\\shdata" -O0 -g3 -Wall -c -fmessage-length=0 -o main.o "..\\main.c" 
+gcc "-LC:\\Users\\Emmanuel\\Documents\\GitHub\\shgame\\shdata\\Debug" "-LC:\\Users\\Emmanuel\\Documents\\Programmation\\SDL\\fichiers\\SDL_image-devel-1.2.12-VC\\SDL_image-1.2.12\\lib" -Wl,-subsystem,windows -o SHClient.exe main.o _surface.o _color.o -lmingw32 -lSDLmain -lSDL -lshdata -lSDL_image 
+23:06:30 **** Incremental Build of configuration Debug for project shclient ****
+Info: Internal Builder is used for build
+gcc "-IC:\\Users\\Emmanuel\\Documents\\Programmation\\SDL\\fichiers\\SDL-1.2.15\\include" "-IC:\\Users\\Emmanuel\\Documents\\Programmation\\ShadowHunters\\dev\\shdata" -O0 -g3 -Wall -c -fmessage-length=0 -o main.o "..\\main.c" 
+gcc "-LC:\\Users\\Emmanuel\\Documents\\GitHub\\shgame\\shdata\\Debug" "-LC:\\Users\\Emmanuel\\Documents\\Programmation\\SDL\\fichiers\\SDL_image-devel-1.2.12-VC\\SDL_image-1.2.12\\lib" -Wl,-subsystem,windows -o SHClient.exe main.o _surface.o _color.o -lmingw32 -lSDLmain -lSDL -lshdata -lSDL_image 
+23:06:42 **** Incremental Build of configuration Debug for project shclient ****
+Info: Internal Builder is used for build
+gcc "-IC:\\Users\\Emmanuel\\Documents\\Programmation\\SDL\\fichiers\\SDL-1.2.15\\include" "-IC:\\Users\\Emmanuel\\Documents\\Programmation\\ShadowHunters\\dev\\shdata" -O0 -g3 -Wall -c -fmessage-length=0 -o main.o "..\\main.c" 
+gcc "-LC:\\Users\\Emmanuel\\Documents\\GitHub\\shgame\\shdata\\Debug" "-LC:\\Users\\Emmanuel\\Documents\\Programmation\\SDL\\fichiers\\SDL_image-devel-1.2.12-VC\\SDL_image-1.2.12\\lib" -Wl,-subsystem,windows -o SHClient.exe main.o _surface.o _color.o -lmingw32 -lSDLmain -lSDL -lshdata -lSDL_image 

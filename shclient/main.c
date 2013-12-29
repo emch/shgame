@@ -54,19 +54,19 @@ int main(int argc, char *argv[]) {
     // Creating surfaces (to be rendered through screen surface)
     board 	= NewSurface(BOARD_SURF_WIDTH, BOARD_SURF_HEIGHT, NULL,
     		SCREEN_WIDTH - BOARD_SURF_WIDTH - PADDING, PADDING, 1,
-    		SH_WHITE, 0, SH_NONE, myLogger);
+    		SH_WHITE, 3, SH_BLACK, myLogger);
     players = NewSurface(PLYRLIST_SURF_WIDTH, PLYRLIST_SURF_HEIGHT, NULL,
     		PADDING, PADDING, 1,
-    		SH_WHITE, 0, SH_NONE, myLogger);
+    		SH_WHITE, 3, SH_BLACK, myLogger);
     gamelog = NewSurface(GAMELOG_SURF_WIDTH, GAMELOG_SURF_HEIGHT, NULL,
     		SCREEN_WIDTH - GAMELOG_SURF_WIDTH - PADDING, SCREEN_HEIGHT - GAMELOG_SURF_HEIGHT - PADDING, 1,
-    		SH_WHITE, 0, SH_NONE, myLogger);
+    		SH_WHITE, 3, SH_BLACK, myLogger);
     items	= NewSurface(ITEMS_SURF_WIDTH, ITEMS_SURF_HEIGHT, NULL,
     		PADDING, SCREEN_HEIGHT - GAMELOG_SURF_HEIGHT - PADDING, 1,
-    		SH_WHITE, 0, SH_NONE, myLogger);
+    		SH_WHITE, 3, SH_BLACK, myLogger);
     dice	= NewSurface(DICE_SURF_WIDTH, DICE_SURF_HEIGHT, NULL,
     		2*PADDING + ITEMS_SURF_WIDTH, SCREEN_HEIGHT - GAMELOG_SURF_HEIGHT - PADDING, 1,
-    		SH_WHITE, 0, SH_NONE, myLogger);
+    		SH_WHITE, 3, SH_BLACK, myLogger);
     // Stacking all surfaces to be rendered
     SHSurface *surfaces [5] = {board, players, gamelog, items, dice};
     // End of Initialization !!
@@ -107,7 +107,7 @@ void loop(SDL_Surface* screen, SHSurface** surfaces)
         }
 
         // Screen update
-        SDL_FillRect(screen, NULL, SDL_MapRGB(screen->format, 100, 100, 100));
+        SDL_FillRect(screen, NULL, SDL_MapRGB(screen->format, 200, 200, 200));
 
         // Board update
         for(surfRenderCmpt = 0; surfRenderCmpt < 5; surfRenderCmpt++) {

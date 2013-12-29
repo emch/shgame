@@ -30,6 +30,7 @@ typedef enum SH_ALIGNMENT {
  * \enum	SH_PLAYER_COLOR
  * \brief	Available colors.
  */
+// for the first version, player colors will be allocated automatically
 typedef enum SH_PLAYER_COLOR {
 	WHITE, RED, BLUE, GREEN, ORANGE, YELLOW, BROWN, VIOLET
 } SH_PLAYER_COLOR;

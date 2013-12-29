@@ -1,0 +1,19 @@
+#include "shclient.h"
+
+SHColor* CreateColor(int r, int g, int b) {
+	SHColor* res = NULL;
+	res->r = r; res->g = g; res->b = b;
+	return res;
+}
+
+SHColor* GetColorData(SH_STORED_COLOR input) {
+	SHColor* color = CreateColor(255,255,255);
+	switch(input) {
+	case BLACK:
+		break;
+	case DARK_ORANGE:
+		break;
+	default:
+		break;
+	}
+}

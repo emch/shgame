@@ -40,10 +40,12 @@
 									<listOptionValue builtIn="false" value="SDLmain"/>
 									<listOptionValue builtIn="false" value="SDL"/>
 									<listOptionValue builtIn="false" value="shdata"/>
+									<listOptionValue builtIn="false" value="SDL_image"/>
 								</option>
 								<option id="gnu.c.link.option.ldflags.825280307" name="Linker flags" superClass="gnu.c.link.option.ldflags" value="-Wl,-subsystem,windows" valueType="string"/>
-								<option id="gnu.c.link.option.paths.591701801" superClass="gnu.c.link.option.paths" valueType="libPaths">
+								<option id="gnu.c.link.option.paths.591701801" name="Library search path (-L)" superClass="gnu.c.link.option.paths" valueType="libPaths">
 									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/shdata/Debug}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;C:\Users\Emmanuel\Documents\Programmation\SDL\fichiers\SDL_image-devel-1.2.12-VC\SDL_image-1.2.12\lib&quot;"/>
 								</option>
 								<inputType id="cdt.managedbuild.tool.gnu.c.linker.input.1746641479" superClass="cdt.managedbuild.tool.gnu.c.linker.input">
 									<additionalInput kind="additionalinputdependency" paths="$(USER_OBJS)"/>

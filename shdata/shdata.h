@@ -27,12 +27,12 @@ typedef enum SH_ALIGNMENT {
 } SH_ALIGNMENT;
 
 /**
- * \enum	SH_COLOR
+ * \enum	SH_PLAYER_COLOR
  * \brief	Available colors.
  */
-typedef enum SH_COLOR {
+typedef enum SH_PLAYER_COLOR {
 	WHITE, RED, BLUE, GREEN, ORANGE, YELLOW, BROWN, VIOLET
-} SH_COLOR;
+} SH_PLAYER_COLOR;
 
 /**
  * \enum	SH_RAW_TYPE
@@ -130,7 +130,7 @@ typedef struct SHPlayer {
 	char 			name[LOGIN_MAXLEN];
 	SHCharacter*	character;
 	int				status; 	// 0 = dead ; 1 = alive
-	SH_COLOR		color;
+	SH_PLAYER_COLOR	color;
 	int				health;
 	int				area;
 	int				dice; // SHDice ?

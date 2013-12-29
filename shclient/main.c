@@ -8,6 +8,7 @@
 #include <stdlib.h>
 #include <stdio.h>
 #include <SDL/SDL.h>
+#include <SDL/SDL_image.h>
 
 #include "shclient.h"
 #include "shdata.h"
@@ -19,6 +20,7 @@ void loop(SDL_Surface*, SHSurface**); // nombre variable de paramètres ?
 
 int main(int argc, char *argv[]) {
 	// Initialization
+	int surfRenderCmpt = 0;
 	SHLogger* myLogger = CreateLogger("shclient.log"); 	// logging device
 
 	char gameLoggerFilename [40];
@@ -51,36 +53,36 @@ int main(int argc, char *argv[]) {
 
     // Creating surfaces (to be rendered through screen surface)
     board 	= NewSurface(BOARD_SURF_WIDTH, BOARD_SURF_HEIGHT, NULL,
-    		SCREEN_WIDTH - BOARD_SURF_WIDTH - PADDING, PADDING, 1, 255, 255, 255, myLogger);
+    		SCREEN_WIDTH - BOARD_SURF_WIDTH - PADDING, PADDING, 1,
+    		SH_WHITE, 0, SH_NONE, myLogger);
     players = NewSurface(PLYRLIST_SURF_WIDTH, PLYRLIST_SURF_HEIGHT, NULL,
-    		PADDING, PADDING, 1, 255, 255, 255, myLogger);
+    		PADDING, PADDING, 1,
+    		SH_WHITE, 0, SH_NONE, myLogger);
     gamelog = NewSurface(GAMELOG_SURF_WIDTH, GAMELOG_SURF_HEIGHT, NULL,
-    		SCREEN_WIDTH - GAMELOG_SURF_WIDTH - PADDING, SCREEN_HEIGHT - GAMELOG_SURF_HEIGHT - PADDING, 1, 255, 255, 255, myLogger);
+    		SCREEN_WIDTH - GAMELOG_SURF_WIDTH - PADDING, SCREEN_HEIGHT - GAMELOG_SURF_HEIGHT - PADDING, 1,
+    		SH_WHITE, 0, SH_NONE, myLogger);
     items	= NewSurface(ITEMS_SURF_WIDTH, ITEMS_SURF_HEIGHT, NULL,
-    		PADDING, SCREEN_HEIGHT - GAMELOG_SURF_HEIGHT - PADDING, 1, 255, 255, 255, myLogger);
+    		PADDING, SCREEN_HEIGHT - GAMELOG_SURF_HEIGHT - PADDING, 1,
+    		SH_WHITE, 0, SH_NONE, myLogger);
     dice	= NewSurface(DICE_SURF_WIDTH, DICE_SURF_HEIGHT, NULL,
-    		2*PADDING + ITEMS_SURF_WIDTH, SCREEN_HEIGHT - GAMELOG_SURF_HEIGHT - PADDING, 1, 255, 255, 255, myLogger);
-
+    		2*PADDING + ITEMS_SURF_WIDTH, SCREEN_HEIGHT - GAMELOG_SURF_HEIGHT - PADDING, 1,
+    		SH_WHITE, 0, SH_NONE, myLogger);
     // Stacking all surfaces to be rendered
     SHSurface *surfaces [5] = {board, players, gamelog, items, dice};
     // End of Initialization !!
 
     // Main loop
-    // to be improved (array of SHSurface pointers ?)
-//    loop(screen, board, players, gamelog, items, dice);
     loop(screen, surfaces);
 
     // Garbage collector
     // idem
-    DestroySurface(board, myLogger);
-    DestroySurface(players, myLogger);
-    DestroySurface(gamelog, myLogger);
-    DestroySurface(items, myLogger);
-    DestroySurface(dice, myLogger);
+    for(surfRenderCmpt = 0; surfRenderCmpt < 5; surfRenderCmpt++) {
+    	DestroySurface(surfaces[surfRenderCmpt], myLogger);
+	}
     SDL_Quit();
 
     // Last but not least, destroy logger !
-    flogf(myLogger, "Client closed successfully\r\n");
+    flogf(myLogger, "Client closed\r\n");
     DestroyLogger(gameLogger); DestroyLogger(myLogger);
 
     // End of program

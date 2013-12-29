@@ -1,0 +1,36 @@
+/*
+ * params.h
+ *
+ *  Created on: 25 déc. 2013
+ *      Author: Emmanuel
+ */
+
+#ifndef PARAMS_H_
+#define PARAMS_H_
+
+#define SCREEN_WIDTH 			1000
+#define SCREEN_HEIGHT 			600
+#define	MAX_FPS					60
+
+#define	PADDING					5
+
+#define BOARD_SURF_WIDTH		795
+#define BOARD_SURF_HEIGHT		490
+#define BOARD_SURF_MIN_ZOOM 	0.9
+#define BOARD_SURF_MAX_ZOOM 	2
+
+#define PLYRLIST_SURF_WIDTH 	190
+#define PLYRLIST_SURF_HEIGHT 	490
+
+#define GAMELOG_SURF_WIDTH		605
+#define GAMELOG_SURF_HEIGHT		95
+
+#define ITEMS_SURF_WIDTH		190
+#define	ITEMS_SURF_HEIGHT		95
+
+#define DICE_SURF_WIDTH			190
+#define	DICE_SURF_HEIGHT		95
+
+#define MOTD					"Welcome, have fun playing Shadow Hunters !"
+
+#endif /* PARAMS_H_ */

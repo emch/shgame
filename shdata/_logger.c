@@ -29,11 +29,11 @@ SHLogger* CreateLogger(char* output_name) {
 	mylogger->now = *localtime(&mylogger->timestamp);
 
 	// Some basic information
-	fprintf(mylogger->file, "%s\r\n", "SHServer Logging File");
-	fprintf(mylogger->file, "Generated on %02d-%02d-%04d",
-			mylogger->now.tm_mon+1, mylogger->now.tm_mday, mylogger->now.tm_year+1900);
-	fprintf(mylogger->file, " at %02d:%02d:%02d\r\n\r\n",
-			mylogger->now.tm_hour, mylogger->now.tm_min, mylogger->now.tm_sec);
+//	fprintf(mylogger->file, "%s\r\n", "SHServer Logging File");
+//	fprintf(mylogger->file, "Generated on %02d-%02d-%04d",
+//			mylogger->now.tm_mon+1, mylogger->now.tm_mday, mylogger->now.tm_year+1900);
+//	fprintf(mylogger->file, " at %02d:%02d:%02d\r\n\r\n",
+//			mylogger->now.tm_hour, mylogger->now.tm_min, mylogger->now.tm_sec);
 	// End of Basic information
 
 	return mylogger;

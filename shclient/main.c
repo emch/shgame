@@ -14,6 +14,7 @@
 #include "shdata.h"
 #include "params.h"
 
+void ConnectLoop();
 void GameLoop(SDL_Surface*, SHSurface**); // nombre variable de paramètres ?
 
 // 2 threads : updates serveur et update graphiques
@@ -27,7 +28,9 @@ int main(int argc, char *argv[]) {
 	sprintf(gameLoggerFilename, "gamelog_%02d-%02d-%04d_%02d-%02d-%02d.txt",
 			myLogger->now.tm_mon+1, myLogger->now.tm_mday, myLogger->now.tm_year+1900,
 			myLogger->now.tm_hour, myLogger->now.tm_min, myLogger->now.tm_sec);
-	SHLogger* gameLogger = CreateLogger(gameLoggerFilename);	// game logger
+
+	// Create gameLogger only when the game has started !
+	// SHLogger* gameLogger = CreateLogger(gameLoggerFilename);	// game logger
 
 	SDL_Surface *screen = NULL;
 	SHSurface *players = NULL, *board = NULL, *gamelog = NULL, *items = NULL, *dice = NULL;
@@ -83,7 +86,8 @@ int main(int argc, char *argv[]) {
 
     // Last but not least, destroy logger !
     flogf(myLogger, "Client closed\r\n");
-    DestroyLogger(gameLogger); DestroyLogger(myLogger);
+    //DestroyLogger(gameLogger);
+    DestroyLogger(myLogger);
 
     // End of program
     return EXIT_SUCCESS;
@@ -124,3 +128,10 @@ void GameLoop(SDL_Surface* screen, SHSurface** surfaces)
 }
 
 // plan a ConnectLoop, ErrorLoop, ...
+
+// In the connect loop, only show a centered surface where a message saying it is connecting is displayed
+// if an error occurs, go to error loop (retrying every minute and possibility to exit)
+// otherwise, launch gameLoop !
+void ConnectLoop() {
+
+}

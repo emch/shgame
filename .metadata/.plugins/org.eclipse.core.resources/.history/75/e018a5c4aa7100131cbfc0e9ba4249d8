@@ -78,17 +78,4 @@ SDL_Surface* DrawRounderCorner(int, int, int, SH_STORED_COLOR);
 // Pour écrire du texte sur une SHSurface
 // Voir SDL_ttf et chercher une police sympathique
 
-/******************************** _textfield *******************************/
-typedef struct _textfield SHTextField;
-
-struct _textfield {
-	SDL_Surface*	container;
-	char**			content;
-	// other infos like font and color, see SDL_ttf
-
-	SHSurface* 		parent;
-	SDL_Rect*		pos;
-};
-/***************************************************************************/
-
 #endif /* SHCLIENT_H_ */

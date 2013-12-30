@@ -1,6 +1,6 @@
 #include "shclient.h"
 
-SHColor* CreateColor(int r, int g, int b) {
+SHColor* CreateColor(Uint8 r, Uint8 g, Uint8 b) {
 	SHColor* res = malloc(sizeof(SHColor));
 	res->r = r; res->g = g; res->b = b;
 	return res;
@@ -18,6 +18,18 @@ SHColor* GetColorData(SH_STORED_COLOR input) {
 		break;
 	case SH_DARK_ORANGE:
 		color = CreateColor(255, 140, 0);
+		break;
+	case SH_GREEN_YELLOW:
+		color = CreateColor(173, 255, 47);
+		break;
+	case SH_YELLOW_GREEN:
+		color = CreateColor(154, 205, 50);
+		break;
+	case SH_BURLYWOOD: //that's a brown
+		color = CreateColor(222, 184, 135);
+		break;
+	case SH_IVORY:
+		color = CreateColor(205, 205, 193);
 		break;
 	default: // WHITE
 		break;

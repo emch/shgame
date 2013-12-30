@@ -6,7 +6,9 @@
  */
 
 #include <stdlib.h>
+//#include <math.h>
 
+#include "params.h"
 #include "shclient.h"
 #include "shdata.h"
 
@@ -30,7 +32,7 @@
  */
 SHSurface* NewSurface(int width, int height, SHSurface* parent, int pos_x, int pos_y, int visible,
 		SH_STORED_COLOR bck_color,
-		int border_width, SH_STORED_COLOR border_color,
+		int border_width, int rounded_corners,  SH_STORED_COLOR border_color,
 		SHLogger* myLogger) {
 
 	int bckWidth = width, bckHeight = height;
@@ -42,7 +44,7 @@ SHSurface* NewSurface(int width, int height, SHSurface* parent, int pos_x, int p
 	SDL_Rect* res_pos = malloc(sizeof(SDL_Rect));
 	SDL_Surface *res_bck = NULL;
 	SDL_Surface *res_border_tc = NULL, *res_border_ml = NULL, *res_border_mr = NULL, *res_border_bc = NULL;
-	//*res_border_tl = NULL,
+	SDL_Surface *res_border_tl = NULL, *res_border_tr = NULL, *res_border_bl = NULL, *res_border_br = NULL;
 
 	if(border_width <= 0) { // no border
 		res_bck = SDL_CreateRGBSurface(SDL_HWSURFACE, bckWidth, bckHeight, 32, 0, 0, 0, 0);
@@ -54,13 +56,24 @@ SHSurface* NewSurface(int width, int height, SHSurface* parent, int pos_x, int p
 		// Move background center at the right position
 		res_pos->x = pos_x + border_width; res_pos->y = pos_y + border_width;
 
-		// Create other surfaces (rounded corners especially !)
+		// Create border straight surfaces
 		res_border_tc = SDL_CreateRGBSurface(SDL_HWSURFACE, bckWidth, border_width, 32, 0, 0, 0, 0);
 		res_border_ml = SDL_CreateRGBSurface(SDL_HWSURFACE, border_width, bckHeight, 32, 0, 0, 0, 0);
 		res_border_mr = SDL_CreateRGBSurface(SDL_HWSURFACE, border_width, bckHeight, 32, 0, 0, 0, 0);
 		res_border_bc = SDL_CreateRGBSurface(SDL_HWSURFACE, bckWidth, border_width, 32, 0, 0, 0, 0);
 
-		// border radius equals border_width !
+		// Create border corners
+		if(rounded_corners != 0) {
+			res_border_tl = DrawRounderCorner(border_width, border_width-1, border_width-1, border_color);
+			res_border_tr = DrawRounderCorner(border_width, 0, border_width-1, border_color);
+			res_border_bl = DrawRounderCorner(border_width, border_width-1, 0, border_color);
+			res_border_br = DrawRounderCorner(border_width, 0, 0, border_color);
+		} else { // just a basic square !
+			res_border_tl = SDL_CreateRGBSurface(SDL_HWSURFACE, border_width, border_width, 32, 0, 0, 0, 0);
+			res_border_tr = SDL_CreateRGBSurface(SDL_HWSURFACE, border_width, border_width, 32, 0, 0, 0, 0);
+			res_border_bl = SDL_CreateRGBSurface(SDL_HWSURFACE, border_width, border_width, 32, 0, 0, 0, 0);
+			res_border_br = SDL_CreateRGBSurface(SDL_HWSURFACE, border_width, border_width, 32, 0, 0, 0, 0);
+		}
 	}
 
 	// Checking if surface was correctly defined
@@ -70,20 +83,26 @@ SHSurface* NewSurface(int width, int height, SHSurface* parent, int pos_x, int p
 	}
 
 	// Filling fields
-	res->bck 			= res_bck;
-	res->bck_color		= sh_bck_color;
+	res->bck 				= res_bck;
+	res->bck_color			= sh_bck_color;
 
-	res->border_width 	= border_width;
-	res->border_color	= sh_border_color;
+	res->border_width 		= border_width;
+	res->rounded_corners	= rounded_corners;
+	res->border_color		= sh_border_color;
 
-	res->border_tc		= res_border_tc;
-	res->border_ml		= res_border_ml;
-	res->border_mr		= res_border_mr;
-	res->border_bc		= res_border_bc;
+	res->border_tc			= res_border_tc;
+	res->border_ml			= res_border_ml;
+	res->border_mr			= res_border_mr;
+	res->border_bc			= res_border_bc;
 
-	res->parent 		= parent;
-	res->sdl_pos 		= res_pos;
-	res->visible		= visible;
+	res->border_tl			= res_border_tl;
+	res->border_tr			= res_border_tr;
+	res->border_bl			= res_border_bl;
+	res->border_br			= res_border_br;
+
+	res->parent 			= parent;
+	res->sdl_pos 			= res_pos;
+	res->visible			= visible;
 
 	// Logging and sending back result
 	flogf(myLogger, "Surface created at address 0x%p\r\n", res);
@@ -100,14 +119,14 @@ SHSurface* NewSurface(int width, int height, SHSurface* parent, int pos_x, int p
 void DestroySurface(SHSurface* surface, SHLogger* myLogger) {
 	SDL_FreeSurface(surface->bck);
 
-//	SDL_FreeSurface(surface->border_tl);
+	SDL_FreeSurface(surface->border_tl);
 	SDL_FreeSurface(surface->border_tc);
-//	SDL_FreeSurface(surface->border_tr);
+	SDL_FreeSurface(surface->border_tr);
 	SDL_FreeSurface(surface->border_ml);
 	SDL_FreeSurface(surface->border_mr);
-//	SDL_FreeSurface(surface->border_bl);
+	SDL_FreeSurface(surface->border_bl);
 	SDL_FreeSurface(surface->border_bc);
-//	SDL_FreeSurface(surface->border_br);
+	SDL_FreeSurface(surface->border_br);
 
 	free(surface->bck_color);
 	free(surface->border_color);
@@ -137,7 +156,7 @@ void RenderSurface(SHSurface* surface, SDL_Surface* parent_surface) {
 
 		// Border
 		if(surface->border_width > 0) {
-			// Border (problem here !!)
+			// Border (straight surfaces)
 			SDL_FillRect(surface->border_tc, NULL, SDL_MapRGB(surface->border_tc->format,
 					surface->border_color->r, surface->border_color->g, surface->border_color->b));
 			SDL_FillRect(surface->border_ml, NULL, SDL_MapRGB(surface->border_ml->format,
@@ -146,6 +165,18 @@ void RenderSurface(SHSurface* surface, SDL_Surface* parent_surface) {
 					surface->border_color->r, surface->border_color->g, surface->border_color->b));
 			SDL_FillRect(surface->border_bc, NULL, SDL_MapRGB(surface->border_bc->format,
 					surface->border_color->r, surface->border_color->g, surface->border_color->b));
+
+			// Border corners
+			if(surface->rounded_corners == 0) {
+				SDL_FillRect(surface->border_tl, NULL, SDL_MapRGB(surface->border_tl->format,
+					surface->border_color->r, surface->border_color->g, surface->border_color->b));
+				SDL_FillRect(surface->border_tr, NULL, SDL_MapRGB(surface->border_tr->format,
+					surface->border_color->r, surface->border_color->g, surface->border_color->b));
+				SDL_FillRect(surface->border_bl, NULL, SDL_MapRGB(surface->border_bl->format,
+					surface->border_color->r, surface->border_color->g, surface->border_color->b));
+				SDL_FillRect(surface->border_br, NULL, SDL_MapRGB(surface->border_br->format,
+					surface->border_color->r, surface->border_color->g, surface->border_color->b));
+			} // else ? will color already be integrated in surface ?
 
 			// Blitting border
 			pos.y -= surface->border_width;
@@ -156,6 +187,16 @@ void RenderSurface(SHSurface* surface, SDL_Surface* parent_surface) {
 			SDL_BlitSurface(surface->border_mr, NULL, parent_surface, &pos);
 			pos.x -= surface->bck->w; pos.y += surface->bck->h;
 			SDL_BlitSurface(surface->border_bc, NULL, parent_surface, &pos);
+
+			// Blitting corners
+			pos.x -= surface->border_width;
+			SDL_BlitSurface(surface->border_bl, NULL, parent_surface, &pos);
+			pos.x += surface->border_width + surface->bck->w;
+			SDL_BlitSurface(surface->border_br, NULL, parent_surface, &pos);
+			pos.y -= surface->bck->h + surface->border_width;
+			SDL_BlitSurface(surface->border_tr, NULL, parent_surface, &pos);
+			pos.x -= surface->border_width + surface->bck->w;
+			SDL_BlitSurface(surface->border_tl, NULL, parent_surface, &pos);
 		}
 	}
 }
@@ -169,4 +210,123 @@ void RenderSurface(SHSurface* surface, SDL_Surface* parent_surface) {
  */
 void SetVisible(SHSurface* surface, int visible) {
 	surface->visible = visible;
+}
+
+/**
+ * \fn		GetPixel
+ * \brief	Get pixel information (especially color, used for modification)
+ *
+ * \param	surface	pointer to surface where the pixel lies
+ * \param	x		x (pixel position)
+ * \param	y		y (pixel position)
+ */
+Uint32 GetPixel(SDL_Surface *surface, int x, int y) {
+	// Number of octets used to store a pixel
+    int nbOctets = surface->format->BytesPerPixel;
+
+    // Pointer to pixel to get
+    Uint8 *p = (Uint8 *)surface->pixels + y*surface->pitch + x*nbOctets;
+
+    switch(nbOctets) {
+    	case 1:
+            return *p;
+        case 2:
+            return *(Uint16 *)p;
+        case 3:
+            /*Suivant l'architecture de la machine*/
+            if(SDL_BYTEORDER == SDL_BIG_ENDIAN)
+                return p[0] << 16 | p[1] << 8 | p[2];
+            else
+                return p[0] | p[1] << 8 | p[2] << 16;
+        case 4:
+            return *(Uint32 *)p;
+        default:
+            return 0;
+    }
+}
+
+/**
+ * \fn		GetPixel
+ * \brief	Set pixel information (especially color)
+ *
+ * \param	surface	pointer to surface where the pixel lies
+ * \param	x		x (pixel position)
+ * \param	y		y (pixel position)
+ * \param	pixel	intended pixel color (SDL_MapRGB)
+ */
+void SetPixel(SDL_Surface *surface, int x, int y, Uint32 pixel) {
+	// Number of octets used to store a pixel
+    int nbOctets = surface->format->BytesPerPixel;
+
+    // Pointer to pixel to set
+    Uint8 *p = (Uint8 *)surface->pixels + y*surface->pitch + x*nbOctets;
+
+    switch(nbOctets) {
+        case 1:
+            *p = pixel;
+            break;
+        case 2:
+            *(Uint16 *)p = pixel;
+            break;
+        case 3:
+            if(SDL_BYTEORDER == SDL_BIG_ENDIAN)
+            {
+                p[0] = (pixel >> 16) & 0xff;
+                p[1] = (pixel >> 8) & 0xff;
+                p[2] = pixel & 0xff;
+            }
+            else
+            {
+                p[0] = pixel & 0xff;
+                p[1] = (pixel >> 8) & 0xff;
+                p[2] = (pixel >> 16) & 0xff;
+            }
+            break;
+        case 4:
+            *(Uint32 *)p = pixel;
+            break;
+    }
+}
+
+/**
+ * \fn		DrawRoundedCorner
+ * \brief	Creates a rounded corner for the border !
+ *
+ * \param	width		border width that is corner radius !
+ * \param	center_x	x position of targetted circle center
+ * \param	center_y	y position of targetted circle center
+ * \param	color		border color
+ */
+SDL_Surface* DrawRounderCorner(int width, int center_x, int center_y, SH_STORED_COLOR color) {
+	SHColor* cornerColor = GetColorData(color);
+	SDL_Surface* res = SDL_CreateRGBSurface(SDL_HWSURFACE, width, width, 32, RMASK, GMASK, BMASK, AMASK);
+	Uint32 pixel;
+	Uint8 r, g, b, a;
+	int i, j;
+
+	SDL_LockSurface(res);
+
+	for(j = 0; j < width; j++) {
+		for(i = 0; i < width; i++) {
+			pixel = GetPixel(res, i, j);
+			SDL_GetRGBA(pixel, res->format, &r, &g, &b, &a);
+
+			// Modify pixel color here ! To get transparency, set a to 0 (255 otherwise)
+			if((i-center_x)*(i-center_x)+(j-center_y)*(j-center_y) <= width*width) {
+				r = cornerColor->r; g = cornerColor->g; b = cornerColor->b;
+				a = 255;
+			} else {
+				a = 0;
+			}
+
+			// Change pixel value
+			pixel = SDL_MapRGBA(res->format, r, g, b, a);
+			SetPixel(res,i,j,pixel);
+		}
+	}
+
+	SDL_UnlockSurface(res);
+
+	DestroyColor(cornerColor);
+	return res;
 }

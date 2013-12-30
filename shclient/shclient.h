@@ -15,17 +15,19 @@
 /********************************** _color **********************************/
 // http://www.tayloredmktg.com/rgb/
 typedef enum _stored_colors {
-	SH_BLACK, SH_WHITE, SH_DARK_ORANGE, SH_NONE
+	SH_BLACK, SH_WHITE, SH_DARK_ORANGE, SH_GREEN_YELLOW, SH_YELLOW_GREEN, SH_BURLYWOOD, SH_IVORY, SH_NONE
 } SH_STORED_COLOR;
 
 typedef struct _color SHColor;
 
 struct _color {
-	int	r; int g; int b;
+	Uint8 r;
+	Uint8 g;
+	Uint8 b;
 };
 
 // Prototypes
-SHColor* CreateColor(int, int, int);
+SHColor* CreateColor(Uint8, Uint8, Uint8);
 void DestroyColor(SHColor*);
 SHColor* GetColorData(SH_STORED_COLOR);
 /***************************************************************************/
@@ -38,6 +40,7 @@ struct _surface {
 	SHColor*		bck_color;
 
 	int				border_width;
+	int				rounded_corners;
 	SHColor*		border_color;
 	SDL_Surface*	border_tl;
 	SDL_Surface*	border_tc;
@@ -54,10 +57,13 @@ struct _surface {
 };
 
 // Prototypes
-SHSurface* NewSurface(int, int, SHSurface*, int, int, int, SH_STORED_COLOR, int, SH_STORED_COLOR, SHLogger*);
+SHSurface* NewSurface(int, int, SHSurface*, int, int, int, SH_STORED_COLOR, int, int, SH_STORED_COLOR, SHLogger*);
 void DestroySurface(SHSurface*, SHLogger*);
 void RenderSurface(SHSurface*, SDL_Surface*);
 void SetVisible(SHSurface*, int);
+Uint32 GetPixel(SDL_Surface*, int, int);
+void SetPixel(SDL_Surface*, int, int, Uint32);
+SDL_Surface* DrawRounderCorner(int, int, int, SH_STORED_COLOR);
 /***************************************************************************/
 
 // SHButton

@@ -1,14 +1,19 @@
-[10:20:03] SDL initialized
-[10:20:03] Video mode set
-[10:20:03] Surface created at address 0x021A1C88
-[10:20:03] Surface created at address 0x021A1D40
-[10:20:03] Surface created at address 0x021FA4E0
-[10:20:03] Surface created at address 0x0083EF60
-[10:20:03] Surface created at address 0x0083F230
-[10:20:03] Surface created at address 0x0083F500
-[10:20:12] Surface at address 0x021A1C88 destroyed
-[10:20:12] Surface at address 0x021A1D40 destroyed
-[10:20:12] Surface at address 0x021FA4E0 destroyed
-[10:20:12] Surface at address 0x0083EF60 destroyed
-[10:20:12] Surface at address 0x0083F230 destroyed
-[10:20:12] Client closed
+[17:37:41] SDL initialized
+[17:37:42] Video mode set
+[17:37:42] Surface created at address 0x005D1C88
+[17:37:42] Surface created at address 0x005D1D40
+[17:37:42] Surface created at address 0x0062A4E0
+[17:37:42] Surface created at address 0x00A7EF60
+[17:37:42] Surface created at address 0x00A7F230
+[17:37:42] Surface created at address 0x00A7F500
+[17:37:42] Dice six has been rolled: 1
+[17:37:42] Dice four has been rolled: 2
+[17:37:42] Dice six has been rolled again: 4
+[17:37:42] State changed to 1
+[17:37:44] State changed to 2
+[17:37:45] Surface at address 0x005D1C88 destroyed
+[17:37:45] Surface at address 0x005D1D40 destroyed
+[17:37:45] Surface at address 0x0062A4E0 destroyed
+[17:37:45] Surface at address 0x00A7EF60 destroyed
+[17:37:45] Surface at address 0x00A7F230 destroyed
+[17:37:45] Client closed

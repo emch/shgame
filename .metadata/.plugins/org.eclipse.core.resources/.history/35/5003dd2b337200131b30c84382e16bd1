@@ -1,0 +1,58 @@
+/*
+ * SHDice.c
+ *
+ *  Created on: 31 déc. 2013
+ *      Author: Emmanuel
+ */
+
+#include <stdio.h>
+#include <stdlib.h>
+#include <time.h>
+
+#include "shdata.h"
+
+/**
+ * \fn		InitDice
+ * \brief	Initialize a dice with a given type
+ *
+ * \param	type	dice type (4 or 6 faces)
+ *
+ * \returns	pointer to SHDice
+ */
+SHDice* InitDice(SH_DICE_TYPE type) {
+	SHDice* res = malloc(sizeof(SHDice));
+
+	res->type 	= type;
+	res->value	= 1;
+
+	return res;
+}
+
+/**
+ * \fn		DestroyDice
+ * \brief	Destroy a given dice from memory
+ *
+ * \param	dice	pointer to dice to destroy
+ */
+void DestroyDice(SHDice* dice) {
+	free(dice);
+}
+
+/**
+ * \fn		RollDice
+ * \brief	Let's roll the dice !
+ *
+ * \param	dice	pointer to dice to roll
+ *
+ * \returns	result
+ */
+int RollDice(SHDice* dice) {
+	switch(dice->type) {
+	case SH_FOUR_FACES:
+		break;
+	case SH_SIX_FACES:
+		break;
+	default:
+		break;
+	}
+}

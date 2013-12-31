@@ -27,6 +27,8 @@ SDL_Surface *screen = NULL;
 SHSurface *players = NULL, *board = NULL, *gamelog = NULL, *items = NULL, *dice = NULL;
 SHSurface *msgbox = NULL; //*curr_card = NULL;
 
+SHDice *diceSix = NULL, *diceFour = NULL;
+
 int main(int argc, char *argv[]) {
 	// Initialization
 	int surfRenderCmpt = 0;
@@ -75,6 +77,17 @@ int main(int argc, char *argv[]) {
     		SH_BURLYWOOD, BORDER_WIDTH, 1, SH_BURLYWOOD, myLogger);
     // Stacking all surfaces to be rendered
     SHSurface *surfaces [6] = {board, players, gamelog, items, dice, msgbox};
+
+    // Initializing game elements
+    diceSix = InitDice(SH_SIX_FACES); diceFour = InitDice(SH_FOUR_FACES);
+
+    // Testing dice
+    int test = RollDice(diceSix);
+    flogf(myLogger, "Dice six has been rolled: %d\r\n", test);
+    test = RollDice(diceFour);
+    flogf(myLogger, "Dice four has been rolled: %d\r\n", test);
+    test = RollDice(diceSix);
+    flogf(myLogger, "Dice six has been rolled again: %d\r\n", test);
     // End of Initialization !!
 
     // Main loop

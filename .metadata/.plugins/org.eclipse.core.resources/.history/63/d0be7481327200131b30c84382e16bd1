@@ -1,0 +1,16 @@
+/*
+ * SHDice.c
+ *
+ *  Created on: 31 déc. 2013
+ *      Author: Emmanuel
+ */
+
+#include <stdio.h>
+#include <stdlib.h>
+#include <time.h>
+
+#include "shdata.h"
+
+SHDice* InitDice(SH_DICE_TYPE type) {
+	SHDice* res = malloc(sizeof(SHDice));
+}

@@ -121,6 +121,27 @@ typedef struct SHCharacter {
 //void DestroyCharacter(SHCharacter*);
 /*****************************************************************************/
 
+/********************************** SHDice ***********************************/
+typedef enum SH_DICE_TYPE {
+	SH_FOUR_FACES, SH_SIX_FACES
+} SH_DICE_TYPE;
+
+/**
+ * \struct 	SHDice
+ * \brief	Structure for storing dice information.
+ */
+typedef struct SHDice {
+	SH_DICE_TYPE	type;
+	int				value;
+} SHDice;
+
+// Prototypes
+SHDice* InitDice(SH_DICE_TYPE);
+void DestroyDice(SHDice*);
+int RollDice(SHDice*);
+int RandomInt(int);
+/*****************************************************************************/
+
 /********************************** SHPlayer *********************************/
 /**
  * \struct	SHPlayer

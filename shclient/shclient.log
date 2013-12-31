@@ -1,16 +1,16 @@
-[10:22:43] SDL initialized
-[10:22:43] Video mode set
-[10:22:43] Surface created at address 0x02091E78
-[10:22:43] Surface created at address 0x02091F30
-[10:22:43] Surface created at address 0x020EA6D0
-[10:22:43] Surface created at address 0x004AEE20
-[10:22:43] Surface created at address 0x004AF0F0
-[10:22:43] Surface created at address 0x004AF3C0
-[10:22:43] State changed to 1
-[10:22:45] State changed to 2
-[10:22:47] Surface at address 0x02091E78 destroyed
-[10:22:47] Surface at address 0x02091F30 destroyed
-[10:22:47] Surface at address 0x020EA6D0 destroyed
-[10:22:47] Surface at address 0x004AEE20 destroyed
-[10:22:47] Surface at address 0x004AF0F0 destroyed
-[10:22:47] Client closed
+[17:04:06] SDL initialized
+[17:04:06] Video mode set
+[17:04:06] Surface created at address 0x007C1E78
+[17:04:06] Surface created at address 0x007C1F30
+[17:04:06] Surface created at address 0x0081A6D0
+[17:04:06] Surface created at address 0x003BEE20
+[17:04:06] Surface created at address 0x003BF0F0
+[17:04:06] Surface created at address 0x003BF3C0
+[17:04:06] State changed to 1
+[17:04:08] State changed to 2
+[17:04:13] Surface at address 0x007C1E78 destroyed
+[17:04:13] Surface at address 0x007C1F30 destroyed
+[17:04:13] Surface at address 0x0081A6D0 destroyed
+[17:04:13] Surface at address 0x003BEE20 destroyed
+[17:04:13] Surface at address 0x003BF0F0 destroyed
+[17:04:13] Client closed

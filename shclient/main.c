@@ -14,28 +14,27 @@
 #include "shdata.h"
 #include "params.h"
 
-void ConnectLoop();
-void GameLoop(SDL_Surface*, SHSurface**); // nombre variable de paramètres ?
+void GameLoop(SDL_Surface*, SHSurface**, SHLogger*); // nombre variable de paramètres ?
 
 // 2 threads : updates serveur et update graphiques
+
+// Global variables
+SH_STATE clientStatus = SH_START;
+
+SHLogger* gameLogger = NULL; char gameLoggerFilename [40];
+
+SDL_Surface *screen = NULL;
+SHSurface *players = NULL, *board = NULL, *gamelog = NULL, *items = NULL, *dice = NULL;
+SHSurface *msgbox = NULL; //*curr_card = NULL;
 
 int main(int argc, char *argv[]) {
 	// Initialization
 	int surfRenderCmpt = 0;
 	SHLogger* myLogger = CreateLogger("shclient.log"); 	// logging device
 
-	char gameLoggerFilename [40];
 	sprintf(gameLoggerFilename, "gamelog_%02d-%02d-%04d_%02d-%02d-%02d.txt",
 			myLogger->now.tm_mon+1, myLogger->now.tm_mday, myLogger->now.tm_year+1900,
 			myLogger->now.tm_hour, myLogger->now.tm_min, myLogger->now.tm_sec);
-
-	// Create gameLogger only when the game has started !
-	// SHLogger* gameLogger = CreateLogger(gameLoggerFilename);	// game logger
-
-	SDL_Surface *screen = NULL;
-	SHSurface *players = NULL, *board = NULL, *gamelog = NULL, *items = NULL, *dice = NULL;
-	//*msgbox = NULL, *curr_card = NULL;
-	// load a background image for msgbox and curr_card (transparency) ?
 
 	// Initializing SDL
     if(SDL_Init(SDL_INIT_VIDEO | SDL_INIT_TIMER) == -1) {
@@ -56,35 +55,38 @@ int main(int argc, char *argv[]) {
 
     // Creating surfaces (to be rendered through screen surface)
     board 	= NewSurface(BOARD_SURF_WIDTH, BOARD_SURF_HEIGHT, NULL,
-    		SCREEN_WIDTH - BOARD_SURF_WIDTH - PADDING, PADDING, 1,
+    		SCREEN_WIDTH - BOARD_SURF_WIDTH - PADDING, PADDING, 0,
     		SH_WHITE, -1, 0, SH_NONE, myLogger); // no border here (image will be loaded)
     players = NewSurface(PLYRLIST_SURF_WIDTH, PLYRLIST_SURF_HEIGHT, NULL,
-    		PADDING, PADDING, 1,
+    		PADDING, PADDING, 0,
     		SH_BURLYWOOD, BORDER_WIDTH, 1, SH_BURLYWOOD, myLogger);
     gamelog = NewSurface(GAMELOG_SURF_WIDTH, GAMELOG_SURF_HEIGHT, NULL,
-    		SCREEN_WIDTH - GAMELOG_SURF_WIDTH - PADDING, SCREEN_HEIGHT - GAMELOG_SURF_HEIGHT - PADDING, 1,
+    		SCREEN_WIDTH - GAMELOG_SURF_WIDTH - PADDING, SCREEN_HEIGHT - GAMELOG_SURF_HEIGHT - PADDING, 0,
     		SH_IVORY, BORDER_WIDTH, 1, SH_IVORY, myLogger);
     items	= NewSurface(ITEMS_SURF_WIDTH, ITEMS_SURF_HEIGHT, NULL,
-    		PADDING, SCREEN_HEIGHT - GAMELOG_SURF_HEIGHT - PADDING, 1,
+    		PADDING, SCREEN_HEIGHT - GAMELOG_SURF_HEIGHT - PADDING, 0,
     		SH_BURLYWOOD, BORDER_WIDTH, 1, SH_BURLYWOOD, myLogger);
     dice	= NewSurface(DICE_SURF_WIDTH, DICE_SURF_HEIGHT, NULL,
-    		2*PADDING + ITEMS_SURF_WIDTH, SCREEN_HEIGHT - GAMELOG_SURF_HEIGHT - PADDING, 1,
+    		2*PADDING + ITEMS_SURF_WIDTH, SCREEN_HEIGHT - GAMELOG_SURF_HEIGHT - PADDING, 0,
     		SH_YELLOW_GREEN, BORDER_WIDTH, 1, SH_YELLOW_GREEN, myLogger);
+
+    msgbox	= NewSurface(MSGBOX_SURF_WIDTH, MSGBOX_SURF_HEIGHT, NULL,
+    		(SCREEN_WIDTH-MSGBOX_SURF_WIDTH)/2, (SCREEN_HEIGHT-MSGBOX_SURF_HEIGHT)/2, 1,
+    		SH_BURLYWOOD, BORDER_WIDTH, 1, SH_BURLYWOOD, myLogger);
     // Stacking all surfaces to be rendered
-    SHSurface *surfaces [5] = {board, players, gamelog, items, dice};
+    SHSurface *surfaces [6] = {board, players, gamelog, items, dice, msgbox};
     // End of Initialization !!
 
     // Main loop
-    GameLoop(screen, surfaces);
+    GameLoop(screen, surfaces, myLogger);
 
     // Garbage collector
-    // idem
     for(surfRenderCmpt = 0; surfRenderCmpt < 5; surfRenderCmpt++) {
     	DestroySurface(surfaces[surfRenderCmpt], myLogger);
 	}
     SDL_Quit();
 
-    // Last but not least, destroy logger !
+    // Last but not least, destroy loggers !
     flogf(myLogger, "Client closed\r\n");
     //DestroyLogger(gameLogger);
     DestroyLogger(myLogger);
@@ -94,14 +96,11 @@ int main(int argc, char *argv[]) {
 }
 
 // SDL update loop (main thread)
-void GameLoop(SDL_Surface* screen, SHSurface** surfaces)
-{
+void GameLoop(SDL_Surface* screen, SHSurface** surfaces, SHLogger* myLogger) {
     int done = 0, surfRenderCmpt = 0;
     SDL_Event event;
 
-    // detection de clic et de la SDL_surface cliquée (bouton, ...)
-    while (!done)
-    {
+    while (!done) {
         SDL_WaitEvent(&event);
         switch(event.type)
         {
@@ -110,28 +109,49 @@ void GameLoop(SDL_Surface* screen, SHSurface** surfaces)
                 break;
         }
 
-        // Screen update
-//        SDL_FillRect(screen, NULL, SDL_MapRGB(screen->format, 200, 200, 200));
-        SDL_FillRect(screen, NULL, SDL_MapRGB(screen->format, 255, 255, 255));
+        // State Machine
+        switch(clientStatus) {
+        case SH_START: // Msgbox is visible to indicate current status. Other surfaces are invisible.
+        	// Go to next state
+        	clientStatus = SH_CONNECTING; flogf(myLogger, "State changed to %d\r\n", SH_CONNECTING);
+        	break;
+        case SH_CONNECTING:
 
-        // Board update
-        for(surfRenderCmpt = 0; surfRenderCmpt < 5; surfRenderCmpt++) {
-        	RenderSurface(surfaces[surfRenderCmpt], screen);
+        	// Simulating connection delay (temporary)
+        	SDL_Delay(2000);
+
+        	// Once connected, change surfaces visibility
+        	msgbox->visible = 0;
+        	board->visible = 1; players->visible = 1; gamelog->visible = 1; items->visible = 1;
+        	dice->visible = 1;
+
+        	// Change status
+        	clientStatus = SH_WAITING; flogf(myLogger, "State changed to %d\r\n", SH_WAITING);
+        	break;
+        case SH_WAITING:
+        	break;
+        case SH_RUNNING:
+        	// Create gameLogger only when the game has started
+        	gameLogger = CreateLogger(gameLoggerFilename);
+
+        	//
+			break;
+        case SH_ERROR:
+        	break;
         }
 
-        // Flipping buffer
-        SDL_Flip(screen);
+        // Screen update
+		SDL_FillRect(screen, NULL, SDL_MapRGB(screen->format, 255, 255, 255));
 
-        // Maximum FPS constraint
-        SDL_Delay(1000/MAX_FPS);
+		// Board update
+		for(surfRenderCmpt = 0; surfRenderCmpt < 6; surfRenderCmpt++) {
+			RenderSurface(surfaces[surfRenderCmpt], screen);
+		}
+
+		// Flipping buffer
+		SDL_Flip(screen);
+
+		// Maximum FPS constraint
+		SDL_Delay(1000/MAX_FPS);
     }
-}
-
-// plan a ConnectLoop, ErrorLoop, ...
-
-// In the connect loop, only show a centered surface where a message saying it is connecting is displayed
-// if an error occurs, go to error loop (retrying every minute and possibility to exit)
-// otherwise, launch gameLoop !
-void ConnectLoop() {
-
 }

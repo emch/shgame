@@ -1,0 +1,100 @@
+/*
+ * shclient.h
+ *
+ *  Created on: 28 déc. 2013
+ *      Author: Emmanuel
+ */
+
+#ifndef SHCLIENT_H_
+#define SHCLIENT_H_
+
+#include <SDL/SDL.h>
+
+#include "shdata.h"
+
+/********************************** States *********************************/
+typedef enum _state {
+	SH_START, SH_CONNECTING, SH_WAITING, SH_RUNNING, SH_ERROR
+} SH_STATE;
+/***************************************************************************/
+
+/********************************** _color **********************************/
+// http://www.tayloredmktg.com/rgb/
+typedef enum _stored_colors {
+	SH_BLACK, SH_WHITE, SH_DARK_ORANGE, SH_GREEN_YELLOW, SH_YELLOW_GREEN, SH_BURLYWOOD, SH_IVORY, SH_NONE
+} SH_STORED_COLOR;
+
+typedef struct _color SHColor;
+
+struct _color {
+	Uint8 r;
+	Uint8 g;
+	Uint8 b;
+};
+
+// Prototypes
+SHColor* CreateColor(Uint8, Uint8, Uint8);
+void DestroyColor(SHColor*);
+SHColor* GetColorData(SH_STORED_COLOR);
+/***************************************************************************/
+
+/********************************* _surface ********************************/
+typedef struct _surface SHSurface;
+
+struct _surface {
+	SDL_Surface*	bck;		// background
+	SHColor*		bck_color;
+
+	int				border_width;
+	int				rounded_corners;
+	SHColor*		border_color;
+	SDL_Surface*	border_tl;
+	SDL_Surface*	border_tc;
+	SDL_Surface*	border_tr;
+	SDL_Surface*	border_ml;
+	SDL_Surface*	border_mr;
+	SDL_Surface*	border_bl;
+	SDL_Surface*	border_bc;
+	SDL_Surface*	border_br;
+
+	SHSurface*		parent;		// if not null, sld_pos is defined relatively to the parent
+	SDL_Rect*		sdl_pos;
+	int				visible;
+};
+
+// Prototypes
+SHSurface* NewSurface(int, int, SHSurface*, int, int, int, SH_STORED_COLOR, int, int, SH_STORED_COLOR, SHLogger*);
+void DestroySurface(SHSurface*, SHLogger*);
+void RenderSurface(SHSurface*, SDL_Surface*);
+void SetVisible(SHSurface*, int);
+Uint32 GetPixel(SDL_Surface*, int, int);
+void SetPixel(SDL_Surface*, int, int, Uint32);
+SDL_Surface* DrawRounderCorner(int, int, int, SH_STORED_COLOR);
+/***************************************************************************/
+
+// SHButton
+// Seuls les SHButton sont cliquables
+// Comme les SHSurface, les mettre dans un array et parcourir l'array lorsqu'un event mouseclicked est détecté
+// Voir les pointeurs sur fonction
+// Idem, un des fields est une SDL_Surface avec bordure + couleur de fond (utile pour le bouton de choix de couleur de carte)
+// + possibilité de mettre un texte
+// afficher les joueurs (colonne de gauche) dans des boutons !
+
+// SHTextField
+// Pour écrire du texte sur une SHSurface
+// Voir SDL_ttf et chercher une police sympathique
+
+/******************************** _textfield *******************************/
+typedef struct _textfield SHTextField;
+
+struct _textfield {
+	SDL_Surface*	container;
+	char**			content;
+	// other infos like font and color, see SDL_ttf
+
+	SHSurface* 		parent;
+	SDL_Rect*		pos;
+};
+/***************************************************************************/
+
+#endif /* SHCLIENT_H_ */

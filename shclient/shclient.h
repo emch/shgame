@@ -12,6 +12,16 @@
 
 #include "shdata.h"
 
+/********************************** States *********************************/
+typedef enum _state {
+	SH_START,			// client has just started, do some initializations here (config loading, ...)
+	SH_CONNECTING,		// waiting for an answer from the server
+	SH_WAITING,			// waiting for the game to be launched (by first player)
+	SH_RUNNING,			// game is running
+	SH_ERROR			// an error occurred
+} SH_STATE;
+/***************************************************************************/
+
 /********************************** _color **********************************/
 // http://www.tayloredmktg.com/rgb/
 typedef enum _stored_colors {

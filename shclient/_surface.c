@@ -5,8 +5,9 @@
  *      Author: Emmanuel
  */
 
+#include <SDL/SDL_image.h>
 #include <stdlib.h>
-//#include <math.h>
+#include <string.h>
 
 #include "params.h"
 #include "shclient.h"
@@ -30,7 +31,7 @@
  *
  * \returns	pointer to created SHSurface
  */
-SHSurface* NewSurface(int width, int height, SHSurface* parent, int pos_x, int pos_y, int visible,
+SHSurface* NewSurface(int width, int height, SDL_Surface* parent, int pos_x, int pos_y, int visible,
 		SH_STORED_COLOR bck_color,
 		int border_width, int rounded_corners,  SH_STORED_COLOR border_color,
 		SHLogger* myLogger) {
@@ -110,6 +111,57 @@ SHSurface* NewSurface(int width, int height, SHSurface* parent, int pos_x, int p
 }
 
 /**
+ * \fn		NewDiceSurface
+ * \brief	Creating a dice surface
+ *
+ * \param	dice		dice to render
+ * \param	parent		SDL_Surface where the dice will be positionned
+ * \param	x
+ * \param	y			relative position to the parent surface
+ * \param	myLogger	pointer to logger
+ *
+ * \returns	pointer to an SHSurface containing required data !
+ */
+SHSurface* NewDiceSurface(SHDice* dice, SDL_Surface* parent, int pos_x, int pos_y, SHLogger* myLogger) {
+	SHSurface* res = NULL;
+
+	// TODO change initial size
+	res = NewSurface(100, 100, parent,
+    		pos_x, pos_y, 0,
+    		SH_BLACK, 0, 0, SH_NONE, myLogger);
+
+	// Reallocating background !
+	UpdateDiceSurface(dice, res, myLogger);
+
+	return res;
+}
+
+// TODO review after developping _loader
+void UpdateDiceSurface(SHDice* dice, SHSurface* surface, SHLogger* myLogger) {
+	SDL_Surface *sdlSurf = NULL;
+	char diceImgPath[DATA_MAX_PATH_LENGTH];
+	char diceImgName[10];
+	int diceMaxValue = (dice->type == SH_SIX_FACES) ? 6 : 4;
+
+	// Selecting the right image
+	sprintf(diceImgName, "%d-%d.png", diceMaxValue, dice->value);
+
+	// Generating data path
+	strcpy(diceImgPath, DATA_FOLDER);
+	strcat(diceImgPath, DATA_ART_FOLDER);
+	strcat(diceImgPath, DATA_DICE_FOLDER);
+	strcat(diceImgPath, diceImgName);
+
+	// TODO Better idea : load everything in an array and move pointer ? --> yes ! (cf. _loader.c)
+	if((sdlSurf = IMG_Load(diceImgPath)) == NULL) {
+		flogf(myLogger, "%s\n", SDL_GetError());
+	}
+
+	SDL_FreeSurface(surface->bck);
+	surface->bck = sdlSurf;
+}
+
+/**
  * \fn		DestroySurface
  * \brief	Removes all fields of an SHSurface from memory
  *
@@ -139,20 +191,18 @@ void DestroySurface(SHSurface* surface, SHLogger* myLogger) {
  * \brief	Renders a surface when called in rendering loop
  *
  * \param	surface	pointer to surface to render
- * \param	parent_surface	TEMPORAIRE !!
  */
-void RenderSurface(SHSurface* surface, SDL_Surface* parent_surface) {
+void RenderSurface(SHSurface* surface, SHLogger* myLogger) {
 	// Temporary SDL_Rect for positionning border
 	SDL_Rect pos;
 	pos.x = surface->sdl_pos->x; pos.y = surface->sdl_pos->y;
 
-	// Background
-	SDL_FillRect(surface->bck, NULL, SDL_MapRGB(surface->bck->format,
-			surface->bck_color->r, surface->bck_color->g, surface->bck_color->b));
+	if((surface->parent != NULL) && (surface->visible != 0)) {
+		// Background
+		SDL_FillRect(surface->bck, NULL, SDL_MapRGB(surface->bck->format,
+				surface->bck_color->r, surface->bck_color->g, surface->bck_color->b));
 
-	// if((surface->parent != NULL) && (surface->visible != 0)) {
-	if(surface->visible != 0) { // temporaire
-		SDL_BlitSurface(surface->bck, NULL, parent_surface, surface->sdl_pos);
+		SDL_BlitSurface(surface->bck, NULL, surface->parent, surface->sdl_pos);
 
 		// Border
 		if(surface->border_width > 0) {
@@ -180,23 +230,23 @@ void RenderSurface(SHSurface* surface, SDL_Surface* parent_surface) {
 
 			// Blitting border
 			pos.y -= surface->border_width;
-			SDL_BlitSurface(surface->border_tc, NULL, parent_surface, &pos);
+			SDL_BlitSurface(surface->border_tc, NULL, surface->parent, &pos);
 			pos.x -= surface->border_width; pos.y += surface->border_width;
-			SDL_BlitSurface(surface->border_ml, NULL, parent_surface, &pos);
+			SDL_BlitSurface(surface->border_ml, NULL, surface->parent, &pos);
 			pos.x += surface->border_width + surface->bck->w;
-			SDL_BlitSurface(surface->border_mr, NULL, parent_surface, &pos);
+			SDL_BlitSurface(surface->border_mr, NULL, surface->parent, &pos);
 			pos.x -= surface->bck->w; pos.y += surface->bck->h;
-			SDL_BlitSurface(surface->border_bc, NULL, parent_surface, &pos);
+			SDL_BlitSurface(surface->border_bc, NULL, surface->parent, &pos);
 
 			// Blitting corners
 			pos.x -= surface->border_width;
-			SDL_BlitSurface(surface->border_bl, NULL, parent_surface, &pos);
+			SDL_BlitSurface(surface->border_bl, NULL, surface->parent, &pos);
 			pos.x += surface->border_width + surface->bck->w;
-			SDL_BlitSurface(surface->border_br, NULL, parent_surface, &pos);
+			SDL_BlitSurface(surface->border_br, NULL, surface->parent, &pos);
 			pos.y -= surface->bck->h + surface->border_width;
-			SDL_BlitSurface(surface->border_tr, NULL, parent_surface, &pos);
+			SDL_BlitSurface(surface->border_tr, NULL, surface->parent, &pos);
 			pos.x -= surface->border_width + surface->bck->w;
-			SDL_BlitSurface(surface->border_tl, NULL, parent_surface, &pos);
+			SDL_BlitSurface(surface->border_tl, NULL, surface->parent, &pos);
 		}
 	}
 }

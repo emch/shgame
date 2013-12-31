@@ -8,7 +8,6 @@
 #include <stdlib.h>
 #include <stdio.h>
 #include <SDL/SDL.h>
-#include <SDL/SDL_image.h>
 
 #include "shclient.h"
 #include "shdata.h"
@@ -24,8 +23,8 @@ SH_STATE clientStatus = SH_START;
 SHLogger* gameLogger = NULL; char gameLoggerFilename [40];
 
 SDL_Surface *screen = NULL;
-SHSurface *players = NULL, *board = NULL, *gamelog = NULL, *items = NULL, *dice = NULL;
-SHSurface *msgbox = NULL; //*curr_card = NULL;
+SHSurface *players = NULL, *board = NULL, *gamelog = NULL, *items = NULL, *dice = NULL, *msgbox = NULL; //*curr_card = NULL;
+SHSurface *diceSixSurf = NULL, *diceFourSurf = NULL;
 
 SHDice *diceSix = NULL, *diceFour = NULL;
 
@@ -56,30 +55,33 @@ int main(int argc, char *argv[]) {
     flogf(myLogger,"Video mode set\r\n");
 
     // Creating surfaces (to be rendered through screen surface)
-    board 	= NewSurface(BOARD_SURF_WIDTH, BOARD_SURF_HEIGHT, NULL,
+    board 	= NewSurface(BOARD_SURF_WIDTH, BOARD_SURF_HEIGHT, screen,
     		SCREEN_WIDTH - BOARD_SURF_WIDTH - PADDING, PADDING, 0,
     		SH_WHITE, -1, 0, SH_NONE, myLogger); // no border here (image will be loaded)
-    players = NewSurface(PLYRLIST_SURF_WIDTH, PLYRLIST_SURF_HEIGHT, NULL,
+    players = NewSurface(PLYRLIST_SURF_WIDTH, PLYRLIST_SURF_HEIGHT, screen,
     		PADDING, PADDING, 0,
     		SH_BURLYWOOD, BORDER_WIDTH, 1, SH_BURLYWOOD, myLogger);
-    gamelog = NewSurface(GAMELOG_SURF_WIDTH, GAMELOG_SURF_HEIGHT, NULL,
+    gamelog = NewSurface(GAMELOG_SURF_WIDTH, GAMELOG_SURF_HEIGHT, screen,
     		SCREEN_WIDTH - GAMELOG_SURF_WIDTH - PADDING, SCREEN_HEIGHT - GAMELOG_SURF_HEIGHT - PADDING, 0,
     		SH_IVORY, BORDER_WIDTH, 1, SH_IVORY, myLogger);
-    items	= NewSurface(ITEMS_SURF_WIDTH, ITEMS_SURF_HEIGHT, NULL,
+    items	= NewSurface(ITEMS_SURF_WIDTH, ITEMS_SURF_HEIGHT, screen,
     		PADDING, SCREEN_HEIGHT - GAMELOG_SURF_HEIGHT - PADDING, 0,
     		SH_BURLYWOOD, BORDER_WIDTH, 1, SH_BURLYWOOD, myLogger);
-    dice	= NewSurface(DICE_SURF_WIDTH, DICE_SURF_HEIGHT, NULL,
+    dice	= NewSurface(DICE_SURF_WIDTH, DICE_SURF_HEIGHT, screen,
     		2*PADDING + ITEMS_SURF_WIDTH, SCREEN_HEIGHT - GAMELOG_SURF_HEIGHT - PADDING, 0,
     		SH_YELLOW_GREEN, BORDER_WIDTH, 1, SH_YELLOW_GREEN, myLogger);
 
-    msgbox	= NewSurface(MSGBOX_SURF_WIDTH, MSGBOX_SURF_HEIGHT, NULL,
+    msgbox	= NewSurface(MSGBOX_SURF_WIDTH, MSGBOX_SURF_HEIGHT, screen,
     		(SCREEN_WIDTH-MSGBOX_SURF_WIDTH)/2, (SCREEN_HEIGHT-MSGBOX_SURF_HEIGHT)/2, 1,
     		SH_BURLYWOOD, BORDER_WIDTH, 1, SH_BURLYWOOD, myLogger);
-    // Stacking all surfaces to be rendered
-    SHSurface *surfaces [6] = {board, players, gamelog, items, dice, msgbox};
 
-    // Initializing game elements
+    // Initializing game elements and their graphical counterparts
     diceSix = InitDice(SH_SIX_FACES); diceFour = InitDice(SH_FOUR_FACES);
+    diceSixSurf = NewDiceSurface(diceSix, screen, 0, 0, myLogger); // problem dice->bck
+    diceFourSurf = NewDiceSurface(diceFour, screen, 60, 0, myLogger); // idem
+
+    // Stacking all surfaces to be rendered
+    SHSurface *surfaces [8] = {board, players, gamelog, items, dice, msgbox, diceSixSurf, diceFourSurf};
 
     // Testing dice
     int test = RollDice(diceSix);
@@ -94,10 +96,11 @@ int main(int argc, char *argv[]) {
     GameLoop(screen, surfaces, myLogger);
 
     // Garbage collector
-    for(surfRenderCmpt = 0; surfRenderCmpt < 5; surfRenderCmpt++) {
+    for(surfRenderCmpt = 0; surfRenderCmpt < 8; surfRenderCmpt++) {
     	DestroySurface(surfaces[surfRenderCmpt], myLogger);
 	}
     SDL_Quit();
+    DestroyDice(diceSix); DestroyDice(diceFour);
 
     // Last but not least, destroy loggers !
     flogf(myLogger, "Client closed\r\n");
@@ -129,15 +132,13 @@ void GameLoop(SDL_Surface* screen, SHSurface** surfaces, SHLogger* myLogger) {
         	clientStatus = SH_CONNECTING; flogf(myLogger, "State changed to %d\r\n", SH_CONNECTING);
         	break;
         case SH_CONNECTING:
-
         	// Simulating connection delay (temporary)
         	SDL_Delay(2000);
 
         	// Once connected, change surfaces visibility
         	msgbox->visible = 0;
         	board->visible = 1; players->visible = 1; gamelog->visible = 1; items->visible = 1;
-        	dice->visible = 1;
-
+        	dice->visible = 1; diceSixSurf->visible = 1; diceFourSurf->visible = 1;
         	// Change status
         	clientStatus = SH_WAITING; flogf(myLogger, "State changed to %d\r\n", SH_WAITING);
         	break;
@@ -156,9 +157,19 @@ void GameLoop(SDL_Surface* screen, SHSurface** surfaces, SHLogger* myLogger) {
         // Screen update
 		SDL_FillRect(screen, NULL, SDL_MapRGB(screen->format, 255, 255, 255));
 
-		// Board update
-		for(surfRenderCmpt = 0; surfRenderCmpt < 6; surfRenderCmpt++) {
-			RenderSurface(surfaces[surfRenderCmpt], screen);
+		// Updating dice
+		UpdateDiceSurface(diceSix, diceSixSurf, myLogger);
+		UpdateDiceSurface(diceFour, diceFourSurf, myLogger);
+
+		// Updating gamelog
+
+		// Updating items
+
+		// Updating player's list
+
+		// Finally, updating surfaces
+		for(surfRenderCmpt = 0; surfRenderCmpt < 8; surfRenderCmpt++) {
+			RenderSurface(surfaces[surfRenderCmpt], myLogger);
 		}
 
 		// Flipping buffer

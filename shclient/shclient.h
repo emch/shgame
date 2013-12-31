@@ -61,15 +61,19 @@ struct _surface {
 	SDL_Surface*	border_bc;
 	SDL_Surface*	border_br;
 
-	SHSurface*		parent;		// if not null, sld_pos is defined relatively to the parent
+	SDL_Surface*	parent;		// if not null, sld_pos is defined relatively to the parent
 	SDL_Rect*		sdl_pos;
 	int				visible;
 };
 
 // Prototypes
-SHSurface* NewSurface(int, int, SHSurface*, int, int, int, SH_STORED_COLOR, int, int, SH_STORED_COLOR, SHLogger*);
+SHSurface* NewSurface(int, int, SDL_Surface*, int, int, int, SH_STORED_COLOR, int, int, SH_STORED_COLOR, SHLogger*);
+
+SHSurface* NewDiceSurface(SHDice*, SDL_Surface*, int, int, SHLogger*);
+void UpdateDiceSurface(SHDice*, SHSurface*, SHLogger*);
+
 void DestroySurface(SHSurface*, SHLogger*);
-void RenderSurface(SHSurface*, SDL_Surface*);
+void RenderSurface(SHSurface*, SHLogger*);
 void SetVisible(SHSurface*, int);
 Uint32 GetPixel(SDL_Surface*, int, int);
 void SetPixel(SDL_Surface*, int, int, Uint32);

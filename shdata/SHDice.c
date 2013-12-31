@@ -24,7 +24,7 @@ SHDice* InitDice(SH_DICE_TYPE type) {
 	srand((unsigned)time(NULL));	// randomize
 
 	res->type 	= type;
-	res->value	= 0;		// impossible, dice must be rolled at least once !
+	res->value	= (type == SH_SIX_FACES) ? 6 : 4;	// set to maximum value
 
 	return res;
 }

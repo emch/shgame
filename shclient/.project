@@ -3,6 +3,7 @@
 	<name>shclient</name>
 	<comment></comment>
 	<projects>
+		<project>shdata</project>
 	</projects>
 	<buildSpec>
 		<buildCommand>

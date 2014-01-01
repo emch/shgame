@@ -1,0 +1,11 @@
+/*
+ * _loader.c
+ *
+ *  Created on: 1 janv. 2014
+ *      Author: Emmanuel
+ */
+
+// Load ALL data/art image into an array !
+void ImageLoader() {
+
+}

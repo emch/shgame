@@ -1,0 +1,16 @@
+/*
+ * _loader.c
+ *
+ *  Created on: 1 janv. 2014
+ *      Author: Emmanuel
+ */
+
+// Load ALL data/art image into an array !
+void LoadImages() {
+
+}
+
+// idem but with surfaces (so that the main is cleaner)
+void LoadSurfaces() {
+
+}

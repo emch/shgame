@@ -1,7 +1,1 @@
-12:54:27 **** Rebuild of configuration Debug for project shserver ****
-Info: Internal Builder is used for build
-gcc "-IC:\\Users\\Emmanuel\\Documents\\Programmation\\ShadowHunters\\dev\\shdata" -O0 -g3 -Wall -c -fmessage-length=0 -o main.o "..\\main.c" 
-gcc "-LC:\\Users\\Emmanuel\\Documents\\GitHub\\shgame\\shdata\\Debug" -o SHServer.exe main.o -lshdata 
-
-12:54:28 Build Finished (took 1s.2ms)
-
+Info: Nothing to build for shserver

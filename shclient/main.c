@@ -13,9 +13,7 @@
 #include "shdata.h"
 #include "params.h"
 
-void GameLoop(SDL_Surface*, SHSurface**, SHLogger*); // nombre variable de paramètres ?
-
-// 2 threads : updates serveur et update graphiques
+void GameLoop(SDL_Surface*, SHSurface**, SHLogger*);
 
 // Global variables
 SH_STATE clientStatus = SH_START;
@@ -77,6 +75,7 @@ int main(int argc, char *argv[]) {
 
     // Initializing game elements and their graphical counterparts
     diceSix = InitDice(SH_SIX_FACES); diceFour = InitDice(SH_FOUR_FACES);
+
     diceSixSurf = NewDiceSurface(diceSix, screen, 0, 0, myLogger); // problem dice->bck
     diceFourSurf = NewDiceSurface(diceFour, screen, 60, 0, myLogger); // idem
 

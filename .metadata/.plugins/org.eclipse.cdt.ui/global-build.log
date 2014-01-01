@@ -201,3 +201,259 @@ Info: Nothing to build for shupdate
 Info: Internal Builder is used for build
 gcc -O0 -g3 -Wall -c -fmessage-length=0 -o vfsdesc.o "..\\vfsdesc.c" 
 gcc -shared -o libshvfs.dll vfsdesc.o 
+22:16:22 **** Incremental Build of configuration Debug for project shdata ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o _loader.o "..\\_loader.c" 
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o _DELETE_tree.o "..\\_DELETE_tree.c" 
+gcc -shared -o shdata.dll _parser.o _logger.o _loader.o _hashtable.o _DELETE_tree.o SHPlayer.o SHDice.o SHCharacter.o SHArea.o _tree.o 
+_tree.o: In function `NewNode':
+C:\Users\Emmanuel\Documents\GitHub\shgame\shdata\Debug/../_tree.c:22: multiple definition of `NewNode'
+_DELETE_tree.o:C:\Users\Emmanuel\Documents\GitHub\shgame\shdata\Debug/../_DELETE_tree.c:23: first defined here
+_tree.o: In function `NewLeaf':
+C:\Users\Emmanuel\Documents\GitHub\shgame\shdata\Debug/../_tree.c:46: multiple definition of `NewLeaf'
+_DELETE_tree.o:C:\Users\Emmanuel\Documents\GitHub\shgame\shdata\Debug/../_DELETE_tree.c:47: first defined here
+_tree.o: In function `AddChild':
+C:\Users\Emmanuel\Documents\GitHub\shgame\shdata\Debug/../_tree.c:62: multiple definition of `AddChild'
+_DELETE_tree.o:C:\Users\Emmanuel\Documents\GitHub\shgame\shdata\Debug/../_DELETE_tree.c:63: first defined here
+_tree.o: In function `RemoveChild':
+C:\Users\Emmanuel\Documents\GitHub\shgame\shdata\Debug/../_tree.c:70: multiple definition of `RemoveChild'
+_DELETE_tree.o:C:\Users\Emmanuel\Documents\GitHub\shgame\shdata\Debug/../_DELETE_tree.c:71: first defined here
+_tree.o: In function `GetChildId':
+C:\Users\Emmanuel\Documents\GitHub\shgame\shdata\Debug/../_tree.c:74: multiple definition of `GetChildId'
+_DELETE_tree.o:C:\Users\Emmanuel\Documents\GitHub\shgame\shdata\Debug/../_DELETE_tree.c:75: first defined here
+_tree.o: In function `DestroyNode':
+C:\Users\Emmanuel\Documents\GitHub\shgame\shdata\Debug/../_tree.c:84: multiple definition of `DestroyNode'
+_DELETE_tree.o:C:\Users\Emmanuel\Documents\GitHub\shgame\shdata\Debug/../_DELETE_tree.c:85: first defined here
+collect2: ld a retourné 1 code d'état d'exécution
+Info: Nothing to build for shclient
+Info: Nothing to build for shserver
+Info: Nothing to build for shupdate
+Info: Nothing to build for shvfs
+22:16:51 **** Incremental Build of configuration Debug for project shdata ****
+Info: Internal Builder is used for build
+gcc -shared -o shdata.dll _parser.o _logger.o _loader.o _hashtable.o _DELETE_tree.o SHPlayer.o SHDice.o SHCharacter.o SHArea.o 
+Info: Nothing to build for shclient
+Info: Nothing to build for shserver
+Info: Nothing to build for shupdate
+Info: Nothing to build for shvfs
+22:17:44 **** Incremental Build of configuration Debug for project shdata ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o _loader.o "..\\_loader.c" 
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o SHPlayer.o "..\\SHPlayer.c" 
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o _DELETE_tree.o "..\\_DELETE_tree.c" 
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o _logger.o "..\\_logger.c" 
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o SHDice.o "..\\SHDice.c" 
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o SHCharacter.o "..\\SHCharacter.c" 
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o _hashtable.o "..\\_hashtable.c" 
+gcc -shared -o shdata.dll _parser.o _logger.o _loader.o _hashtable.o _DELETE_tree.o SHPlayer.o SHDice.o SHCharacter.o SHArea.o 
+Info: Nothing to build for shclient
+Info: Nothing to build for shserver
+Info: Nothing to build for shupdate
+Info: Nothing to build for shvfs
+Info: Nothing to build for shdata
+22:18:52 **** Incremental Build of configuration Debug for project shclient ****
+Info: Internal Builder is used for build
+gcc "-IC:\\Users\\Emmanuel\\Documents\\GitHub\\shgame\\shdata" "-IC:\\Users\\Emmanuel\\Documents\\Programmation\\SDL\\fichiers\\SDL-1.2.15\\include" "-IC:\\Users\\Emmanuel\\Documents\\GitHub\\shgame\\shdata" -O0 -g3 -Wall -c -fmessage-length=0 -o _loader.o "..\\_loader.c" 
+gcc "-LC:\\Users\\Emmanuel\\Documents\\GitHub\\shgame\\shdata\\Debug" "-LC:\\Users\\Emmanuel\\Documents\\Programmation\\SDL\\fichiers\\SDL_image-devel-1.2.12-VC\\SDL_image-1.2.12\\lib" "-LC:\\Users\\Emmanuel\\Documents\\GitHub\\shgame\\shdata\\Debug" -Wl,-subsystem,windows -o SHClient.exe main.o _textfield.o _surface.o _loader.o _color.o -lshdata -lmingw32 -lSDLmain -lSDL -lSDL_image 
+Info: Nothing to build for shserver
+Info: Nothing to build for shupdate
+Info: Nothing to build for shvfs
+Info: Nothing to build for shdata
+22:30:20 **** Incremental Build of configuration Debug for project shclient ****
+Info: Internal Builder is used for build
+gcc "-IC:\\Users\\Emmanuel\\Documents\\GitHub\\shgame\\shdata" "-IC:\\Users\\Emmanuel\\Documents\\Programmation\\SDL\\fichiers\\SDL-1.2.15\\include" "-IC:\\Users\\Emmanuel\\Documents\\GitHub\\shgame\\shdata" -O0 -g3 -Wall -c -fmessage-length=0 -o _surface.o "..\\_surface.c" 
+..\_surface.c: In function 'UpdateDiceSurface':
+..\_surface.c:149: erreur: 'DATA_FOLDER' undeclared (first use in this function)
+..\_surface.c:149: erreur: (Each undeclared identifier is reported only once
+..\_surface.c:149: erreur: for each function it appears in.)
+..\_surface.c:151: erreur: 'DATA_DICE_FOLDER' undeclared (first use in this function)
+Info: Nothing to build for shserver
+Info: Nothing to build for shupdate
+Info: Nothing to build for shvfs
+Info: Nothing to build for shdata
+22:30:36 **** Incremental Build of configuration Debug for project shclient ****
+Info: Internal Builder is used for build
+gcc "-IC:\\Users\\Emmanuel\\Documents\\GitHub\\shgame\\shdata" "-IC:\\Users\\Emmanuel\\Documents\\Programmation\\SDL\\fichiers\\SDL-1.2.15\\include" "-IC:\\Users\\Emmanuel\\Documents\\GitHub\\shgame\\shdata" -O0 -g3 -Wall -c -fmessage-length=0 -o _color.o "..\\_color.c" 
+gcc "-IC:\\Users\\Emmanuel\\Documents\\GitHub\\shgame\\shdata" "-IC:\\Users\\Emmanuel\\Documents\\Programmation\\SDL\\fichiers\\SDL-1.2.15\\include" "-IC:\\Users\\Emmanuel\\Documents\\GitHub\\shgame\\shdata" -O0 -g3 -Wall -c -fmessage-length=0 -o main.o "..\\main.c" 
+gcc "-IC:\\Users\\Emmanuel\\Documents\\GitHub\\shgame\\shdata" "-IC:\\Users\\Emmanuel\\Documents\\Programmation\\SDL\\fichiers\\SDL-1.2.15\\include" "-IC:\\Users\\Emmanuel\\Documents\\GitHub\\shgame\\shdata" -O0 -g3 -Wall -c -fmessage-length=0 -o _surface.o "..\\_surface.c" 
+gcc "-IC:\\Users\\Emmanuel\\Documents\\GitHub\\shgame\\shdata" "-IC:\\Users\\Emmanuel\\Documents\\Programmation\\SDL\\fichiers\\SDL-1.2.15\\include" "-IC:\\Users\\Emmanuel\\Documents\\GitHub\\shgame\\shdata" -O0 -g3 -Wall -c -fmessage-length=0 -o _loader.o "..\\_loader.c" 
+..\_loader.c:18: erreur: expected '=', ',', ';', 'asm' or '__attribute__' before '*' token
+Info: Nothing to build for shserver
+Info: Nothing to build for shupdate
+Info: Nothing to build for shvfs
+Info: Nothing to build for shdata
+22:31:01 **** Incremental Build of configuration Debug for project shclient ****
+Info: Internal Builder is used for build
+gcc "-IC:\\Users\\Emmanuel\\Documents\\GitHub\\shgame\\shdata" "-IC:\\Users\\Emmanuel\\Documents\\Programmation\\SDL\\fichiers\\SDL-1.2.15\\include" "-IC:\\Users\\Emmanuel\\Documents\\GitHub\\shgame\\shdata" -O0 -g3 -Wall -c -fmessage-length=0 -o main.o "..\\main.c" 
+gcc "-IC:\\Users\\Emmanuel\\Documents\\GitHub\\shgame\\shdata" "-IC:\\Users\\Emmanuel\\Documents\\Programmation\\SDL\\fichiers\\SDL-1.2.15\\include" "-IC:\\Users\\Emmanuel\\Documents\\GitHub\\shgame\\shdata" -O0 -g3 -Wall -c -fmessage-length=0 -o _loader.o "..\\_loader.c" 
+gcc "-IC:\\Users\\Emmanuel\\Documents\\GitHub\\shgame\\shdata" "-IC:\\Users\\Emmanuel\\Documents\\Programmation\\SDL\\fichiers\\SDL-1.2.15\\include" "-IC:\\Users\\Emmanuel\\Documents\\GitHub\\shgame\\shdata" -O0 -g3 -Wall -c -fmessage-length=0 -o _surface.o "..\\_surface.c" 
+gcc "-IC:\\Users\\Emmanuel\\Documents\\GitHub\\shgame\\shdata" "-IC:\\Users\\Emmanuel\\Documents\\Programmation\\SDL\\fichiers\\SDL-1.2.15\\include" "-IC:\\Users\\Emmanuel\\Documents\\GitHub\\shgame\\shdata" -O0 -g3 -Wall -c -fmessage-length=0 -o _color.o "..\\_color.c" 
+gcc "-LC:\\Users\\Emmanuel\\Documents\\GitHub\\shgame\\shdata\\Debug" "-LC:\\Users\\Emmanuel\\Documents\\Programmation\\SDL\\fichiers\\SDL_image-devel-1.2.12-VC\\SDL_image-1.2.12\\lib" "-LC:\\Users\\Emmanuel\\Documents\\GitHub\\shgame\\shdata\\Debug" -Wl,-subsystem,windows -o SHClient.exe main.o _textfield.o _surface.o _loader.o _color.o -lshdata -lmingw32 -lSDLmain -lSDL -lSDL_image 
+Info: Nothing to build for shserver
+Info: Nothing to build for shupdate
+Info: Nothing to build for shvfs
+Info: Nothing to build for shdata
+22:32:20 **** Incremental Build of configuration Debug for project shclient ****
+Info: Internal Builder is used for build
+gcc "-IC:\\Users\\Emmanuel\\Documents\\GitHub\\shgame\\shdata" "-IC:\\Users\\Emmanuel\\Documents\\Programmation\\SDL\\fichiers\\SDL-1.2.15\\include" "-IC:\\Users\\Emmanuel\\Documents\\GitHub\\shgame\\shdata" -O0 -g3 -Wall -c -fmessage-length=0 -o _loader.o "..\\_loader.c" 
+gcc "-LC:\\Users\\Emmanuel\\Documents\\GitHub\\shgame\\shdata\\Debug" "-LC:\\Users\\Emmanuel\\Documents\\Programmation\\SDL\\fichiers\\SDL_image-devel-1.2.12-VC\\SDL_image-1.2.12\\lib" "-LC:\\Users\\Emmanuel\\Documents\\GitHub\\shgame\\shdata\\Debug" -Wl,-subsystem,windows -o SHClient.exe main.o _textfield.o _surface.o _loader.o _color.o -lshdata -lmingw32 -lSDLmain -lSDL -lSDL_image 
+Info: Nothing to build for shserver
+Info: Nothing to build for shupdate
+Info: Nothing to build for shvfs
+Info: Nothing to build for shdata
+22:34:55 **** Incremental Build of configuration Debug for project shclient ****
+Info: Internal Builder is used for build
+gcc "-IC:\\Users\\Emmanuel\\Documents\\GitHub\\shgame\\shdata" "-IC:\\Users\\Emmanuel\\Documents\\Programmation\\SDL\\fichiers\\SDL-1.2.15\\include" "-IC:\\Users\\Emmanuel\\Documents\\GitHub\\shgame\\shdata" -O0 -g3 -Wall -c -fmessage-length=0 -o _loader.o "..\\_loader.c" 
+..\_loader.c: In function 'LoadImage':
+..\_loader.c:29: erreur: incompatible types when assigning to type 'char[10]' from type 'char *'
+..\_loader.c:30: attention : implicit declaration of function 'IMG_Load'
+..\_loader.c:30: attention : assignment makes pointer from integer without a cast
+Info: Nothing to build for shserver
+Info: Nothing to build for shupdate
+Info: Nothing to build for shvfs
+Info: Nothing to build for shdata
+22:35:10 **** Incremental Build of configuration Debug for project shclient ****
+Info: Internal Builder is used for build
+gcc "-IC:\\Users\\Emmanuel\\Documents\\GitHub\\shgame\\shdata" "-IC:\\Users\\Emmanuel\\Documents\\Programmation\\SDL\\fichiers\\SDL-1.2.15\\include" "-IC:\\Users\\Emmanuel\\Documents\\GitHub\\shgame\\shdata" -O0 -g3 -Wall -c -fmessage-length=0 -o _loader.o "..\\_loader.c" 
+..\_loader.c: In function 'LoadImage':
+..\_loader.c:30: erreur: incompatible types when assigning to type 'char[10]' from type 'char *'
+Info: Nothing to build for shserver
+Info: Nothing to build for shupdate
+Info: Nothing to build for shvfs
+Info: Nothing to build for shdata
+22:35:23 **** Incremental Build of configuration Debug for project shclient ****
+Info: Internal Builder is used for build
+gcc "-IC:\\Users\\Emmanuel\\Documents\\GitHub\\shgame\\shdata" "-IC:\\Users\\Emmanuel\\Documents\\Programmation\\SDL\\fichiers\\SDL-1.2.15\\include" "-IC:\\Users\\Emmanuel\\Documents\\GitHub\\shgame\\shdata" -O0 -g3 -Wall -c -fmessage-length=0 -o main.o "..\\main.c" 
+gcc "-IC:\\Users\\Emmanuel\\Documents\\GitHub\\shgame\\shdata" "-IC:\\Users\\Emmanuel\\Documents\\Programmation\\SDL\\fichiers\\SDL-1.2.15\\include" "-IC:\\Users\\Emmanuel\\Documents\\GitHub\\shgame\\shdata" -O0 -g3 -Wall -c -fmessage-length=0 -o _surface.o "..\\_surface.c" 
+gcc "-IC:\\Users\\Emmanuel\\Documents\\GitHub\\shgame\\shdata" "-IC:\\Users\\Emmanuel\\Documents\\Programmation\\SDL\\fichiers\\SDL-1.2.15\\include" "-IC:\\Users\\Emmanuel\\Documents\\GitHub\\shgame\\shdata" -O0 -g3 -Wall -c -fmessage-length=0 -o _color.o "..\\_color.c" 
+gcc "-IC:\\Users\\Emmanuel\\Documents\\GitHub\\shgame\\shdata" "-IC:\\Users\\Emmanuel\\Documents\\Programmation\\SDL\\fichiers\\SDL-1.2.15\\include" "-IC:\\Users\\Emmanuel\\Documents\\GitHub\\shgame\\shdata" -O0 -g3 -Wall -c -fmessage-length=0 -o _loader.o "..\\_loader.c" 
+..\_loader.c: In function 'LoadImage':
+..\_loader.c:30: erreur: incompatible types when assigning to type 'char[10]' from type 'char *'
+Info: Nothing to build for shserver
+Info: Nothing to build for shupdate
+Info: Nothing to build for shvfs
+Info: Nothing to build for shdata
+22:35:33 **** Incremental Build of configuration Debug for project shclient ****
+Info: Internal Builder is used for build
+gcc "-IC:\\Users\\Emmanuel\\Documents\\GitHub\\shgame\\shdata" "-IC:\\Users\\Emmanuel\\Documents\\Programmation\\SDL\\fichiers\\SDL-1.2.15\\include" "-IC:\\Users\\Emmanuel\\Documents\\GitHub\\shgame\\shdata" -O0 -g3 -Wall -c -fmessage-length=0 -o _loader.o "..\\_loader.c" 
+..\_loader.c: In function 'LoadImage':
+..\_loader.c:30: erreur: incompatible types when assigning to type 'char[10]' from type 'char *'
+Info: Nothing to build for shserver
+Info: Nothing to build for shupdate
+Info: Nothing to build for shvfs
+Info: Nothing to build for shdata
+22:36:01 **** Incremental Build of configuration Debug for project shclient ****
+Info: Internal Builder is used for build
+gcc "-IC:\\Users\\Emmanuel\\Documents\\GitHub\\shgame\\shdata" "-IC:\\Users\\Emmanuel\\Documents\\Programmation\\SDL\\fichiers\\SDL-1.2.15\\include" "-IC:\\Users\\Emmanuel\\Documents\\GitHub\\shgame\\shdata" -O0 -g3 -Wall -c -fmessage-length=0 -o _loader.o "..\\_loader.c" 
+gcc "-LC:\\Users\\Emmanuel\\Documents\\GitHub\\shgame\\shdata\\Debug" "-LC:\\Users\\Emmanuel\\Documents\\Programmation\\SDL\\fichiers\\SDL_image-devel-1.2.12-VC\\SDL_image-1.2.12\\lib" "-LC:\\Users\\Emmanuel\\Documents\\GitHub\\shgame\\shdata\\Debug" -Wl,-subsystem,windows -o SHClient.exe main.o _textfield.o _surface.o _loader.o _color.o -lshdata -lmingw32 -lSDLmain -lSDL -lSDL_image 
+Info: Nothing to build for shserver
+Info: Nothing to build for shupdate
+Info: Nothing to build for shvfs
+Info: Nothing to build for shdata
+22:44:25 **** Incremental Build of configuration Debug for project shclient ****
+Info: Internal Builder is used for build
+gcc "-IC:\\Users\\Emmanuel\\Documents\\GitHub\\shgame\\shdata" "-IC:\\Users\\Emmanuel\\Documents\\Programmation\\SDL\\fichiers\\SDL-1.2.15\\include" "-IC:\\Users\\Emmanuel\\Documents\\GitHub\\shgame\\shdata" -O0 -g3 -Wall -c -fmessage-length=0 -o _surface.o "..\\_surface.c" 
+gcc "-IC:\\Users\\Emmanuel\\Documents\\GitHub\\shgame\\shdata" "-IC:\\Users\\Emmanuel\\Documents\\Programmation\\SDL\\fichiers\\SDL-1.2.15\\include" "-IC:\\Users\\Emmanuel\\Documents\\GitHub\\shgame\\shdata" -O0 -g3 -Wall -c -fmessage-length=0 -o main.o "..\\main.c" 
+gcc "-IC:\\Users\\Emmanuel\\Documents\\GitHub\\shgame\\shdata" "-IC:\\Users\\Emmanuel\\Documents\\Programmation\\SDL\\fichiers\\SDL-1.2.15\\include" "-IC:\\Users\\Emmanuel\\Documents\\GitHub\\shgame\\shdata" -O0 -g3 -Wall -c -fmessage-length=0 -o _color.o "..\\_color.c" 
+gcc "-IC:\\Users\\Emmanuel\\Documents\\GitHub\\shgame\\shdata" "-IC:\\Users\\Emmanuel\\Documents\\Programmation\\SDL\\fichiers\\SDL-1.2.15\\include" "-IC:\\Users\\Emmanuel\\Documents\\GitHub\\shgame\\shdata" -O0 -g3 -Wall -c -fmessage-length=0 -o _loader.o "..\\_loader.c" 
+gcc "-LC:\\Users\\Emmanuel\\Documents\\GitHub\\shgame\\shdata\\Debug" "-LC:\\Users\\Emmanuel\\Documents\\Programmation\\SDL\\fichiers\\SDL_image-devel-1.2.12-VC\\SDL_image-1.2.12\\lib" "-LC:\\Users\\Emmanuel\\Documents\\GitHub\\shgame\\shdata\\Debug" -Wl,-subsystem,windows -o SHClient.exe main.o _textfield.o _surface.o _loader.o _color.o -lshdata -lmingw32 -lSDLmain -lSDL -lSDL_image 
+Info: Nothing to build for shserver
+Info: Nothing to build for shupdate
+Info: Nothing to build for shvfs
+Info: Nothing to build for shdata
+Info: Nothing to build for shdata
+Info: Nothing to build for shclient
+Info: Nothing to build for shdata
+Info: Nothing to build for shdata
+22:46:30 **** Incremental Build of configuration Debug for project shclient ****
+Info: Internal Builder is used for build
+gcc "-IC:\\Users\\Emmanuel\\Documents\\GitHub\\shgame\\shdata" "-IC:\\Users\\Emmanuel\\Documents\\Programmation\\SDL\\fichiers\\SDL-1.2.15\\include" "-IC:\\Users\\Emmanuel\\Documents\\GitHub\\shgame\\shdata" -O0 -g3 -Wall -c -fmessage-length=0 -o _surface.o "..\\_surface.c" 
+gcc "-LC:\\Users\\Emmanuel\\Documents\\GitHub\\shgame\\shdata\\Debug" "-LC:\\Users\\Emmanuel\\Documents\\Programmation\\SDL\\fichiers\\SDL_image-devel-1.2.12-VC\\SDL_image-1.2.12\\lib" "-LC:\\Users\\Emmanuel\\Documents\\GitHub\\shgame\\shdata\\Debug" -Wl,-subsystem,windows -o SHClient.exe main.o _textfield.o _surface.o _loader.o _color.o -lshdata -lmingw32 -lSDLmain -lSDL -lSDL_image 
+Info: Nothing to build for shdata
+Info: Nothing to build for shdata
+Info: Nothing to build for shclient
+Info: Nothing to build for shdata
+Info: Nothing to build for shdata
+Info: Nothing to build for shclient
+Info: Nothing to build for shdata
+22:48:26 **** Incremental Build of configuration Debug for project shclient ****
+Info: Internal Builder is used for build
+gcc "-IC:\\Users\\Emmanuel\\Documents\\GitHub\\shgame\\shdata" "-IC:\\Users\\Emmanuel\\Documents\\Programmation\\SDL\\fichiers\\SDL-1.2.15\\include" "-IC:\\Users\\Emmanuel\\Documents\\GitHub\\shgame\\shdata" -O0 -g3 -Wall -c -fmessage-length=0 -o _surface.o "..\\_surface.c" 
+gcc "-LC:\\Users\\Emmanuel\\Documents\\GitHub\\shgame\\shdata\\Debug" "-LC:\\Users\\Emmanuel\\Documents\\Programmation\\SDL\\fichiers\\SDL_image-devel-1.2.12-VC\\SDL_image-1.2.12\\lib" "-LC:\\Users\\Emmanuel\\Documents\\GitHub\\shgame\\shdata\\Debug" -Wl,-subsystem,windows -o SHClient.exe main.o _textfield.o _surface.o _loader.o _color.o -lshdata -lmingw32 -lSDLmain -lSDL -lSDL_image 
+Info: Nothing to build for shserver
+Info: Nothing to build for shupdate
+Info: Nothing to build for shvfs
+Info: Nothing to build for shdata
+Info: Nothing to build for shdata
+22:48:49 **** Incremental Build of configuration Debug for project shclient ****
+Info: Internal Builder is used for build
+gcc "-IC:\\Users\\Emmanuel\\Documents\\GitHub\\shgame\\shdata" "-IC:\\Users\\Emmanuel\\Documents\\Programmation\\SDL\\fichiers\\SDL-1.2.15\\include" "-IC:\\Users\\Emmanuel\\Documents\\GitHub\\shgame\\shdata" -O0 -g3 -Wall -c -fmessage-length=0 -o _surface.o "..\\_surface.c" 
+gcc "-LC:\\Users\\Emmanuel\\Documents\\GitHub\\shgame\\shdata\\Debug" "-LC:\\Users\\Emmanuel\\Documents\\Programmation\\SDL\\fichiers\\SDL_image-devel-1.2.12-VC\\SDL_image-1.2.12\\lib" "-LC:\\Users\\Emmanuel\\Documents\\GitHub\\shgame\\shdata\\Debug" -Wl,-subsystem,windows -o SHClient.exe main.o _textfield.o _surface.o _loader.o _color.o -lshdata -lmingw32 -lSDLmain -lSDL -lSDL_image 
+Info: Nothing to build for shdata
+Info: Nothing to build for shdata
+22:50:14 **** Incremental Build of configuration Debug for project shclient ****
+Info: Internal Builder is used for build
+gcc "-IC:\\Users\\Emmanuel\\Documents\\GitHub\\shgame\\shdata" "-IC:\\Users\\Emmanuel\\Documents\\Programmation\\SDL\\fichiers\\SDL-1.2.15\\include" "-IC:\\Users\\Emmanuel\\Documents\\GitHub\\shgame\\shdata" -O0 -g3 -Wall -c -fmessage-length=0 -o _surface.o "..\\_surface.c" 
+gcc "-LC:\\Users\\Emmanuel\\Documents\\GitHub\\shgame\\shdata\\Debug" "-LC:\\Users\\Emmanuel\\Documents\\Programmation\\SDL\\fichiers\\SDL_image-devel-1.2.12-VC\\SDL_image-1.2.12\\lib" "-LC:\\Users\\Emmanuel\\Documents\\GitHub\\shgame\\shdata\\Debug" -Wl,-subsystem,windows -o SHClient.exe main.o _textfield.o _surface.o _loader.o _color.o -lshdata -lmingw32 -lSDLmain -lSDL -lSDL_image 
+Info: Nothing to build for shdata
+Info: Nothing to build for shdata
+22:50:53 **** Incremental Build of configuration Debug for project shclient ****
+Info: Internal Builder is used for build
+gcc "-IC:\\Users\\Emmanuel\\Documents\\GitHub\\shgame\\shdata" "-IC:\\Users\\Emmanuel\\Documents\\Programmation\\SDL\\fichiers\\SDL-1.2.15\\include" "-IC:\\Users\\Emmanuel\\Documents\\GitHub\\shgame\\shdata" -O0 -g3 -Wall -c -fmessage-length=0 -o _surface.o "..\\_surface.c" 
+gcc "-LC:\\Users\\Emmanuel\\Documents\\GitHub\\shgame\\shdata\\Debug" "-LC:\\Users\\Emmanuel\\Documents\\Programmation\\SDL\\fichiers\\SDL_image-devel-1.2.12-VC\\SDL_image-1.2.12\\lib" "-LC:\\Users\\Emmanuel\\Documents\\GitHub\\shgame\\shdata\\Debug" -Wl,-subsystem,windows -o SHClient.exe main.o _textfield.o _surface.o _loader.o _color.o -lshdata -lmingw32 -lSDLmain -lSDL -lSDL_image 
+Info: Nothing to build for shdata
+Info: Nothing to build for shdata
+Info: Nothing to build for shclient
+Info: Nothing to build for shdata
+Info: Nothing to build for shdata
+22:51:47 **** Incremental Build of configuration Debug for project shclient ****
+Info: Internal Builder is used for build
+gcc "-IC:\\Users\\Emmanuel\\Documents\\GitHub\\shgame\\shdata" "-IC:\\Users\\Emmanuel\\Documents\\Programmation\\SDL\\fichiers\\SDL-1.2.15\\include" "-IC:\\Users\\Emmanuel\\Documents\\GitHub\\shgame\\shdata" -O0 -g3 -Wall -c -fmessage-length=0 -o _surface.o "..\\_surface.c" 
+gcc "-LC:\\Users\\Emmanuel\\Documents\\GitHub\\shgame\\shdata\\Debug" "-LC:\\Users\\Emmanuel\\Documents\\Programmation\\SDL\\fichiers\\SDL_image-devel-1.2.12-VC\\SDL_image-1.2.12\\lib" "-LC:\\Users\\Emmanuel\\Documents\\GitHub\\shgame\\shdata\\Debug" -Wl,-subsystem,windows -o SHClient.exe main.o _textfield.o _surface.o _loader.o _color.o -lshdata -lmingw32 -lSDLmain -lSDL -lSDL_image 
+Info: Nothing to build for shdata
+Info: Nothing to build for shdata
+22:52:00 **** Incremental Build of configuration Debug for project shclient ****
+Info: Internal Builder is used for build
+gcc "-IC:\\Users\\Emmanuel\\Documents\\GitHub\\shgame\\shdata" "-IC:\\Users\\Emmanuel\\Documents\\Programmation\\SDL\\fichiers\\SDL-1.2.15\\include" "-IC:\\Users\\Emmanuel\\Documents\\GitHub\\shgame\\shdata" -O0 -g3 -Wall -c -fmessage-length=0 -o _surface.o "..\\_surface.c" 
+gcc "-LC:\\Users\\Emmanuel\\Documents\\GitHub\\shgame\\shdata\\Debug" "-LC:\\Users\\Emmanuel\\Documents\\Programmation\\SDL\\fichiers\\SDL_image-devel-1.2.12-VC\\SDL_image-1.2.12\\lib" "-LC:\\Users\\Emmanuel\\Documents\\GitHub\\shgame\\shdata\\Debug" -Wl,-subsystem,windows -o SHClient.exe main.o _textfield.o _surface.o _loader.o _color.o -lshdata -lmingw32 -lSDLmain -lSDL -lSDL_image 
+Info: Nothing to build for shdata
+Info: Nothing to build for shdata
+22:52:11 **** Incremental Build of configuration Debug for project shclient ****
+Info: Internal Builder is used for build
+gcc "-IC:\\Users\\Emmanuel\\Documents\\GitHub\\shgame\\shdata" "-IC:\\Users\\Emmanuel\\Documents\\Programmation\\SDL\\fichiers\\SDL-1.2.15\\include" "-IC:\\Users\\Emmanuel\\Documents\\GitHub\\shgame\\shdata" -O0 -g3 -Wall -c -fmessage-length=0 -o _surface.o "..\\_surface.c" 
+gcc "-LC:\\Users\\Emmanuel\\Documents\\GitHub\\shgame\\shdata\\Debug" "-LC:\\Users\\Emmanuel\\Documents\\Programmation\\SDL\\fichiers\\SDL_image-devel-1.2.12-VC\\SDL_image-1.2.12\\lib" "-LC:\\Users\\Emmanuel\\Documents\\GitHub\\shgame\\shdata\\Debug" -Wl,-subsystem,windows -o SHClient.exe main.o _textfield.o _surface.o _loader.o _color.o -lshdata -lmingw32 -lSDLmain -lSDL -lSDL_image 
+Info: Nothing to build for shdata
+22:52:31 **** Incremental Build of configuration Debug for project shclient ****
+Info: Internal Builder is used for build
+gcc "-IC:\\Users\\Emmanuel\\Documents\\GitHub\\shgame\\shdata" "-IC:\\Users\\Emmanuel\\Documents\\Programmation\\SDL\\fichiers\\SDL-1.2.15\\include" "-IC:\\Users\\Emmanuel\\Documents\\GitHub\\shgame\\shdata" -O0 -g3 -Wall -c -fmessage-length=0 -o _loader.o "..\\_loader.c" 
+gcc "-LC:\\Users\\Emmanuel\\Documents\\GitHub\\shgame\\shdata\\Debug" "-LC:\\Users\\Emmanuel\\Documents\\Programmation\\SDL\\fichiers\\SDL_image-devel-1.2.12-VC\\SDL_image-1.2.12\\lib" "-LC:\\Users\\Emmanuel\\Documents\\GitHub\\shgame\\shdata\\Debug" -Wl,-subsystem,windows -o SHClient.exe main.o _textfield.o _surface.o _loader.o _color.o -lshdata -lmingw32 -lSDLmain -lSDL -lSDL_image 
+Info: Nothing to build for shserver
+Info: Nothing to build for shupdate
+Info: Nothing to build for shvfs
+Info: Nothing to build for shdata
+22:54:33 **** Incremental Build of configuration Debug for project shclient ****
+Info: Internal Builder is used for build
+gcc "-IC:\\Users\\Emmanuel\\Documents\\GitHub\\shgame\\shdata" "-IC:\\Users\\Emmanuel\\Documents\\Programmation\\SDL\\fichiers\\SDL-1.2.15\\include" "-IC:\\Users\\Emmanuel\\Documents\\GitHub\\shgame\\shdata" -O0 -g3 -Wall -c -fmessage-length=0 -o _surface.o "..\\_surface.c" 
+gcc "-IC:\\Users\\Emmanuel\\Documents\\GitHub\\shgame\\shdata" "-IC:\\Users\\Emmanuel\\Documents\\Programmation\\SDL\\fichiers\\SDL-1.2.15\\include" "-IC:\\Users\\Emmanuel\\Documents\\GitHub\\shgame\\shdata" -O0 -g3 -Wall -c -fmessage-length=0 -o _loader.o "..\\_loader.c" 
+gcc "-IC:\\Users\\Emmanuel\\Documents\\GitHub\\shgame\\shdata" "-IC:\\Users\\Emmanuel\\Documents\\Programmation\\SDL\\fichiers\\SDL-1.2.15\\include" "-IC:\\Users\\Emmanuel\\Documents\\GitHub\\shgame\\shdata" -O0 -g3 -Wall -c -fmessage-length=0 -o main.o "..\\main.c" 
+gcc "-IC:\\Users\\Emmanuel\\Documents\\GitHub\\shgame\\shdata" "-IC:\\Users\\Emmanuel\\Documents\\Programmation\\SDL\\fichiers\\SDL-1.2.15\\include" "-IC:\\Users\\Emmanuel\\Documents\\GitHub\\shgame\\shdata" -O0 -g3 -Wall -c -fmessage-length=0 -o _color.o "..\\_color.c" 
+gcc "-LC:\\Users\\Emmanuel\\Documents\\GitHub\\shgame\\shdata\\Debug" "-LC:\\Users\\Emmanuel\\Documents\\Programmation\\SDL\\fichiers\\SDL_image-devel-1.2.12-VC\\SDL_image-1.2.12\\lib" "-LC:\\Users\\Emmanuel\\Documents\\GitHub\\shgame\\shdata\\Debug" -Wl,-subsystem,windows -o SHClient.exe main.o _textfield.o _surface.o _loader.o _color.o -lshdata -lmingw32 -lSDLmain -lSDL -lSDL_image 
+Info: Nothing to build for shserver
+Info: Nothing to build for shupdate
+Info: Nothing to build for shvfs
+Info: Nothing to build for shdata
+22:55:23 **** Incremental Build of configuration Debug for project shclient ****
+Info: Internal Builder is used for build
+gcc "-IC:\\Users\\Emmanuel\\Documents\\GitHub\\shgame\\shdata" "-IC:\\Users\\Emmanuel\\Documents\\Programmation\\SDL\\fichiers\\SDL-1.2.15\\include" "-IC:\\Users\\Emmanuel\\Documents\\GitHub\\shgame\\shdata" -O0 -g3 -Wall -c -fmessage-length=0 -o _loader.o "..\\_loader.c" 
+gcc "-LC:\\Users\\Emmanuel\\Documents\\GitHub\\shgame\\shdata\\Debug" "-LC:\\Users\\Emmanuel\\Documents\\Programmation\\SDL\\fichiers\\SDL_image-devel-1.2.12-VC\\SDL_image-1.2.12\\lib" "-LC:\\Users\\Emmanuel\\Documents\\GitHub\\shgame\\shdata\\Debug" -Wl,-subsystem,windows -o SHClient.exe main.o _textfield.o _surface.o _loader.o _color.o -lshdata -lmingw32 -lSDLmain -lSDL -lSDL_image 
+Info: Nothing to build for shserver
+Info: Nothing to build for shupdate
+Info: Nothing to build for shvfs
+Info: Nothing to build for shdata
+22:56:12 **** Incremental Build of configuration Debug for project shclient ****
+Info: Internal Builder is used for build
+gcc "-IC:\\Users\\Emmanuel\\Documents\\GitHub\\shgame\\shdata" "-IC:\\Users\\Emmanuel\\Documents\\Programmation\\SDL\\fichiers\\SDL-1.2.15\\include" "-IC:\\Users\\Emmanuel\\Documents\\GitHub\\shgame\\shdata" -O0 -g3 -Wall -c -fmessage-length=0 -o _loader.o "..\\_loader.c" 
+gcc "-LC:\\Users\\Emmanuel\\Documents\\GitHub\\shgame\\shdata\\Debug" "-LC:\\Users\\Emmanuel\\Documents\\Programmation\\SDL\\fichiers\\SDL_image-devel-1.2.12-VC\\SDL_image-1.2.12\\lib" "-LC:\\Users\\Emmanuel\\Documents\\GitHub\\shgame\\shdata\\Debug" -Wl,-subsystem,windows -o SHClient.exe main.o _textfield.o _surface.o _loader.o _color.o -lshdata -lmingw32 -lSDLmain -lSDL -lSDL_image 
+Info: Nothing to build for shserver
+Info: Nothing to build for shupdate
+Info: Nothing to build for shvfs

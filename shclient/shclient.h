@@ -10,6 +10,7 @@
 
 #include <SDL/SDL.h>
 
+#include "params.h"
 #include "shdata.h"
 
 /********************************** States *********************************/
@@ -43,7 +44,19 @@ SHColor* GetColorData(SH_STORED_COLOR);
 /***************************************************************************/
 
 /********************************* _loader *********************************/
+typedef struct _image	SHImage;
 
+struct _image {
+	char 			name [FILENAME_MAXLEN];
+	SDL_Surface*	surface;
+};
+
+// Prototypes
+SHImage* LoadImage(char*, char*, SHLogger*);
+void DestroyImage(SHImage*, SHLogger*);
+SHImage** LoadImages(char*, SHLogger*);
+SHImage* GetImageByName(SHImage**, char*);
+void UnloadImages(SHImage**, SHLogger*);
 /***************************************************************************/
 
 /********************************* _surface ********************************/

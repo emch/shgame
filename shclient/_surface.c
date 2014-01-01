@@ -136,25 +136,22 @@ SHSurface* NewDiceSurface(SHDice* dice, SDL_Surface* parent, int pos_x, int pos_
 	return res;
 }
 
-// TODO review after developping _loader
 void UpdateDiceSurface(SHDice* dice, SHSurface* surface, SHLogger* myLogger) {
 	SDL_Surface *sdlSurf = NULL;
-	char diceImgPath[DATA_MAX_PATH_LENGTH];
-	char diceImgName[10];
+	char diceImgPath[DATA_MAX_PATH_LENGTH] = "";
+	char diceImgName[FILENAME_MAXLEN] = "";
 	int diceMaxValue = (dice->type == SH_SIX_FACES) ? 6 : 4;
 
 	// Selecting the right image
 	sprintf(diceImgName, "%d-%d.png", diceMaxValue, dice->value);
 
 	// Generating data path
-	strcpy(diceImgPath, DATA_FOLDER);
-	strcat(diceImgPath, DATA_ART_FOLDER);
-	strcat(diceImgPath, DATA_DICE_FOLDER);
+	strcat(diceImgPath, DATA_ART_FOLDER); // problem !!
 	strcat(diceImgPath, diceImgName);
 
 	// TODO Better idea : load everything in an array and move pointer ? --> yes ! (cf. _loader.c)
 	if((sdlSurf = IMG_Load(diceImgPath)) == NULL) {
-		flogf(myLogger, "%s\n", SDL_GetError());
+		flogf(myLogger, "%s\r\n", SDL_GetError());
 	}
 
 	SDL_FreeSurface(surface->bck);

@@ -114,36 +114,6 @@ void flogf(SHLogger*, char*, ...);
 
 /*****************************************************************************/
 
-/************************************ _tree **********************************/
-typedef enum _filetype {
-	SH_FOLDER, SH_IMAGE, SH_TEXTFILE
-} SH_FILETYPE;
-
-typedef struct _node SHNode;
-
-/**
- * \struct 	_node
- * \brief	Used to store data in a tree structure. In our case, nodes with children are folders
- * 			and leaves are files.
- */
-struct _node {
-	char		name[FOLDERNAME_MAXLEN];
-
-	SH_FILETYPE	filetype;
-
-	int			nb_children;
-	int			nb_max_children;
-	SHNode**	children;
-};
-
-// Prototype
-SHNode* NewNode(char*, int);
-SHNode* NewLeaf(char*, SH_FILETYPE);
-void AddChild(SHNode*, SHNode*);
-void DestroyNode(SHNode*);
-// tree search
-/*****************************************************************************/
-
 /******************************** SHCharacter ********************************/
 /**
  * \struct 	SHCharacter

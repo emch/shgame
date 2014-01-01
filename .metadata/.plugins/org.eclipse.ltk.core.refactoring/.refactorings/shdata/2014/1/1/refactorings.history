@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename resource &apos;shdata/_tree.c&apos; to &apos;_DELETE_tree.c&apos;" description="Rename resource &apos;_tree.c&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="_tree.c" name="_DELETE_tree.c" stamp="1388610977421" updateReferences="true"/>
+</session>

@@ -9,9 +9,8 @@
 #define PARAMS_H_
 
 #define	DATA_MAX_PATH_LENGTH	50			// TODO to check once all data is written !
-#define	DATA_FOLDER				"data/"
-#define DATA_ART_FOLDER			"art/"
-#define	DATA_DICE_FOLDER		"dice/"
+#define DATA_ART_FOLDER			"data/art/"
+#define	FILENAME_MAXLEN			10			// TODO idem
 
 #define SCREEN_WIDTH 			1000
 #define SCREEN_HEIGHT 			600

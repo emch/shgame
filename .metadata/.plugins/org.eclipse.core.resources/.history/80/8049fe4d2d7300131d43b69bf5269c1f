@@ -1,0 +1,89 @@
+/*
+ * _loader.c - Used to load graphical content. For game content, use _loader.c from shdata.
+ *
+ *  Created on: 1 janv. 2014
+ *      Author: Emmanuel
+ */
+
+// rather use shdata _loader.c ?
+
+#include <stdlib.h>
+#include <SDL/SDL.h>
+#include <SDL/SDL_image.h>
+
+#include "shclient.h"
+
+// Create SHImage structure (SDL_Surface* + string for name)
+// LoadImages loads all data/art images into an array
+// + GetImage function to get an image by its name from the generated array
+
+
+/**
+ * \fn		LoadImage
+ * \brief	Load image into memory from a given location
+ *
+ * \param	folder	(relative) path to file without filename. e.g. : data/art/
+ * \param	name	image name
+ */
+SHImage* LoadImage(char* folder, char* name) {
+	char completePath [DATA_MAX_PATH_LENGTH];
+	SHImage* res = malloc(sizeof(SHImage));
+
+	// Generate complete path
+	strcpy(completePath, folder);
+	strcat(completePath, name);
+
+	// Filling SHImage fields
+	strcpy(res->name, name);
+	res->surface = IMG_Load(completePath);
+
+	return res;
+}
+
+/**
+ * \fn		DestroyImage
+ * \brief	Cleans an SHImage from memory
+ *
+ * \param	image	SHImage to clean
+ */
+void DestroyImage(SHImage* image) {
+	SDL_FreeSurface(image->surface);
+	free(image);
+}
+
+SHImage** LoadImages(char* location) {
+	int nb_images = 5;
+	SHImage** res = malloc(nb_images*sizeof(SHImage*));
+
+	return res;
+}
+
+SHImage* GetImageByName(SHImage** array, char* name) {
+	return NULL;
+}
+
+
+//// load surfaces (so that the main is cleaner)
+//// includes dice and player info
+//SHSurface** LoadSurfaces() {
+//	return NULL;
+//}
+//
+//// Load ALL data/art image into an array (struct SDL_Surface + image name) !
+//SHSurface** LoadImages() { // return SHSurface** ?
+//	return NULL;
+//}
+//
+//void LoadButtons() { // return SHButton**
+//
+//}
+//
+//// load textfields from data/texts
+//void LoadTextFields() { // return SHTextField**
+//
+//}
+//
+//// extension of loader ?
+//void RenderSurfaces() {
+//
+//}

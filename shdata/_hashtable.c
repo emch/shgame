@@ -5,12 +5,6 @@
  *      Author: Emmanuel
  */
 
-// folder = array of hashtables
-// file in folder = hashtable
-// hence : hashtable with varying number of parameters (but constant once created)
-
-// prévoir une fonction qui renvoie la valeur d'un élément dans le bon type
-
 #include <stdlib.h>
 #include <string.h>
 

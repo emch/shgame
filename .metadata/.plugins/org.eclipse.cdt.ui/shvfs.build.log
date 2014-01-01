@@ -1,1 +1,7 @@
-Info: Nothing to build for shvfs
+12:54:29 **** Rebuild of configuration Debug for project shvfs ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o vfsdesc.o "..\\vfsdesc.c" 
+gcc -shared -o libshvfs.dll vfsdesc.o 
+
+12:54:30 Build Finished (took 1s.305ms)
+

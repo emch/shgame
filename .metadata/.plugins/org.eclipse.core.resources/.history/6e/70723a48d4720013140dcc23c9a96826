@@ -1,0 +1,33 @@
+/*
+ * _loader.c
+ *
+ *  Created on: 1 janv. 2014
+ *      Author: Emmanuel
+ */
+
+// rather use shdata _loader.c ?
+
+// load surfaces (so that the main is cleaner)
+// includes dice and player info
+SDL_Surface** LoadSurfaces() {
+
+}
+
+// Load ALL data/art image into an array (struct SDL_Surface + image name) !
+SDL_Surface** LoadImages() {
+
+}
+
+void LoadButtons() {
+
+}
+
+// load textfields from data/texts
+void LoadTextFields() {
+
+}
+
+// extension of loader ?
+void RenderSurfaces() {
+
+}

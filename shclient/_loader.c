@@ -5,23 +5,31 @@
  *      Author: Emmanuel
  */
 
+// rather use shdata _loader.c ?
+
+#include <stdlib.h>
+#include <SDL/SDL.h>
+
+#include "shclient.h"
+// use SHData _loader.c !!
+
 // load surfaces (so that the main is cleaner)
 // includes dice and player info
-void LoadSurfaces() {
-
+SHSurface** LoadSurfaces() {
+	return NULL;
 }
 
 // Load ALL data/art image into an array (struct SDL_Surface + image name) !
-void LoadImages() {
-
+SHSurface** LoadImages() { // return SHSurface** ?
+	return NULL;
 }
 
-void LoadButtons() {
+void LoadButtons() { // return SHButton**
 
 }
 
 // load textfields from data/texts
-void LoadTextFields() {
+void LoadTextFields() { // return SHTextField**
 
 }
 

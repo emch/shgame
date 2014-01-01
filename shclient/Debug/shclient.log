@@ -1,24 +1,24 @@
-[00:57:51] SDL initialized
-[00:57:53] Video mode set
-[00:57:53] Surface created at address 0x02271D10
-[00:57:53] Surface created at address 0x02271DC8
-[00:57:53] Surface created at address 0x022CA568
-[00:57:53] Surface created at address 0x008FEF60
-[00:57:53] Surface created at address 0x008FF230
-[00:57:53] Surface created at address 0x008FF500
-[00:57:53] Surface created at address 0x008FF7D0
-[00:57:54] Surface created at address 0x008FF818
-[00:57:54] Dice six has been rolled: 6
-[00:57:54] Dice four has been rolled: 3
-[00:57:54] Dice six has been rolled again: 3
-[00:57:54] State changed to 1
-[00:57:56] State changed to 2
-[00:57:58] Surface at address 0x02271D10 destroyed
-[00:57:58] Surface at address 0x02271DC8 destroyed
-[00:57:58] Surface at address 0x022CA568 destroyed
-[00:57:58] Surface at address 0x008FEF60 destroyed
-[00:57:58] Surface at address 0x008FF230 destroyed
-[00:57:58] Surface at address 0x008FF500 destroyed
-[00:57:58] Surface at address 0x008FF7D0 destroyed
-[00:57:58] Surface at address 0x008FF818 destroyed
-[00:57:58] Client closed
+[12:56:19] SDL initialized
+[12:56:20] Video mode set
+[12:56:20] Surface created at address 0x02211D10
+[12:56:20] Surface created at address 0x02211DC8
+[12:56:20] Surface created at address 0x0226A568
+[12:56:20] Surface created at address 0x0085EF60
+[12:56:20] Surface created at address 0x0085F230
+[12:56:20] Surface created at address 0x0085F500
+[12:56:20] Surface created at address 0x0085F7D0
+[12:56:20] Surface created at address 0x0085F818
+[12:56:20] Dice six has been rolled: 6
+[12:56:20] Dice four has been rolled: 1
+[12:56:20] Dice six has been rolled again: 4
+[12:56:20] State changed to 1
+[12:56:22] State changed to 2
+[12:56:23] Surface at address 0x02211D10 destroyed
+[12:56:23] Surface at address 0x02211DC8 destroyed
+[12:56:23] Surface at address 0x0226A568 destroyed
+[12:56:23] Surface at address 0x0085EF60 destroyed
+[12:56:23] Surface at address 0x0085F230 destroyed
+[12:56:23] Surface at address 0x0085F500 destroyed
+[12:56:23] Surface at address 0x0085F7D0 destroyed
+[12:56:23] Surface at address 0x0085F818 destroyed
+[12:56:23] Client closed

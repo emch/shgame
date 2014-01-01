@@ -1,0 +1,42 @@
+/*
+ * _tree.c
+ *
+ *  Created on: 1 janv. 2014
+ *      Author: Emmanuel
+ */
+
+#include <stdlib.h>
+#include <string.h>
+
+#include "shdata.h"
+
+// at this stage, value has already been allocated
+SHNode* NewNode(char* name, SH_FILETYPE filetype, void* value, int nb_children) {
+	SHNode* res = malloc(sizeof(SHNode));
+
+	// Fields
+	strcpy(res->name, name);
+
+	res->filetype 		= filetype;
+	res->value 			= value;
+
+	res->nb_children	= 0;
+	res->children		= malloc(nb_children*sizeof(SHNode));
+
+	return res;
+}
+
+void AddChild(SHNode* node, SHNode* child) {
+
+}
+
+// destroys child and all subchildren
+void RemoveChild(SHNode* node, char* child_name) {
+
+}
+
+// do not destroy value (will be done in loader)
+void DestroyNode(SHNode* node) {
+	free(node->children);
+	free(node);
+}

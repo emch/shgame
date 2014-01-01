@@ -1,0 +1,27 @@
+/*
+ * _tree.c
+ * There is no need to be able to add/remove a child dynamically since this structure will only be used to
+ * copy a fixed list of folders/files.
+ *
+ *  Created on: 1 janv. 2014
+ *      Author: Emmanuel
+ */
+
+// no need to be able to add chil
+
+// at this stage, value has already been allocated
+SHNode* NewNode(char* name, SH_FILETYPE filetype, void* value, int nb_children, SHNode** children) {
+	SHNode* res = malloc(sizeof(SHNode));
+
+	// Fields
+	strcpy(res->name, name);
+	res->filetype 	= filetype;
+	res->value 		= value;
+
+	return res;
+}
+
+// do not destroy value (will be done in loader)
+void DestroyNode(SHNode* node) {
+	free(node);
+}

@@ -15,6 +15,7 @@
 #define LOG_FILENAME_MAXLEN 	10
 #define LOGIN_MAXLEN			10
 #define CHARACTER_NAME_MAXLEN	8
+#define	FOLDERNAME_MAXLEN		10
 /*****************************************************************************/
 
 /********************************* Parameters ********************************/
@@ -85,6 +86,12 @@ char* GetHashtableElementStringValue(SHHashtableElt*);
 
 /*****************************************************************************/
 
+/*********************************** _loader *********************************/
+// go through the data directory and create a tree structure where pointers to files/images are stored
+// files/images have been loaded into memory of course and are destroy upon tree destruction
+
+/*****************************************************************************/
+
 /*********************************** _logger *********************************/
 /**
  * \struct	_logger
@@ -105,6 +112,36 @@ void flogf(SHLogger*, char*, ...);
 
 /*********************************** _parser *********************************/
 
+/*****************************************************************************/
+
+/************************************ _tree **********************************/
+typedef enum _filetype {
+	SH_FOLDER, SH_IMAGE, SH_TEXTFILE
+} SH_FILETYPE;
+
+typedef struct _node SHNode;
+
+/**
+ * \struct 	_node
+ * \brief	Used to store data in a tree structure. In our case, nodes with children are folders
+ * 			and leaves are files.
+ */
+struct _node {
+	char		name[FOLDERNAME_MAXLEN];
+
+	SH_FILETYPE	filetype;
+
+	int			nb_children;
+	int			nb_max_children;
+	SHNode**	children;
+};
+
+// Prototype
+SHNode* NewNode(char*, int);
+SHNode* NewLeaf(char*, SH_FILETYPE);
+void AddChild(SHNode*, SHNode*);
+void DestroyNode(SHNode*);
+// tree search
 /*****************************************************************************/
 
 /******************************** SHCharacter ********************************/

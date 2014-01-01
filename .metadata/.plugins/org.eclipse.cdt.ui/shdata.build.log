@@ -1,1 +1,15 @@
-Info: Nothing to build for shdata
+12:54:16 **** Rebuild of configuration Debug for project shdata ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o SHDice.o "..\\SHDice.c" 
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o _loader.o "..\\_loader.c" 
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o SHArea.o "..\\SHArea.c" 
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o _logger.o "..\\_logger.c" 
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o SHPlayer.o "..\\SHPlayer.c" 
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o _parser.o "..\\_parser.c" 
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o _tree.o "..\\_tree.c" 
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o SHCharacter.o "..\\SHCharacter.c" 
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o _hashtable.o "..\\_hashtable.c" 
+gcc -shared -o shdata.dll _tree.o _parser.o _logger.o _loader.o _hashtable.o SHPlayer.o SHDice.o SHCharacter.o SHArea.o 
+
+12:54:21 Build Finished (took 4s.809ms)
+

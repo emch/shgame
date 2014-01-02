@@ -15,6 +15,7 @@
 #define LOG_FILENAME_MAXLEN 	10
 #define LOGIN_MAXLEN			10
 #define CHARACTER_NAME_MAXLEN	8
+#define	FOLDERNAME_MAXLEN		10
 /*****************************************************************************/
 
 /********************************* Parameters ********************************/
@@ -85,6 +86,12 @@ char* GetHashtableElementStringValue(SHHashtableElt*);
 
 /*****************************************************************************/
 
+/*********************************** _loader *********************************/
+// go through the data directory and create a tree structure where pointers to files/images are stored
+// files/images have been loaded into memory of course and are destroy upon tree destruction
+
+/*****************************************************************************/
+
 /*********************************** _logger *********************************/
 /**
  * \struct	_logger
@@ -122,15 +129,24 @@ typedef struct SHCharacter {
 /*****************************************************************************/
 
 /********************************** SHDice ***********************************/
+typedef enum SH_DICE_TYPE {
+	SH_FOUR_FACES, SH_SIX_FACES
+} SH_DICE_TYPE;
+
 /**
  * \struct 	SHDice
  * \brief	Structure for storing dice information.
  */
 typedef struct SHDice {
-	char			name[CHARACTER_NAME_MAXLEN];
-	SH_ALIGNMENT	alignment;
+	SH_DICE_TYPE	type;
+	int				value;
 } SHDice;
 
+// Prototypes
+SHDice* InitDice(SH_DICE_TYPE);
+void DestroyDice(SHDice*);
+int RollDice(SHDice*);
+int RandomInt(int);
 /*****************************************************************************/
 
 /********************************** SHPlayer *********************************/

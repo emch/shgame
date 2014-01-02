@@ -87,8 +87,6 @@ char* GetHashtableElementStringValue(SHHashtableElt*);
 /*****************************************************************************/
 
 /*********************************** _loader *********************************/
-// go through the data directory and create a tree structure where pointers to files/images are stored
-// files/images have been loaded into memory of course and are destroy upon tree destruction
 
 /*****************************************************************************/
 

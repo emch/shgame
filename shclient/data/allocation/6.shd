@@ -1,0 +1,5 @@
+nb_players = 6
+nb_hunters = 2
+nb_shadows = 2
+nb_neutrals = 2
+complements = ""

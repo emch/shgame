@@ -1,0 +1,5 @@
+short_name = "hermit"
+long_name = "Hermit's Cabin"
+dice = 2|3
+text = "You may draw a Hermit Card."
+action = "G"	// draw Green card

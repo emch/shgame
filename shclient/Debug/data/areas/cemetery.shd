@@ -1,0 +1,5 @@
+short_name = "cemetery"
+long_name = "Cemetery"
+dice = 8
+text = "You may draw a Black Card."
+action = "B"	// draw Black card

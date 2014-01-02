@@ -1,0 +1,5 @@
+short_name = "altar"
+long_name = "Ertswhile Altar"
+dice = 10
+text = "You may steal an Equipment card from any player."
+action = "S"	// Steal Equipment card (if possible)

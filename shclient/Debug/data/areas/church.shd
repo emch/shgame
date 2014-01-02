@@ -1,0 +1,5 @@
+short_name = "church"
+long_name = "Church"
+dice = 6
+text = "You may draw a white Card."
+action = "W"	// draw White card

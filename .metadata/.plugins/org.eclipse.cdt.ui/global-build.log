@@ -457,3 +457,16 @@ gcc "-LC:\\Users\\Emmanuel\\Documents\\GitHub\\shgame\\shdata\\Debug" "-LC:\\Use
 Info: Nothing to build for shserver
 Info: Nothing to build for shupdate
 Info: Nothing to build for shvfs
+10:35:55 **** Incremental Build of configuration Debug for project shdata ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o _hashtable.o "..\\_hashtable.c" 
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o SHPlayer.o "..\\SHPlayer.c" 
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o SHDice.o "..\\SHDice.c" 
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o SHCharacter.o "..\\SHCharacter.c" 
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o _loader.o "..\\_loader.c" 
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o _logger.o "..\\_logger.c" 
+gcc -shared -o shdata.dll _parser.o _logger.o _loader.o _hashtable.o SHPlayer.o SHDice.o SHCharacter.o SHArea.o _DELETE_tree.o 
+Info: Nothing to build for shclient
+Info: Nothing to build for shserver
+Info: Nothing to build for shupdate
+Info: Nothing to build for shvfs

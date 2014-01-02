@@ -1,0 +1,5 @@
+short_name = "underworld"
+long_name = "Underworld Gate"
+dice = 4|5
+text = "You may draw a card from the stack of your choice."
+action = "G|B|W"	// draw Green OR Black OR White card

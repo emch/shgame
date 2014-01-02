@@ -1,0 +1,5 @@
+short_name = "woods"
+long_name = "Weird Woods"
+dice = 9
+text = "You may either give 2 damage to any player or heal 1 damage of any player."
+action = "A2|H1"	// Attack for 2 points OR Heal for 1 point

@@ -1,1 +1,12 @@
-Info: Nothing to build for shdata
+10:35:55 **** Incremental Build of configuration Debug for project shdata ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o _hashtable.o "..\\_hashtable.c" 
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o SHPlayer.o "..\\SHPlayer.c" 
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o SHDice.o "..\\SHDice.c" 
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o SHCharacter.o "..\\SHCharacter.c" 
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o _loader.o "..\\_loader.c" 
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o _logger.o "..\\_logger.c" 
+gcc -shared -o shdata.dll _parser.o _logger.o _loader.o _hashtable.o SHPlayer.o SHDice.o SHCharacter.o SHArea.o _DELETE_tree.o 
+
+10:36:03 Build Finished (took 7s.587ms)
+
